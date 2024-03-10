@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+        <title><?php echo $cfg_webname; ?>- 会员注册</title>
+        <link href="templets/style/login.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/templets/default/css/commen.css">
+        <script src="templets/js/j.js" language="javascript" type="text/javascript"></script>
+        <script src="templets/js/base.js" language="javascript" type="text/javascript"></script>
+        <script src='templets/js/CheckPassStrength.js' type="text/javascript" language="javascript"></script>
+        <script type="text/javascript" language="javascript" src='templets/js/reg_new.js'></script>
+        <script type="text/javascript" language="javascript"> 
+        <!--
+        var reMethod = "<?php echo ($cfg_soft_lang == 'utf-8') ? 'POST' : 'GET';?>",pwdmin = <?php echo $cfg_mb_pwdmin; ?>;
+        
+        function changeAuthCode() {
+          var num = 	new Date().getTime();
+          var rand = Math.round(Math.random() * 10000);
+          num = num + rand;
+          $('#ver_code').css('visibility','visible');
+          if ($("#vdimgck")[0]) {
+            $("#vdimgck")[0].src = "../include/vdimgck.php?tag=" + num;
+          }
+          return false;	
+        }
+        
+        function hideVc()
+        {
+          $('#ver_code').css('visibility','hidden');
+        }
+        
+        
+        $(document).ready(function(){ 
+          $("#passwordLevel").removeClass().addClass("rank r0");
+          $("#vdcode").focus(function(){
+            var leftpos = $("#vdcode").position().left;
+            var toppos = $("#vdcode").position().top - 42;
+            $('#ver_code').css('left', leftpos+'px');
+            $('#ver_code').css('top', toppos+'px');
+            $('#ver_code').css('visibility','visible');
+          });
+          $("input[type='password']").click(function(){
+            hideVc()
+          });
+          $("#txtUsername").click(function(){
+            hideVc()
+          });
+          $("input[type='radio']").focus(function(){
+            hideVc()
+          });
+          /*
+          $("#vdcode").blur(function(){
+              $('#ver_code').css('visibility','hidden');
+          });
+          */
+        })
+        
+        -->
+        </script>
+        <style>
+          
+          body{
+
+            background: #e7eff4;
+          }
+
+          .buttonGreen142{
+            background:#008b5f;
+            border-radius: 5px;
+          }
+          .footer{
+            background-color: #fff;
+          }
+       
+          #login,.theme{
+            width: 100%!important;
+          }
+          .contract{
+              width: 570px;
+            }
+          @media (max-width:768px){
+            .contract{
+              width: 260px;
+            }
+            .stip1{
+              width: 100%;
+              margin-left: 15px;
+            }
+            #login .theme{
+              width: 100%;
+            }
+            .mL68{
+              margin-left:0px;
+            }
+            #login .theme span{
+              width: 84px;
+            }
+          }
+         input{
+           border-radius: 5px;
+         }
+        </style>
+    </head>
+<body>
+  
+<div class="container">
+
+<div id="login" class="container">
+
+  <div class="<?php echo ($cfg_mb_reginfo == 'Y')? '' : 's';?>tip1"></div>
+  <div class="theme fLeft">
+    <form method="post" action="reg_new.php" id="regUser" name="form2">
+      <input type="hidden" value="regbase" name="dopost"/>
+      <input type="hidden" value="1" name="step"/>
+      <input type="hidden" value="个人" name="mtype"/>
+      <p style="text-align: right;" class="mB10"/>
+      <ul>
+        <li class="mL68" class="col-xs-12">(带<i class="red"> * </i>号的表示为必填项目，用户名必须大于3位小于20位，密码必须大于3位)</li>
+        <li class="col-xs-12"><span>帐号类型：</span>
+         <?php
+         if(!file_exists(DEDEDATA.'/cache/member_model.inc'))
+         {
+         	   $dsql->SetQuery("SELECT * FROM `#@__member_model` WHERE state='1'");
+	           $dsql->Execute();
+	           while($row=$dsql->GetObject())
+	           {
+		             $_MemberMod[$row->id]=array($row->name,$row->table);
+           	 }
+          } else {
+           	     require_once DEDEDATA.'/cache/member_model.inc';
+          }
+            foreach ($_MemberMod as $type)
+            {
+                if($type[0] == '个人') echo ' <label><input type="radio" name="mtype" class="usermtype" value="'.$type[0].'" checked/>';
+                elseif($type[0] == '企业') echo ' <label><input type="radio" name="mtype" class="usermtype2" value="'.$type[0].'" />';
+                else echo ' <label><input type="radio" name="mtype" class="usermtype" value="'.$type[0].'" />';
+                echo $type[0], '</label> &nbsp;';
+            }
+        ?>
+
+        </li>
+        <li class="col-xs-12"><span>用户名：</span>
+          <input type="text" class="intxt w200" id="txtUsername" name="userid" />
+        <i class="red">*</i> <em id="_userid">(可以使用中文，但禁止除[@][.]以外的特殊符号)</em> </li>
+       
+        <li class="col-xs-12"><span>登陆密码：</span>
+          <input type="password" onkeyup="setPasswordLevel(this, document.getElementById('passwordLevel'));" style="font-family: verdana;" class="intxt w200" id="txtPassword" name="userpwd"/>
+          <i class="red">*</i> </li>
+        <li class="col-xs-12"><span>密码强度：</span>
+          <input id="passwordLevel" class="rank r2" disabled="disabled" name="Input" />
+        </li>
+        <li class="col-xs-12"><span>确认密码：</span>
+          <input type="password" class="intxt w200" size="20" value="" id="userpwdok" name="userpwdok"/>
+          <i class="red">*</i> <em id="_userpwdok"><font color="red"><b>×两次输入密码不一致</b></font></em> </li>
+         
+          <?php
+            if($safe_faq_reg == '1'){
+            $faqkey = array_rand($safefaqs);
+          ?>
+
+          <?php
+          	}
+          ?>
+        
+          <?php
+            if(preg_match("/1/",$safe_gdopen)){
+          ?>
+          <li><span>验证码：</span>
+            <input type="text" class="intxt w200" style="width: 50px; text-transform: uppercase;" id="vdcode" name="vdcode"/><img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>
+           看不清？ <a href="javascript:void(0)" onclick="changeAuthCode();">点击更换</a></li>
+           <?php }?>
+      </ul>
+     
+        <li class="col-xs-12"><span>&nbsp;</span>
+          <button type="submit" id="btnSignCheck" class="buttonGreen142">立即注册</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <br class="clear"/>
+</div>
+
+</div>
+
+
+<script language="javascript" type="text/javascript">
+// 	window.onload=function (){
+// 		setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+// 	}
+// </script>
+
+</body>
+</html>

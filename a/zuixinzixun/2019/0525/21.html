@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/zuixinzixun/'>最新资讯</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">百年光影下的济南皮影戏</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-05-25 16:21
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&ldquo;一口叙说千古事，双手对舞百万兵。&rdquo;这句诗形容的就是有着2000多年历史的民间艺术形式&mdash;&mdash;中国皮影戏。小小几张皮影，一幅白色幕布，一束光源，琴鼓伴奏中，就能表现千古历史轶事，讲述人生百态。它被誉为&ldquo;有声电影的鼻祖&rdquo;，2008年入选国家级非遗名录；2011年被联合国教科文组织列入&ldquo;人类非遗代表作名录&rdquo;。</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	作为中国皮影戏的一个分支，济南皮影戏1917年由李克鳌带入济南，后经第二代传人李福增、李福祥，第三代传人李兴堂、李兴时的传承和发展，逐渐演绎成带有鲜明济南烙印的皮影戏。</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	济南皮影戏，&ldquo;两人一台戏&rdquo;。一人在幕后一边用手操纵皮影人物，一边用济南话来唱述故事；一人在旁配以山东琴书、西河大鼓等曲调，幽默诙谐的表演，加上引人入胜的故事，让幕布上的人物&ldquo;举手投足皆是戏，一颦一笑若有声&rdquo;，令观众拍案叫绝。</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px; text-align: center;">
+	<img alt="" src="/uploads/allimg/190525/162335A05-0.jpg" style="padding: 0px; margin: 0px; border: none; max-width: 80%; height: auto;" /></p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	最初济南皮影戏选用的都是旧鼓皮，这种材质便宜易得，但却不透明、无色彩，幕布上映出的人物多为黑色，再加上当时雕镂技艺并不成熟，其花纹较为粗犷，影响了皮影的逼真程度。</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	经过几十年的创新和发展，雕镂技艺不断成熟，过往稍显简单的人物形象逐渐丰满起来，五官、四肢、衣袖、头饰更加逼真，更多戏曲人物造型在艺人手中诞生，或帝王将相、或妖魔鬼怪、或才子佳人，或花鸟鱼虫&hellip;&hellip;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	当然，技术的革新离不开材料的改进。上等牛皮开始成为艺人们最重要的原材质，它鲜亮透明，且易于着色涂油。正是如此，济南皮影戏也迎来了五彩缤纷的时代。</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	艺术的革新远不止于此。早先的皮影戏是源于街头，兴于市井。少则三五人，多则十来人，一阵叫好声后大家一哄而散。为便于操纵和掌握，当时的影人高度只有20厘米出头。演员双手操纵20多个影人却忙而不乱，得心应手。后来，皮影戏慢慢走向剧场，原本小巧的皮影必须变大，才能让更多观众同时欣赏。于是，影人逐渐增高，30厘米、50厘米、70厘米&hellip;&hellip;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px; text-align: center;">
+	<img alt="" src="/uploads/allimg/190525/1623354359-1.jpg" style="padding: 0px; margin: 0px; border: none; max-width: 80%; height: auto;" /></p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px; text-align: center;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	在表演剧目上，济南皮影戏艺人也不满足于老祖宗留下的&ldquo;一亩三分地&rdquo;。他们在呵护优秀传统的同时，结合新时代和济南特色，不仅改编了诸如《西游记》《哪吒闹海》等传统剧目，还创作出诸如《挑嫂》《新媳妇》《两块六》等一批现代皮影戏。</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	济南皮影戏，就是这样一步步地适应、发展、创新。2008年6月，济南皮影戏被列入国家第二批&ldquo;非遗&rdquo;名录扩展项目。2011年，包括济南皮影在内的中国皮影戏被联合国教科文组织列入&ldquo;人类非物质文化遗产代表作名录&rdquo;。从旧时的市井技艺，到国家认证的优秀文化遗产，这项走过风风雨雨的古老技艺在新时代中能够继续流传，是一代代皮影艺人不断推陈出新的结果。</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	&nbsp;</p>
+<p style="padding: 0px; margin: 0px; font-family: &quot;Microsoft YaHei&quot;, arial, helvetica, clean, sans-serif; text-indent: 2em; color: rgb(80, 80, 80); font-size: 14px;">
+	如今，新时代下，观众对民间艺术有了新的品味和要求。于是，济南皮影戏在国家级&ldquo;非遗&rdquo;济南皮影戏第五代传承人、年轻的&ldquo;80后&rdquo;李娟手中，有了更多新意。她不仅让影人的材料、雕刻和着色，布景的灯光等更具现代感，大小也增高到1米多，而且在皮影幕布上增添了更多的时尚元素。如，用英语演绎的国际范《趵突泉传说》、大型舞台剧《芙蓉仙子》、卡通剧《喜羊羊与灰太狼系列》等。在表现形式上，既有和动画相结合的卡通皮影，也有与现代舞台艺术相融合的皮影脱口秀，还将皮影演到《武媚娘传奇》等电视剧中&hellip;&hellip;这为传统皮影戏延续了生命力，让皮影戏更加&ldquo;活跃&rdquo;了起来，并绽放着自己的风采。</p>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

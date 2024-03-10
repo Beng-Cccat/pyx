@@ -1,0 +1,245 @@
+.ImageF {
+    margin: 10px;
+    font-family: "Open Sans", sans-serif;
+    min-height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #f4f6f9!important;
+}
+
+.masonry {
+    /* css多列布局 */
+    /* 4列 */
+    column-count: 4;
+    /* 一列中每块的间距 */
+    column-gap: 2px;
+    margin-bottom: 2px;
+}
+
+@media(max-width: 1024px) {
+    .masonry {
+        /* css多列布局 */
+        column-count: 3;
+        column-gap: 0;
+    }
+}
+
+@media(max-width: 800px) {
+    .masonry {
+        /* css多列布局 */
+        column-count: 2;
+        column-gap: 0;
+    }
+}
+
+.item {
+    padding: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.item img {
+    display: block;
+    width: 100%;
+    /* 自适应高度 */
+    height: auto;
+    transition: 0.5s;
+}
+
+.item:hover img {
+    /* 放大图片 */
+    transform: scale(1.2);
+}
+
+.Image-title {
+    width: 100%;
+    text-align: center;
+    height: 6rem;
+}
+
+.Image-title h1 {
+    font-size: 1.8rem;
+    line-height: 6rem;
+    letter-spacing: 0.4rem;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .Image-title {
+        height: 4rem;
+    }
+    .Image-title h1 {
+        line-height: 4rem;
+        font-size: 1.2rem;
+        letter-spacing: 0rem;
+    }
+}
+
+
+/* 弹窗背景 */
+
+.Modal {
+    /* 固定定位 */
+    position: fixed;
+    width: 80%;
+    height: 100vh;
+    transition: 0.5s;
+    transform: translateX(100%);
+    background-color: rgba(0, 0, 0, 0.9);
+    /*阴影*/
+    top: 0;
+    right: 0;
+    z-index: 30;
+}
+
+.rowcol-t {
+    height: 100%!important;
+    display: flex;
+    align-items: center;
+}
+
+.img-content {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+/* 图片 */
+
+.img-modal-content {
+    max-width: 100%;
+    display: block;
+    max-height: 80%;
+    margin: 0 auto;
+    /* 防止变形 */
+    object-fit: cover;
+}
+
+.Image-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.maxAclose {
+    height: 100vh;
+}
+
+.PhoneAclose {
+    display: none;
+}
+
+.Image-container a {
+    opacity: 0.8;
+    /* 相对定位 */
+    position: relative;
+    /* 将a这个行内元素转为块级元素不然无法设置宽和高 */
+    display: block;
+    width: 100px;
+    height: 50px;
+    /* 行高 */
+    line-height: 50px;
+    text-align: center;
+    margin: 20px;
+    color: #ffffff;
+    font-size: 20px;
+    /* 取消下划线 */
+    text-decoration: none;
+    /* 过渡事件 */
+    transition: all 0.3s ease-in-out;
+    /* 改变各个元素的颜色,一句话搞定 */
+    /* hue-rotate是颜色滤镜 可以加不同的度数来改变颜色
+  这里我们用了calc自动计算的方法,还有var函数来调用我们给每一个a设置的不同的属性值1~5,然后分别乘以60度,就能够分别得到不同的度数 */
+    /* filter: hue-rotate(calc(var(--i) * 60deg)); */
+}
+
+@media (max-width: 850px) {
+    .maxAclose {
+        display: none;
+    }
+    .PhoneAclose {
+        display: block;
+    }
+    .Modal {
+        width: 100%;
+    }
+    .img-content {
+        height: 80vh;
+    }
+    .img-modal-content {
+        width: 100%;
+        height: auto;
+    }
+    .Image-container {
+        height: 20vh;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .Image-container a {
+        width: 28%!important;
+        margin: 4px;
+    }
+}
+
+.Image-container a::before,
+.Image-container a::after {
+    /* 将两个伪元素的相同部分写在一起 */
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    /* 最后的.3s是延迟时间 */
+    transition: all 0.3s ease-in-out 0.3s;
+    box-sizing: border-box;
+}
+
+.Image-container a::before {
+    top: 0;
+    left: 0;
+    /* 删除左边的伪元素的右和下边框 */
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.Image-container a::after {
+    right: 0;
+    bottom: 0;
+    /* 删除右边的伪元素的上边和左边的边框 */
+    border-top: 0;
+    border-left: 0;
+}
+
+.Image-container a:hover {
+    background-color: #ffffff;
+    color: #000;
+    /* 加个发光效果和下面的倒影 */
+    /* 模糊度加到了50px */
+    box-shadow: 0 0 50px #ffffff;
+    /* below 是下倒影 1px是倒影的元素相隔的距离 最后是个渐变的颜色 */
+    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+    /* 设置一下以上属性的延迟时间 */
+    transition-delay: 0.4s;
+}
+
+
+/* 在设置两条线的变化 总体来说四条各个方向的 只需要改变一下两个伪元素的宽度和高度 */
+
+.Image-container a:hover::before,
+.Image-container a:hover::after {
+    width: 138px;
+    height: 58px;
+    transition-delay: 0s;
+}

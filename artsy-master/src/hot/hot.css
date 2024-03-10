@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f6f9;
+    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@media (min-width: 450px) {
+    body {
+        font-size: 1.25rem;
+    }
+}
+
+.shell {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.shell img {
+    /* 防止图像变形 */
+    object-fit: cover;
+    width: 120%;
+    margin: 0 auto;
+    margin-top: -40px;
+}
+
+.big-title {
+    position: absolute;
+    z-index: 1;
+    line-height: 4rem;
+    top: calc(50% - 2rem);
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+
+/* 大屏端导航样式 */
+
+.daohang {
+    width: 16.5vw;
+    height: 100vh;
+}
+
+
+/* elementUI导航组件样式 */
+
+.el-tabs__header {
+    float: none!important;
+}
+
+.el-tabs {
+    transition: 0.5s ease-in-out;
+}
+
+.tabsGD {
+    position: fixed;
+    left: 10%;
+    top: 20%;
+    transition: 0.5s;
+}
+
+.el-tabs__item {
+    height: 60px!important;
+    font-size: 18px!important;
+}
+
+@media (max-width: 768px) {
+    .big-title {
+        font-size: 3rem;
+    }
+    .el-tabs {
+        margin-top: 0px;
+        text-align: center;
+    }
+    .el-tabs__nav {
+        width: 100%;
+        text-align: center;
+    }
+    .el-tabs__item {
+        height: 60px!important;
+        font-size: 16px!important;
+        padding: 0 0.5rem!important;
+    }
+    .el-tabs__nav-scroll {
+        width: 78%;
+        margin: 0 auto;
+    }
+}
+
+.hot-text {
+    padding-bottom: 50px;
+}
+
+.hot-H {
+    font-size: 3.5rem;
+    text-align: center;
+    font-style: italic;
+    font-weight: 300;
+    margin: 50px 0px 0px 0px;
+}
+
+.hot-P {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.5em;
+    max-width: 800px;
+    margin: 20px auto 0px auto;
+    text-align: center;
+    max-width: 800px;
+}
+
+.hotPC {
+    display: none;
+}
+
+.hot-P:hover .hotPE {
+    display: none;
+}
+
+.hot-P:hover .hotPC {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .hot-text {
+        padding-bottom: 30px;
+    }
+    .hot-H {
+        font-size: 3rem;
+        line-height: 3.5rem;
+        padding: 0px 10px 0px 10px;
+    }
+    .hot-P {
+        font-size: 1.1rem;
+        padding: 0px 30px 0px 30px;
+    }
+}
+
+.ImageF .masonry {
+    /* css多列布局 */
+    /* column-count: 4; */
+    column-gap: 20px;
+}
+
+.item {
+    margin-bottom: 20px;
+}

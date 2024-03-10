@@ -1,0 +1,369 @@
+.page-header {
+    /* flex布局 */
+    display: flex;
+    /* 自动换行 */
+    flex-wrap: wrap;
+    /* 内容两边对齐 */
+    justify-content: space-between;
+    /* 固定定位 */
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    /* visible :不剪切内容也不添加滚动条。 */
+    overflow: visible;
+    padding: 1rem;
+    z-index: 30;
+}
+
+.page-tagline {
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 100;
+}
+
+.page-tagline a {
+    color: #123965;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3rem 1rem 1rem;
+    width: 100vw;
+    min-height: 100vh;
+    text-align: center;
+    background-color: white;
+    box-sizing: border-box;
+    opacity: 0;
+    z-index: 20;
+    transform: translateY(-100%);
+    /* opacity 0.45s 0.45s ease 意为对opacity属性加一个持续0.45s，延迟0.45s，先加速后减速的过渡 */
+    transition: opacity 0.45s 0.45s ease, transform 0s 1.2s;
+}
+
+.menu ol {
+    /* grid布局 */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 间距：每一块的间距 */
+    grid-gap: 1rem;
+    width: 100%;
+}
+
+
+/* 屏幕宽度大于820px时 */
+
+@media (min-width: 820px) {
+    .menu ol {
+        /* grid布局：一行分四块 */
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.menu ol li {
+    display: grid;
+    /* grid-column为Grid Items 属性  */
+    /* 占据一个网格轨道 */
+    grid-column: span 1;
+    grid-gap: 1rem;
+    overflow: hidden;
+}
+
+.menu ol a {
+    display: flex;
+    /* 垂直居中 */
+    align-items: center;
+    /* 水平居中 */
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: #2269BB;
+    background-color: #2269BB;
+    /* 圆角 */
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 450px) {
+    .menu ol a {
+        font-size: 1.75rem;
+    }
+}
+
+
+/* 对.menu .ol里的第3，4，5，6...的li设置属性 */
+
+.menu>ol>li:nth-child(n+3) {
+    /* 占据两个网格轨道 */
+    grid-column: span 2;
+}
+
+.menu .sub-menu {
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 500px) {
+    .menu .sub-menu {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.menu .sub-menu li a {
+    font-size: 0.85rem;
+    color: #16457a;
+    background-color: #16457a;
+}
+
+@media (min-width: 450px) {
+    .menu .sub-menu li a {
+        font-size: 1rem;
+    }
+}
+
+.menu .sub-menu li:nth-child(3n) {
+    grid-column: span 2;
+}
+
+@media (min-width: 500px) {
+    .menu .sub-menu li:nth-child(3n) {
+        grid-column: span 1;
+    }
+}
+
+.menu-toggle {
+    display: grid;
+    /* 一行六块，为实现每个span长度不同的效果，为每个span分配不同数量的网格轨道 */
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 2px;
+    position: relative;
+    /* 鼠标移入显示小手 */
+    cursor: pointer;
+    width: 28px;
+    height: 22px;
+    z-index: 100;
+}
+
+.menu-toggle:before {
+    content: "×";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 2.4rem;
+    line-height: 0.4;
+    color: #123965;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-toggle span {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+    /* transform-origin属性用于设置旋转元素的基点位置 */
+    transform-origin: 100% 100%;
+}
+
+
+/* 为每个span设置不同的过渡延迟时间 */
+
+.menu-toggle span:nth-child(1) {
+    transition-delay: 0.35s;
+}
+
+.menu-toggle span:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.menu-toggle span:nth-child(3) {
+    transition-delay: 0.45s;
+}
+
+.menu-toggle span:nth-child(4) {
+    transition-delay: 0.5s;
+}
+
+.menu-toggle span:nth-child(5) {
+    transition-delay: 0.55s;
+}
+
+.menu-toggle span:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+
+/* 为每一span设置占据不同数量的网格轨道数量，结合上边设置的一行6个网格轨道 */
+
+.menu-toggle span:nth-child(1),
+.menu-toggle span:nth-child(2) {
+    grid-column: span 3;
+}
+
+.menu-toggle span:nth-child(3),
+.menu-toggle span:nth-child(6) {
+    grid-column: span 2;
+}
+
+.menu-toggle span:nth-child(4),
+.menu-toggle span:nth-child(5) {
+    grid-column: span 4;
+}
+
+#menu-toggle-input {
+    /* 隐藏承载label的input复选框 */
+    display: none;
+}
+
+
+/* :checked伪类用于匹配被用户选中的单选按钮Radio或复选按钮checkbox */
+
+
+/* a~b 代表选择前边有a元素的每个b元素 */
+
+#menu-toggle-input:checked~.menu-toggle span {
+    /* scaleX(n) 定义 2D 缩放转换，改变元素的宽度。 */
+    transform: scaleX(0);
+}
+
+#menu-toggle-input:checked~.menu-toggle span:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+#menu-toggle-input:checked~.menu-toggle span:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+#menu-toggle-input:checked~.menu-toggle span:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+#menu-toggle-input:checked~.menu-toggle span:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+#menu-toggle-input:checked~.menu-toggle span:nth-child(5) {
+    transition-delay: 0.25s;
+}
+
+#menu-toggle-input:checked~.menu-toggle span:nth-child(6) {
+    transition-delay: 0.3s;
+}
+
+#menu-toggle-input:checked~.menu-toggle:before {
+    opacity: 1;
+    transition-delay: 0.75s;
+}
+
+#menu-toggle-input:checked~nav {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+#menu-toggle-input:checked~nav>ol>li:nth-child(1)>a {
+    transition: color 0.3s 0.825s, transform 0.3s 0.35s ease;
+}
+
+#menu-toggle-input:checked~nav .sub-menu>li:nth-child(1)>a {
+    transition: color 0.3s 0.825s, transform 0.3s 0.5s ease;
+}
+
+#menu-toggle-input:checked~nav>ol>li:nth-child(2)>a {
+    transition: color 0.3s 0.825s, transform 0.3s 0.4s ease;
+}
+
+#menu-toggle-input:checked~nav .sub-menu>li:nth-child(2)>a {
+    transition: color 0.3s 0.825s, transform 0.3s 0.55s ease;
+}
+
+#menu-toggle-input:checked~nav>ol>li:nth-child(3)>a {
+    transition: color 0.3s 0.825s, transform 0.3s 0.45s ease;
+}
+
+#menu-toggle-input:checked~nav .sub-menu>li:nth-child(3)>a {
+    transition: color 0.3s 0.825s, transform 0.3s 0.6s ease;
+}
+
+#menu-toggle-input:checked~nav>ol>li:nth-child(4)>a {
+    transition: color 0.3s 0.825s, transform 0.3s 0.5s ease;
+}
+
+#menu-toggle-input:checked~nav .sub-menu>li:nth-child(4)>a {
+    transition: color 0.3s 0.825s, transform 0.3s 0.65s ease;
+}
+
+#menu-toggle-input:checked~nav>ol>li:nth-child(5)>a {
+    transition: color 0.3s 0.825s, transform 0.3s 0.55s ease;
+}
+
+#menu-toggle-input:checked~nav .sub-menu>li:nth-child(5)>a {
+    transition: color 0.3s 0.825s, transform 0.3s 0.7s ease;
+}
+
+.menu>ol>li:nth-child(1)>a {
+    /* translate(x,y) 根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动 */
+    transform: translate(calc(-100% - 12px), 0);
+    transition: color 0.3s, transform 0.3s 0.2s ease;
+}
+
+.sub-menu>li:nth-child(1)>a {
+    transform: translate(0, calc(-100% - 12px));
+    transition: color 0.3s, transform 0.3s 0.2s ease;
+}
+
+.menu>ol>li:nth-child(2)>a {
+    transform: translate(calc(-100% - 12px), 0);
+    transition: color 0.3s, transform 0.3s 0.25s ease;
+}
+
+.sub-menu>li:nth-child(2)>a {
+    transform: translate(0, calc(-100% - 12px));
+    transition: color 0.3s, transform 0.3s 0.25s ease;
+}
+
+.menu>ol>li:nth-child(3)>a {
+    transform: translate(calc(-100% - 12px), 0);
+    transition: color 0.3s, transform 0.3s 0.3s ease;
+}
+
+.sub-menu>li:nth-child(3)>a {
+    transform: translate(0, calc(-100% - 12px));
+    transition: color 0.3s, transform 0.3s 0.3s ease;
+}
+
+.menu>ol>li:nth-child(4)>a {
+    transform: translate(calc(-100% - 12px), 0);
+    transition: color 0.3s, transform 0.3s 0.35s ease;
+}
+
+.sub-menu>li:nth-child(4)>a {
+    transform: translate(0, calc(-100% - 12px));
+    transition: color 0.3s, transform 0.3s 0.35s ease;
+}
+
+.menu>ol>li:nth-child(5)>a {
+    transform: translate(calc(-100% - 12px), 0);
+    transition: color 0.3s, transform 0.3s 0.4s ease;
+}
+
+.sub-menu>li:nth-child(5)>a {
+    transform: translate(0, calc(-100% - 12px));
+    transition: color 0.3s, transform 0.3s 0.4s ease;
+}
+
+#menu-toggle-input:checked~nav a {
+    color: white;
+    transform: translate(0px, 0px);
+}

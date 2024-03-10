@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/zuixinzixun/'>最新资讯</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">发现新成都|让皮影戏焕发新活力</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-05-25 16:04
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <div align="center" style="box-sizing: border-box; padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-family: 宋体, &quot;microsoft yahei&quot;, Arial, Helvetica, sans-serif; font-size: 16.3333px;">
+	<div align="center" style="box-sizing: border-box; padding: 0px; margin: 0px;">
+		<img alt="" src="/uploads/allimg/190525/1604526036-0.jpg" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; display: block; margin: 0px auto;" /></div>
+	<div align="center" style="box-sizing: border-box; padding: 0px; margin: 0px;">
+		&nbsp;</div>
+	<div align="center" style="box-sizing: border-box; padding: 0px; margin: 0px;">
+		寓教于乐的皮影戏，引起了同学们极大的兴趣</div>
+	<div align="center" style="box-sizing: border-box; padding: 0px; margin: 0px;">
+		&nbsp;</div>
+	<div align="center" style="box-sizing: border-box; padding: 0px; margin: 0px;">
+		<div align="center" style="box-sizing: border-box; padding: 0px; margin: 0px;">
+			<div align="center" style="box-sizing: border-box; padding: 0px; margin: 0px;">
+				<img alt="" src="/uploads/allimg/190525/160452J14-1.jpg" style="box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; display: block; margin: 0px auto;" /></div>
+			<div align="center" style="box-sizing: border-box; padding: 0px; margin: 0px;">
+				&nbsp;</div>
+			<div align="center" style="box-sizing: border-box; padding: 0px; margin: 0px;">
+				在西南民族大学创新创业研发楼里，王浩斐研究设计出多款深受大众喜爱的皮影新品</div>
+		</div>
+	</div>
+</div>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(0, 0, 0); font-family: 宋体, &quot;microsoft yahei&quot;, Arial, Helvetica, sans-serif; font-size: 16.3333px;">
+	　　金秋时节，在西南民族大学i创空间，30岁的河南青年王浩斐，正构思着皮影戏的创新设计。</p>
+<p style="box-sizing: border-box; margin: 0px 0px 10px; color: rgb(0, 0, 0); font-family: 宋体, &quot;microsoft yahei&quot;, Arial, Helvetica, sans-serif; font-size: 16.3333px;">
+	　　皮影戏被称为&ldquo;百戏之祖&rdquo;，有着2000多年的传承历史。但从上世纪八十年代开始，皮影戏一度面临观众流失。2016年，西南民族大学动画系专业的王浩斐取得硕士学位后选择留在了成都，开始专门从事皮影创新发展研究和皮影教育培训创业计划，一边研究怎样让皮影与时代接轨；一边将创新的皮影新品投放到市场。同时，他还带着皮影走进校园，让更多人喜欢上皮影这项古老的艺术。</p>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/zuixinzixun/'>最新资讯</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">敲“板凳” 吼老腔 渭南华州皮影进京展演</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-05-25 16:28
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <p style="box-sizing: border-box; margin: 40px 0px 20px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　新京报讯 4月20日，2019&ldquo;传承技艺美丽中国&rdquo;渭南华州皮影文化艺术周在北京召开新闻发布会。此次文化艺术周由文化和旅游部恭王府博物馆、陕西省文化和旅游厅、渭南市人民政府主办，将于4月28至30日在陕西省渭南市华州区205库群文化创意园召开。届时，华州皮影精品展览也随之开幕，来自北京、浙江、四川、山东、河南、云南、河北等地皮影代表作品及雕刻技艺将集中展示。同时，各流派皮影戏展演、学术论坛、华州非遗音乐、舞蹈、曲艺、戏曲类表演、群众观摩体验等多项活动与观众见面。</p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　<img src="/uploads/allimg/190525/162ZRb2-0.jpg" style="box-sizing: border-box; border: 0px; vertical-align: baseline; max-width: 100%; margin: 20px 0px;" /></p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　陕西华州皮影传承人在表演皮影戏《人之道》。</p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　<img src="/uploads/allimg/190525/162ZU2C-1.jpg" style="box-sizing: border-box; border: 0px; vertical-align: baseline; max-width: 100%; margin: 20px 0px;" /></p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　华州皮影国家级非遗传承人刘华（右）和魏金全（左）在表演皮影戏。</p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　<img src="/uploads/allimg/190525/162ZT610-2.jpg" style="box-sizing: border-box; border: 0px; vertical-align: baseline; max-width: 100%; margin: 20px 0px;" /></p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　76岁的团长吕崇德（中）在用华州碗碗腔表演。</p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　<img src="/uploads/allimg/190525/162ZS640-3.jpg" style="box-sizing: border-box; border: 0px; vertical-align: baseline; max-width: 100%; margin: 20px 0px;" /></p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　76岁的团长吕崇德手中弹奏的乐器。</p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　<img src="/uploads/allimg/190525/162ZU5a-4.jpg" style="box-sizing: border-box; border: 0px; vertical-align: baseline; max-width: 100%; margin: 20px 0px;" /></p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　中国皮影在陕西，陕西皮影在华州。渭南华州是中国皮影发源地，华州皮影起源于汉，有上千年的历史。</p>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{dede:global.cfg_webname/}</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+        #list-item{
+            margin-bottom: 15px;
+        }
+        #listImg img{
+            max-width: 100%;
+            height: auto;
+        }
+        h3{
+            width: 162px;
+        }
+        @media (min-width: 1200px){
+        .left-warp{
+            position: fixed;
+            right: 10px;
+            top: auto;
+            bottom: 50px !important;
+           }
+        }
+        .brief-left{
+            background-color: #fff;
+            border-left: 7px solid #31c193;
+        }
+        .brief-left li{
+            height: 54px;
+            line-height: 54px;
+            text-align: center;
+            border-bottom: 1px solid #c5c5c5;
+        }
+        .active{
+            border-left: 5px solid #ff6d00;
+            color: #ff6d00;
+            transition: all 0.3s ease-in-out
+        }
+        .brief-head{
+            height: 64px;
+            line-height: 64px;
+            font-size: 25px;
+            color: #ffffff;
+            text-align: center;
+            margin:0px;
+            background-color: #31c193;
+        }
+        .show-all>div{
+            display: none;
+        }
+        .show{
+            display: block;
+            transition: all 0.5s ease;
+        }
+        #main-wrap {
+            margin-top: 27px;
+            background-color: #e7eff4;
+        }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    {dede:include filename='head.htm'/}        
+    <!-- nav-end -->
+ 
+    <!-- mian-s -->
+    <div class="container-fluid right-side" id="main-wrap">
+         <!-- swiper-s -->
+        
+        <div class="container-fluid" >   
+        <img src="{dede:global.cfg_templets_skin/}/images/tu/bn1.png" alt="" style="width: 100%;height:auto">
+        </div>      
+       
+        <!-- swiper-end -->
+        <div class="container" >
+            <div class="row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：{dede:field name='position'/} </span>
+            </div>  
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <h2 class="brief-head">
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        皮影简介</h2>
+                    <ul class="brief-left list-group">
+                        <li class="active"> <i class="glyphicon glyphicon-info-sign"></i> 表演形式</li>
+                        <li><i class="glyphicon glyphicon-info-sign"></i> 历史起源</li>
+                        <li><i class="glyphicon glyphicon-info-sign"></i> 艺术特色</li>
+                        <li><i class="glyphicon glyphicon-info-sign"></i> 传承发展</li>
+                        <li><i class="glyphicon glyphicon-info-sign"></i> 保护状况</li>
+                    </ul>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 show-all">
+                        <div class="panel show">
+                                <div class="panel-heading">表演形式</div>
+                                <div class="panel-body">
+                                        {dede:sql sql="SELECT body FROM `dede_addonarticle` where aid = 44"}
+                                        [field:body function='cn_substr(html2text(@me),10000)'/]
+                                        {/dede:sql}
+                                </div>
+                        </div>
+                        <div class="panel">
+                                <div class="panel-heading">历史起源</div>
+                                <div class="panel-body">
+                                        {dede:sql sql="SELECT body FROM `dede_addonarticle` where aid = 45"}
+                                        [field:body function='cn_substr(html2text(@me),10000)'/]
+                                        {/dede:sql}
+                                </div>
+                        </div>
+                        <div class="panel">
+                                <div class="panel-heading">艺术特色</div>
+                                <div class="panel-body">
+                                        {dede:sql sql="SELECT body FROM `dede_addonarticle` where aid = 46"}
+                                        [field:body function='cn_substr(html2text(@me),10000)'/]
+                                        {/dede:sql}
+                                </div>
+                        </div>
+                        <div class="panel">
+                                <div class="panel-heading">传承发展</div>
+                                <div class="panel-body">
+                                        {dede:sql sql="SELECT body FROM `dede_addonarticle` where aid = 47"}
+                                        [field:body function='cn_substr(html2text(@me),10000)'/]
+                                        {/dede:sql}
+                                </div>
+                        </div>
+                        <div class="panel">
+                                <div class="panel-heading">保护状况</div>
+                                <div class="panel-body">
+                                        {dede:sql sql="SELECT body FROM `dede_addonarticle` where aid = 48"}
+                                        [field:body function='cn_substr(html2text(@me),10000)'/]
+                                        {/dede:sql}
+                                </div>
+                        </div>
+                        
+                </div>
+                
+            </div>
+    
+            <div class="left-warp top" style="bottom:50px">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    {dede:include filename='footer.htm'/}  
+    <!-- footer-end -->  
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    
+    <script>
+            $(function(){
+                $('.brief-left>li').on("mouseenter",function(){
+                    $(this).addClass("active").siblings().removeClass("active")
+                });
+                $('.brief-left>li').on('click',function(){
+                    $(this).addClass("active");
+                    var index = $(this).index();
+                    $('.show-all>div').eq(index).addClass('show').siblings().removeClass("show")
+                })
+            });
+
+    </script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

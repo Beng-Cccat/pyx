@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/piyingjianjie/'>皮影简介</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">皮影戏</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-06-03 22:59
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <div class="para" label-module="para" style="font-size: 14px; overflow-wrap: break-word; color: rgb(51, 51, 51); margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1; font-family: arial, 宋体, sans-serif;">
+	<span style="font-size:16px;">皮影戏，旧称&ldquo;影子戏&rdquo;或&ldquo;灯影戏&rdquo;，是一种用蜡烛或燃烧的酒精等光源照射兽皮或纸板做成的人物剪影以表演故事的民间戏剧。表演时，艺人们在白色幕布后面，一边操纵戏曲人物，一边用当地流行的曲调唱述故事（有时用方言），同时配以<a href="https://baike.baidu.com/item/%E6%89%93%E5%87%BB%E4%B9%90%E5%99%A8" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">打击乐器</a>和弦乐，有浓厚的乡土气息。在河南、山西、陕西、甘肃天水等地农村，这种拙朴的汉族民间艺术形式很受人们的欢迎。</span></div>
+<div class="para" label-module="para" style="font-size: 14px; overflow-wrap: break-word; color: rgb(51, 51, 51); margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1; font-family: arial, 宋体, sans-serif;">
+	<span style="font-size:16px;">&ldquo;皮影&rdquo;是对皮影戏和皮影戏人物（包括场面道具景物）制品的通用称谓。皮影戏是让观众通过白色幕布，观看一种平面人偶表演的灯影来达到艺术效果的戏剧形式；而皮影戏中的平面人偶以及场面景物，通常是民间艺人用手工，刀雕彩绘而成的皮制品，故称之为皮影。在过去还没有电影、电视的年代，皮影戏曾是十分受欢迎的民间娱乐活动之一。<br />
+	<br />
+	<span style="font-family: arial, tahoma, &quot;Microsoft Yahei&quot;, 宋体, sans-serif;">&nbsp; &nbsp; &nbsp; &nbsp;皮影戏是中国民间古老的传统艺术，老北京人都叫它&ldquo;驴皮影&rdquo;。据史书记载，皮影戏始于西汉，兴于唐朝，盛于清代，元代时期传至西亚和欧洲，可谓历史悠久，源远流长</span></span><br />
+	<p style="margin: 26px 0px; padding: 0px; font-family: &quot;PingFang SC&quot;, &quot;Lantinghei SC&quot;, &quot;Microsoft YaHei&quot;, arial, 宋体, sans-serif, tahoma; font-size: 16px;">
+		<span style="font-size:16px;">皮影戏的代表作品</span></p>
+	<p style="margin: 26px 0px; padding: 0px; font-family: &quot;PingFang SC&quot;, &quot;Lantinghei SC&quot;, &quot;Microsoft YaHei&quot;, arial, 宋体, sans-serif, tahoma; font-size: 16px;">
+		<span style="font-size:16px;">皮影戏的演出，有历史演义戏、民间传说戏、武侠公案戏、爱情故事戏、神话寓言戏、时装现代戏等等，无所不有。折子戏、单本戏和连本戏的剧目繁多，数不胜数。</span></p>
+	<p style="margin: 26px 0px; padding: 0px; font-family: &quot;PingFang SC&quot;, &quot;Lantinghei SC&quot;, &quot;Microsoft YaHei&quot;, arial, 宋体, sans-serif, tahoma; font-size: 16px;">
+		<span style="font-size:16px;">常见的传统剧目有白蛇传、拾玉镯、西厢记、秦香莲、牛郎织女、杨家将、岳飞传、水浒传、三国演义、西游记、封神榜等等。</span></p>
+	<p style="margin: 26px 0px; padding: 0px; font-family: &quot;PingFang SC&quot;, &quot;Lantinghei SC&quot;, &quot;Microsoft YaHei&quot;, arial, 宋体, sans-serif, tahoma; font-size: 16px;">
+		<span style="font-size:16px;">从革命战争年代起到解放后，新发展出的时装戏、现代戏和童话寓言剧，常见的剧目有兄妹开荒、白毛女、刘胡兰、小二黑结婚、小女婿、林海雪原、红灯记、龟与鹤、两朋友、东郭先生等等。</span></p>
+	<p style="margin: 0px 0px 1em; padding: 0px; font-family: &quot;microsoft yahei&quot;; font-size: 18px;">
+		<span style="font-size:16px;">皮影戏是介于戏曲和曲艺之间的一种民间表演艺术样式，和戏曲、曲艺、民歌的关系都非常亲密，同时也有其自成一体的独特表现方式。湖北多地都有表演皮影戏的传统，群众基础深厚，但东西南北的风格存在着较大差异。过去几十年的研究中，因为一些现实的困难，湖北的皮影戏没有形成像地方戏曲剧种一样清晰明确的分类。</span></p>
+	<p style="margin: 0px 0px 1em; padding: 0px; font-family: &quot;microsoft yahei&quot;; font-size: 18px;">
+		<span style="font-size:16px;">　　新世纪以来对&ldquo;非遗&rdquo;的重视使得很多地方恢复了皮影戏演出，也有不少皮影戏项目申遗成功。截止2017年，被列入国家级&ldquo;非遗&rdquo;名录的湖北境内的皮影戏有江汉平原皮影戏（潜江）和云梦皮影戏2个，被列入湖北省&ldquo;非遗&rdquo;名录的有仙桃渔鼓皮影戏、天门皮影戏、京山皮影戏、沙洋皮影戏、东宝沮漳皮影戏（荆门）、分乡皮影戏（宜昌）、秭归皮影戏、神农架下谷皮影戏、巴东皮影戏、大悟高腔皮影戏、曾都皮影戏（随州）等11个。</span></p>
+	<p style="margin: 0px 0px 1em; padding: 0px; font-family: &quot;microsoft yahei&quot;; font-size: 18px;">
+		<span style="font-size:16px;">　　本次图片展选取了江汉平原皮影戏和云梦皮影戏为代表。</span></p>
+	<p style="margin: 0px 0px 1em; padding: 0px; font-family: &quot;microsoft yahei&quot;; font-size: 18px;">
+		<span style="font-size:16px;">　　江汉平原皮影戏主要声腔为歌腔、筒子腔，流布于江汉平原一带以及孝感、汉川、应城和湖南、江西、安徽等省的部分地区。</span></p>
+	<p style="margin: 0px 0px 1em; padding: 0px; font-family: &quot;microsoft yahei&quot;; font-size: 18px;">
+		<span style="font-size:16px;">　　云梦皮影戏主要声腔为西乡高腔，真假嗓音相兼。如云梦打麦号子，柔似摇儿歌。后受其它艺术形式影响，揉进了楚，汉剧唱腔，逐步形成生、旦、净、末、丑腔，分导板、垛子、二六、二八、摇、数等板式。有的戏班还加进了（京胡）弦乐伴奏。流布于孝感市云梦县及周边地区。</span></p>
+</div>
+<div class="para" label-module="para" style="font-size: 14px; overflow-wrap: break-word; color: rgb(51, 51, 51); margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1; font-family: arial, 宋体, sans-serif; text-align: center;">
+	&nbsp;</div>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

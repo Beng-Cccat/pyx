@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{dede:global.cfg_webname/}</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+        h3{
+            width: 170px;
+            text-align: center;
+            padding-left: 0px;
+        }
+     
+        #search .wrap:hover{
+            background: #edf5fa
+        }
+        #search .wrap{
+            padding-top: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        #search p{
+            border-top: 1px solid #e7eff4;
+        }
+        .wrap{
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    {dede:include filename='head.htm'/}        
+    <!-- nav-end -->
+  
+    <!-- mian-s -->
+    <div id="main-wrap">      
+        <div class="container-fluid right-side" >
+                <div class="container">
+                        <form class="text-center search-warp" action="/plus/search.php">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="皮影戏" id="search-text" value="{dede:global name='keyword' function='RemoveXSS(@me)'/}">
+                                </div>
+                                <button type="submit" class="search"><i class="glyphicon glyphicon-search"></i></button>
+                        </form>
+                </div>
+				<div class="container">
+						<div class="container">
+								<div class="row">
+								 <div>
+								   <ul class="list-unstyled" id="search">
+										   {dede:list perpage='20'}
+									  <li class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="wrap">              
+										<h3><a href="[field:arcurl/]" target="_blank">[field:title/]</a></h3>
+										<p>[field:description/]...</p>
+										<span>	
+										  <small>分类：</small><a href="[field:typeurl/]" target="_blank">[field:typename/]</a>
+										  <small>点击：</small>[field:click/]
+										  <small>日期：</small>[field:stime/]
+                                        </span>
+                                        </div>
+									  </li>
+									{/dede:list}
+									</ul>
+								 </div>
+								</div>
+							  </div>
+				</div>
+                <div class="left-warp hidden-md hidden-sm hidden-xs">
+                    <ul class="list-unstyled" id="scroll">
+                        <li>
+                            <img src="{dede:global.cfg_templets_skin/}/images/l-intro.png" alt="">
+                            <div class="txt1">
+                                    皮影简介
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <img src="{dede:global.cfg_templets_skin/}/images/l-make2.png" alt="">
+                                <div class="txt1">
+                                        皮影制作
+                                </div>
+                        </li>
+                        <li>
+                            <img src="{dede:global.cfg_templets_skin/}/images/art.png" alt="">
+                                <div class="txt1">
+                                        艺术流派
+                                </div>
+                        </li>
+                        <li>    
+                            <img src="{dede:global.cfg_templets_skin/}/images/l-new.png" alt="">
+                                <div class="txt1">
+                                        最新资讯
+                                </div>
+                        </li>
+                        <li class="backToTop">
+                                <i class="glyphicon glyphicon-chevron-up"></i>
+                                 <div class="txt1">
+                                     返回顶部   
+                                 </div>
+                               
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    {dede:include filename='footer.htm'/}  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

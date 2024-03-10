@@ -1,0 +1,447 @@
+/* *是通配网页html中所有标签意思 */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 字体 */
+    font-family: "Open Sans", sans-serif;
+    /* 字体大小 */
+    font-size: 1rem;
+    /* 行高 */
+    line-height: 1.4;
+}
+
+
+/* 当屏幕宽度大于450px时 */
+
+@media (min-width: 450px) {
+    body {
+        /* 字体大小 */
+        font-size: 1.25rem;
+    }
+}
+
+.container {
+    max-width: 70rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* 超出部分隐藏 */
+    overflow: hidden;
+}
+
+
+/* after即为以后的效果 ，这里结合定位用于header之上的阴影效果*/
+
+header:after {
+    /* 内容为空 */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: 25;
+}
+
+
+/* 以下为header图片的位置 */
+
+.mountain1 {
+    position: absolute;
+    bottom: -100px;
+    width: 1500px;
+    right: 0;
+    z-index: 19;
+}
+
+.person {
+    position: absolute;
+    width: 650px;
+    bottom: -100px;
+    left: -70px;
+    z-index: 20;
+}
+
+.mountain2 {
+    position: absolute;
+    width: 1100px;
+    bottom: -100px;
+    left: 0;
+    z-index: 18;
+}
+
+.mountain3 {
+    position: absolute;
+    width: 900px;
+    bottom: 150px;
+    right: 0;
+    z-index: 17;
+}
+
+.sky {
+    position: absolute;
+    width: 2100px;
+    bottom: 250px;
+    right: 0;
+}
+
+
+/* ———————————————————————————————— */
+
+.big-title {
+    position: absolute;
+    z-index: 29;
+    line-height: 4rem;
+    top: calc(50% - 2rem);
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.section1 {
+    width: 100%;
+    background-color: #151515;
+    position: relative;
+    /* 定义section1背景颜色的过渡时间为1s */
+    transition: background-color 1s;
+}
+
+
+/* 第一页与第二页衔接处的阴影效果 */
+
+.shadow {
+    position: absolute;
+    bottom: 100%;
+    height: 300px;
+    width: 100%;
+    left: 0;
+    z-index: 20;
+    background: linear-gradient(to top, #151515, transparent);
+}
+
+.section1 .container {
+    padding: 3rem;
+    /* grid布局 */
+    display: grid;
+    /* fr单元允许等分网格容器剩余可用空间来设置网络轨道的大小 */
+    /* 下列为每块占二分之一 */
+    grid-template-columns: repeat(2, 1fr);
+    /* 垂直居中 */
+    align-items: center;
+    /* 水平居中 */
+    /* justify-content: center; */
+    height: 100vh;
+}
+
+.section1 img {
+    width: 100%;
+}
+
+
+/* 选择.section1 .container下的所有元素 */
+
+.section1 .container>* {
+    margin: 2rem;
+}
+
+.content {
+    color: #fff;
+    /* padding-top: 20px; */
+    /* box-sizing: border-box; */
+    /* 定义y周位移 */
+    transform: translateY(-100px);
+    min-height: 270px;
+}
+
+.opacity {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.imgContainer {
+    transform: translateY(100px);
+}
+
+.title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+    position: relative;
+}
+
+.hideC {
+    display: none;
+}
+
+.border {
+    position: absolute;
+    /* 去除边框 */
+    border: none;
+    width: 0%;
+    height: 3px;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+}
+
+.content:hover .hideE {
+    display: none;
+}
+
+.content:hover .hideC {
+    display: block;
+}
+
+@media (max-width: 850px) {
+    .section1 .container {
+        /* 切换一块占一行 */
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 600px) {
+    .big-title {
+        font-size: 3rem
+    }
+    .text {
+        font-size: .8rem;
+    }
+    .title {
+        font-size: 1.2rem;
+    }
+}
+
+.page1 {
+    min-height: 110vh;
+    position: relative;
+}
+
+.page1-yy {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    /* 用背景呈现阴影 */
+    background: linear-gradient( -180deg, #000 11%, #161519 88%);
+    background: linear-gradient( -180deg, rgba(0, 0, 0, 0) 11%, rgba(22, 21, 25, 1.89) 88%);
+}
+
+.page1-yy a {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.5rem;
+    width: 100%;
+    line-height: 120px;
+    /* margin: 0 auto; */
+    text-decoration: none;
+    text-align: center;
+    /* 字间距 */
+    letter-spacing: 0.5rem;
+    transition: 0.5s;
+}
+
+@media(max-width: 1300px) {
+    .page1-yy {
+        height: 70px;
+    }
+    .page1-yy a {
+        line-height: 70px;
+        font-size: 1.4rem;
+    }
+}
+
+@media(max-width: 420px) {
+    .page1-yy {
+        height: 50px;
+    }
+    .page1-yy a {
+        line-height: 50px;
+        font-size: 1rem;
+    }
+}
+
+.page1-yy a:hover {
+    color: #82b8ec;
+    font-size: 2rem;
+}
+
+@media screen and (max-width:700px) {
+    /* 隐藏echarts */
+    #echarts {
+        display: none;
+    }
+}
+
+
+/* ----------- */
+
+.excellentImg {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: #f4f6f9;
+}
+
+.wal {
+    position: relative;
+    width: 80vw;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.excellentImg-Title {
+    padding: 10vh 0 1vh 0;
+    position: relative;
+}
+
+.excellentImg-Title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 5vw;
+    height: 0.4vh;
+    background: #333;
+}
+
+.excellentImg-Title>div {
+    font-size: 0.8rem;
+}
+
+.excellentImg-Title>h2 {
+    font-size: 1.5rem;
+}
+
+.excellentImg-content {
+    padding-top: 3vh;
+    width: 25vw;
+    font-size: 0.8rem;
+    color: #929292;
+    line-height: 1.5rem;
+}
+
+.wal .excellentImg-list {
+    position: absolute;
+    bottom: 0;
+}
+
+.wal .excellentImg-list ul {
+    margin-bottom: 0;
+}
+
+.wal .excellentImg-list li {
+    list-style: none;
+    padding: 1.5vh 0;
+    border-bottom: 1px solid rgb(231, 231, 231);
+}
+
+.wal .excellentImg-list li img {
+    display: none;
+}
+
+.wal .excellentImg-list li a {
+    width: 25vw;
+    color: #333;
+    display: inline-block;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+@media screen and (max-width:1280px) {
+    .wal .excellentImg-list li a {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width:1050px) {
+    .wal .excellentImg-list li {
+        padding: 0;
+    }
+}
+
+.big-img {
+    width: 60vw;
+    height: 90vh;
+    background-color: #000;
+    position: absolute;
+    right: 0;
+    top: 10vh;
+}
+
+.big-img a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.on {
+    background-color: #333;
+    transition: 1s;
+}
+
+.on a {
+    width: 27vw!important;
+    color: #fff!important;
+    padding-left: 2vw;
+    transition: 1s;
+}
+
+@media screen and (max-width:991px) {
+    .wal .excellentImg-list li img {
+        display: block;
+    }
+    .big-img {
+        display: none;
+    }
+    .excellentImg-content {
+        display: none;
+    }
+    .excellentImg {
+        /* background-color: #f4f6f9; */
+        height: auto;
+    }
+    .wal {
+        width: 90%;
+        padding: 10px 0;
+        /* margin: 0 auto; */
+    }
+    .excellentImg-Title {
+        padding: 20px 0;
+    }
+    .excellentImg-Title>div {
+        display: none;
+    }
+    .excellentImg-Title h2 {
+        font-size: 1.2rem;
+        text-align: center;
+        font-weight: bold;
+    }
+    .wal .excellentImg-list {
+        position: initial;
+    }
+    .wal .excellentImg-list li {
+        /* list-style: none; */
+        padding: initial;
+    }
+    .wal .excellentImg-list li a {
+        /* color: #333; */
+        /* text-decoration: none; */
+        /* display: inline-block; */
+        width: initial;
+        font-size: initial;
+        padding: 1rem 0;
+    }
+}

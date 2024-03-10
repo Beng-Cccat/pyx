@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+        .right-new{
+            background-color: #fff;
+        }
+        #list-item{
+            background-color: #fff;
+            padding-bottom: 10px;
+            border-bottom:1px solid #d8d8d8;
+        }
+        #listImg img{
+            width: 100%;
+            height: auto;
+        }
+        .new-title{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color:#31c193;
+            color: #fff;
+            text-align: center;
+            height: 50px;
+            line-height: 50px
+        }
+       
+        .left-warp{
+            position: fixed;
+            right: 10px;
+            top: auto;
+            bottom: 50px !important;
+           }
+        .left-warp li {
+                width: 60px;
+                height: 60px;
+                position: relative;
+                border-radius: 5px;
+                color: #fff;
+                text-align: center;
+                line-height: 60px;
+                z-index: 10;
+                background-color: #008b5f;
+                margin-top: 10px;
+                cursor: pointer;
+                box-shadow: 0px 0px 24px 0px rgba(4, 1, 1, 0.32);
+                cursor: pointer;
+            }
+
+        .pagelists{
+            padding-left: 9px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .pagelists li{
+            border: 1px solid #31c193;
+            border-radius: 5px;
+            margin-left: 5px;
+            width: 55px;
+            text-align: center
+        }
+        .thisclass{
+            background-color: #31c193;
+            color: #fff;
+        }
+        #main-wrap {
+            margin-top: 27px;
+            background-color: #e7eff4;
+        }
+        @media (max-width:768px){
+            #listright{
+                height: 93px;
+                overflow: hidden;
+            }
+        }
+        @media (min-width:1200px){
+          .descript{
+              line-height: 40px;
+          }
+        }
+        .hotlist li{
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+ 
+    <!-- mian-s -->
+    <div class="container-fluid right-side" id="main-wrap">
+         <!-- swiper-s -->
+         <div class="container-fluid" >   
+                <img src="/templets/default/images/tu/bn1.png" alt="" style="width: 100%;height:auto">
+        </div>    
+        <!-- swiper-end -->
+        <div class="container" >
+            <div class="row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/zuixinzixun/'>最新资讯</a> >  </span>
+            </div>  
+            <div class="row">
+                    <div class="col-lg-9 col-md-9 col-xs-12">
+                            <div class="row" id="list-item">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="listImg">
+                                    <a href='/a/zuixinzixun/2019/0525/24.html' class='preview'><img src='/uploads/allimg/190525/16330545a-0-lp.png'/></a> 
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="listright"> 
+                                [<b><a href='/a/zuixinzixun/'>最新资讯</a></b>] <a href="/a/zuixinzixun/2019/0525/24.html" class="title">快来长宁看皮影听老腔</a> <span class="info"> 
+                                <p class="descript"> 有没有一种回忆，是茶余饭后，爷爷拉着你的手，来到一片亮着灯的幕布前，在热闹的人群中津津有味地看着《孙悟空三打白骨精》《哪吒闹海》《东郭先生》 小小天地，神奇变幻，光... </p>  
+                                </div>
+                             </div><div class="row" id="list-item">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="listImg">
+                                    <a href='/a/zuixinzixun/2019/0525/23.html' class='preview'><img src='/uploads/allimg/190525/1630432O6-0-lp.jpg'/></a> 
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="listright"> 
+                                [<b><a href='/a/zuixinzixun/'>最新资讯</a></b>] <a href="/a/zuixinzixun/2019/0525/23.html" class="title">10省非遗皮影齐聚华州 皮影版《清明上河图》亮</a> <span class="info"> 
+                                <p class="descript"> 新京报讯 4月28日，由文化和旅游部恭王府博物馆、陕西省文化和旅游厅、渭南市人民政府主办的2019传承技艺美丽中国渭南华州皮影文化艺术周在陕西省渭南市华州区205库群文化创意园... </p>  
+                                </div>
+                             </div><div class="row" id="list-item">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="listImg">
+                                    <a href='/a/zuixinzixun/2019/0525/22.html' class='preview'><img src='/uploads/allimg/190525/162ZRb2-0-lp.jpg'/></a> 
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="listright"> 
+                                [<b><a href='/a/zuixinzixun/'>最新资讯</a></b>] <a href="/a/zuixinzixun/2019/0525/22.html" class="title">敲“板凳” 吼老腔 渭南华州皮影进京展演</a> <span class="info"> 
+                                <p class="descript"> 新京报讯 4月20日，2019传承技艺美丽中国渭南华州皮影文化艺术周在北京召开新闻发布会。此次文化艺术周由文化和旅游部恭王府博物馆、陕西省文化和旅游厅、渭南市人民政府主办，... </p>  
+                                </div>
+                             </div><div class="row" id="list-item">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="listImg">
+                                    <a href='/a/zuixinzixun/2019/0525/21.html' class='preview'><img src='/uploads/allimg/190525/162335A05-0-lp.jpg'/></a> 
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="listright"> 
+                                [<b><a href='/a/zuixinzixun/'>最新资讯</a></b>] <a href="/a/zuixinzixun/2019/0525/21.html" class="title">百年光影下的济南皮影戏</a> <span class="info"> 
+                                <p class="descript"> 一口叙说千古事，双手对舞百万兵。这句诗形容的就是有着2000多年历史的民间艺术形式中国皮影戏。小小几张皮影，一幅白色幕布，一束光源，琴鼓伴奏中，就能表现千古历史轶事，讲... </p>  
+                                </div>
+                             </div><div class="row" id="list-item">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="listImg">
+                                    <a href='/a/zuixinzixun/2019/0525/20.html' class='preview'><img src='/uploads/allimg/190525/161T02552-0-lp.jpg'/></a> 
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="listright"> 
+                                [<b><a href='/a/zuixinzixun/'>最新资讯</a></b>] <a href="/a/zuixinzixun/2019/0525/20.html" class="title">甘肃渭源：山村皮影闹新春</a> <span class="info"> 
+                                <p class="descript"> 连日来，丰富多彩的春节文化活动在甘肃省渭源县陆续开展，民间艺人为大家献上皮影戏、社火等文化大餐，欢庆新春。 新华社发（王纲 摄） 2月12日，在甘肃省定西市渭源县清源镇崔... </p>  
+                                </div>
+                             </div><div class="row" id="list-item">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="listImg">
+                                    <a href='/a/zuixinzixun/2019/0525/19.html' class='preview'><img src='/uploads/allimg/190525/1616144421-0-lp.jpg'/></a> 
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="listright"> 
+                                [<b><a href='/a/zuixinzixun/'>最新资讯</a></b>] <a href="/a/zuixinzixun/2019/0525/19.html" class="title">千年中国皮影 今日世界瞩目</a> <span class="info"> 
+                                <p class="descript"> 老艺人指点北京少年亲身体验皮影戏表演。摄影/谌强 联合国教科文组织日前宣布，正在印度尼西亚旅游胜地巴厘岛举行的保护非物质文化遗产政府间委员会第六届会议决定，将具有一... </p>  
+                                </div>
+                             </div>
+                       
+                      
+                            <ul class="pagelists">
+
+                            <li><a href='list_1_1.html'>首页</a></li>
+<li><a href='list_1_1.html'>上一页</a></li>
+<li><a href='list_1_1.html'>1</a></li>
+<li class="thisclass">2</li>
+<li><a href='list_1_3.html'>3</a></li>
+<li><a href='list_1_4.html'>4</a></li>
+<li><a href='list_1_3.html'>下一页</a></li>
+<li><a href='list_1_4.html'>末页</a></li>
+
+                            </ul>
+                   </div> 
+                   <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                        <div class="right-new">
+                        <h2 class="new-title">
+                         <img src="/templets/default/images/l-new.png" alt="" style="vertical-align: middle;">
+                        热点内容
+                        </h2>
+                        <ul class="list-unstyled hotlist">
+                        
+                         <li style="border-top: 1px solid #d8d8d8;padding-top: 10px;
+                         margin-bottom: 0px"><a href="/a/zuixinzixun/2019/0525/20.html">甘肃渭源：山村皮影闹新</a>
+                           <p><i class="glyphicon glyphicon-time"></i>
+                           2023-05-25</p>
+                         </li>
+<li style="border-top: 1px solid #d8d8d8;padding-top: 10px;
+                         margin-bottom: 0px"><a href="/a/zuixinzixun/2019/0525/6.html">中华艺术瑰宝皮影欣赏鹤</a>
+                           <p><i class="glyphicon glyphicon-time"></i>
+                           2023-05-25</p>
+                         </li>
+<li style="border-top: 1px solid #d8d8d8;padding-top: 10px;
+                         margin-bottom: 0px"><a href="/a/zuixinzixun/2019/0525/19.html">千年中国皮影 今日世界瞩</a>
+                           <p><i class="glyphicon glyphicon-time"></i>
+                           2023-05-25</p>
+                         </li>
+<li style="border-top: 1px solid #d8d8d8;padding-top: 10px;
+                         margin-bottom: 0px"><a href="/a/zuixinzixun/2019/0525/22.html">敲“板凳” 吼老腔 渭南华</a>
+                           <p><i class="glyphicon glyphicon-time"></i>
+                           2023-05-25</p>
+                         </li>
+<li style="border-top: 1px solid #d8d8d8;padding-top: 10px;
+                         margin-bottom: 0px"><a href="/a/zuixinzixun/2019/0525/24.html">快来长宁看皮影听老腔</a>
+                           <p><i class="glyphicon glyphicon-time"></i>
+                           2023-05-25</p>
+                         </li>
+<li style="border-top: 1px solid #d8d8d8;padding-top: 10px;
+                         margin-bottom: 0px"><a href="/a/zuixinzixun/2019/0524/1.html">当阳皮影戏：一块白布一</a>
+                           <p><i class="glyphicon glyphicon-time"></i>
+                           2023-06-04</p>
+                         </li>
+
+                       
+                        </ul>
+                      </div>
+                    </div> 
+            </div>
+    
+         
+            <div class="left-warp top" style="bottom:50px">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

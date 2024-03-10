@@ -1,0 +1,456 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: none;用在去掉某个选中后显示的外边框 */
+    /* outline: none; */
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    line-height: 1.4;
+    background-color: #ebebec;
+}
+
+@media (min-width: 450px) {
+    body {
+        font-size: 1.25rem;
+    }
+}
+
+.section1 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /* 超出部分隐藏 */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section1 .wave {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ebebec;
+}
+
+.section1 .wave span {
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+    top: 65%;
+    left: 50%;
+    /* transform: translate(-50%, -75%); */
+    background-image: url(../../img/base/baseHeader.jpg);
+    /* 背景图像适应盒子大小 */
+    background-size: cover;
+    /* 背景图像定位居中（垂直水平都居中） */
+    background-position: center;
+    /* 背景图像不平铺 */
+    background-repeat: no-repeat;
+}
+
+.section1 .wave span:nth-child(1) {
+    /* 这里是animation:动画名称 持续时间 运动曲线  播放次数 */
+    /* linear运动曲线从头到尾的速度是相同的，匀速 */
+    /* infinite 代表无限执行 */
+    animation: animate 5s linear infinite;
+    border-radius: 42%;
+    background: rgb(92, 91, 91);
+}
+
+.section1 .wave span:nth-child(2) {
+    animation: animate 6s linear infinite;
+    border-radius: 45%;
+    background: rgb(138, 135, 135);
+}
+
+.section1 .wave span:nth-child(3) {
+    animation: animate 7s linear infinite;
+    border-radius: 50%;
+    background: rgba(20 20, 20, 0.5);
+}
+
+
+/* 定义旋转动画 */
+
+@keyframes animate {
+    /* rotate(0deg)为2D旋转效果 360deg即为360度 */
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+
+.section1 .contentTitle {
+    z-index: 1;
+    color: #fff;
+    font-size: 4rem;
+    position: absolute;
+    height: 5rem;
+    top: calc(50% - 5rem);
+    width: 0ch;
+    /* 不换行 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    font-weight: 600;
+    opacity: 0.9;
+    /* 动画的速度曲线：ease（默认）：动画以低速开始，然后加快，在结束前变慢 */
+    /* 动画结束的状态：forwards 保持当前位置 */
+    animation: move 3s ease forwards;
+}
+
+.section1 .contentTitle h1 {
+    line-height: 5rem;
+}
+
+@keyframes move {
+    0% {}
+    100% {
+        width: 16ch;
+    }
+}
+
+@media(max-width: 600px) {
+    .section1 .contentTitle {
+        font-size: 2.5rem
+    }
+}
+
+.bace-text {
+    box-sizing: border-box;
+    height: 280px;
+}
+
+.bace-H {
+    /* 正常字体 */
+    /* font-style: normal; */
+    font-size: 3.5rem;
+    text-align: center;
+    /* 斜体 */
+    font-style: italic;
+    /* 字体粗细 */
+    font-weight: 300;
+    margin: 50px 0px 0px 0px;
+}
+
+.bace-P {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.5em;
+    max-width: 800px;
+    margin: 20px auto 0px auto;
+    text-align: center;
+    max-width: 800px;
+}
+
+.bacePC {
+    display: none;
+}
+
+.bace-P:hover .bacePE {
+    display: none;
+}
+
+.bace-P:hover .bacePC {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .bace-H {
+        line-height: 3.5rem;
+        padding: 0px 10px 0px 10px;
+        font-size: 3rem;
+    }
+    .bace-P {
+        font-size: 1.1rem;
+        padding: 0px 30px 0px 30px;
+    }
+    .bace-text {
+        height: 320px;
+    }
+}
+
+.shell {
+    border: 1px solid #333;
+    height: 100vh;
+    width: 75%;
+    margin: 0 auto;
+    /* 水平超出部分隐藏 */
+    overflow-x: hidden;
+    perspective: 3px;
+    text-align: center;
+}
+
+
+/* 隐藏滚动轴 */
+
+.shell::-webkit-scrollbar {
+    display: none;
+}
+
+.shell div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 字间距 */
+    letter-spacing: 2px;
+}
+
+.image {
+    /* translateZ表示对象在Z轴的位移 scale()函数用来改变元素的大小。*/
+    transform: translateZ(-1px) scale(1.4);
+    /* background-size：contain；等比缩放，按照某一边来覆盖显示区域的，若区域大于图片的比例，会有白边，图片不会变形 */
+    background-size: contain;
+    height: 70vh;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text {
+    height: 30vh;
+    background-color: #ebebec;
+}
+
+.text h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.heading {
+    z-index: -1;
+    transform: translateY(-30vh) translateZ(0.5px);
+}
+
+.heading .shellA {
+    display: inline-block;
+    box-shadow: rgb(0 0 0) 0px 40px 40px;
+    background-color: #fff;
+    text-decoration: none;
+    color: black;
+    opacity: 0.6;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+@media(max-width: 600px) {
+    .image {
+        height: 40vh;
+    }
+    .text {
+        height: 20vh;
+    }
+    .text h1 {
+        font-size: 1.5rem;
+    }
+    .heading {
+        transform: translateY(-25vh) translateZ(1px);
+    }
+    .headingTop {
+        transform: translateY(-18vh) translateZ(1px);
+    }
+    .headingBottom {
+        transform: translateY(-35vh) translateZ(1px);
+    }
+    .heading .shellA {
+        font-size: 1rem;
+    }
+}
+
+
+/* .................... */
+
+#wrap {
+    width: 530px;
+    margin: 100px auto 0;
+}
+
+.wrapHC {
+    display: none;
+}
+
+.wrapH:hover .wrapHE {
+    display: none;
+}
+
+.wrapH:hover .wrapHC {
+    display: block;
+}
+
+#form-wrap {
+    overflow: hidden;
+    height: 447px;
+    position: relative;
+    top: 0px;
+    /*ease-in-out 规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）（相对于匀速，（开始和结束都慢）两头慢）。 */
+    /* 0.3s为过渡的延迟时间 */
+    transition: all 1s ease-in-out 0.3s;
+}
+
+
+/* 信封上半部分图片 */
+
+#form-wrap:before {
+    content: "";
+    position: absolute;
+    bottom: 128px;
+    left: 0px;
+    background-image: url('../../img/base/letter/before.png');
+    width: 530px;
+    height: 317px;
+    background-size: 530px 317px;
+}
+
+
+/* 信封下半部分图片 */
+
+#form-wrap:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    background: url('../../img/base/letter/after.png');
+    width: 530px;
+    height: 259px;
+    background-size: cover;
+}
+
+#form-wrap:hover {
+    height: 700px;
+    top: -200px;
+}
+
+#form-wrap p {
+    font-size: 24px;
+    color: #757575;
+}
+
+
+/* 信的部分 */
+
+#form-wrap form {
+    background: url('../../img/base/letter/letter_bg.png');
+    position: relative;
+    top: 200px;
+    overflow: hidden;
+    height: 200px;
+    width: 85%;
+    margin: 0px auto;
+    padding: 20px;
+    border-right: 3px;
+    transition: all 1s ease-in-out .3s;
+}
+
+#form-wrap:hover form {
+    height: 400px;
+}
+
+#form-wrap form label {
+    margin: 11px 20px 0 0;
+    font-size: 15px;
+    color: gray;
+}
+
+
+/* 选择type=text的input和textarea */
+
+input[type=text],
+textarea {
+    font: 14px normal uppercase, arial, serif;
+    color: dimgray;
+    background: none;
+    width: 100%;
+    height: 37px;
+    padding: 0px 10px;
+    margin: 0 0 10px 0;
+    border: 1px solid #BDBDBD;
+    /* 圆角属性 */
+    border-radius: 5px;
+    z-index: 99;
+}
+
+textarea {
+    height: 80px;
+    padding-top: 14px;
+}
+
+#form-wrap .formButton {
+    top: 50px;
+    position: relative;
+    font-family: tahoma;
+    outline: none;
+    border: none;
+    font-size: 24px;
+    color: gray;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    background: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: opacity 0.5s ease-in-out 0s;
+}
+
+#form-wrap:hover .formButton {
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out 1s;
+    outline: none;
+}
+
+@media(max-width: 700px) {
+    #wrap {
+        width: 300px;
+    }
+    #form-wrap {
+        height: 340px;
+    }
+    #form-wrap form {
+        top: 135px;
+    }
+    #form-wrap:before {
+        width: 300px;
+        height: 170px;
+        background-size: 300px 188px;
+    }
+    #form-wrap:after {
+        width: 300px;
+        height: 188px;
+        background-size: 300px 188px;
+    }
+    #form-wrap:hover {
+        height: 550px;
+        top: -100px;
+    }
+    #form-wrap:hover form {
+        height: 400px;
+    }
+    #form-wrap .formButton {
+        top: 10px;
+    }
+}
+
+
+/* .................... */
+
+
+/* 鼠标跟随小羊的样式 */
+
+.SBGSimg {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-image: url('./goat.gif');
+    background-size: cover;
+    z-index: 99;
+}

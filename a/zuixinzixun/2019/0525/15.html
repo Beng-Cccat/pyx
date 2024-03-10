@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/zuixinzixun/'>最新资讯</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">一群小伙伴有着大梦想：想让更多人看皮影戏</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-05-25 16:07
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <p style="margin: 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p">新京报讯（记者 张静雅）28岁的孔令博身高1.4米。在抖音上，他有33万粉丝、153万点赞，是皮影戏领域最受欢迎的博主之一。而6年前，他还是一名修车工，艰难维生。</span></p>
+<p style="margin: 22px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p">6年前那个普通的下午，他在修车时听到广播里介绍龙在天皮影艺术剧院。这个简单的介绍勾起他对年幼时看皮影戏的记忆，更勾起他童年快乐生活的记忆。当晚，他就到网吧搜索了这个剧院。他惊奇地发现，剧院里竟然全是跟他一样的&ldquo;袖珍人&rdquo;。</span></p>
+<div class="img-container" style="margin-top: 30px; color: rgb(0, 0, 0); font-family: arial; text-align: center;">
+	&nbsp;</div>
+<p style="margin: 26px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p">皮影艺人孔令博（右）和剧团的小伙伴。受访者供图</span></p>
+<p style="margin: 22px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p"><span class="bjh-strong" style="font-size: 18px; font-weight: 700;">皮影世家成立剧院传承老艺术</span></span></p>
+<p style="margin: 22px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p">孔令博是河北人，农民出身的他文化程度并不高，只有初中学历。他所在的中国龙在天皮影艺术剧院是北京一家著名的皮影戏剧院。2006年剧院刚成立的时候，只是一家小型的&ldquo;皮影博物馆&rdquo;，地点在前门大栅栏。团长王熙出生于皮影世家，小时候却从没碰过皮影，只是偶尔看见爷爷一个人摆弄过。后来，她家里没人学皮影了，&ldquo;不挣钱&rdquo;。但是，王熙却还记得爷爷给她演的皮影戏，一直念念不忘要把这门艺术传承下去。</span></p>
+<p style="margin: 22px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p">几经周折，她和丈夫从河北请了皮影戏团，建起这个剧院。最开始，有游客进来买票看戏，老师傅们就给演上一段。王熙说，当时团里是八九个平均年龄60多岁的老人，有的操纵皮影，有的摆弄道具，有的在旁配乐，十分卖力。皮影艺人通常都在幕后，看不到观众，有时老艺人们热热闹闹地演完一场，出来一看，前边就坐着俩人。&ldquo;老人们受不了这个，&rdquo;王熙说，&ldquo;原来他们在老家，要去各个村子演出，虽然辛苦一些，但是人多，热闹。&rdquo;</span></p>
+<p style="margin: 22px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p">很多老艺人受不了这份寂寞，没多久就回老家了。剧院创立的头一年里，皮影戏团总共换了3个。</span></p>
+<div class="img-container" style="margin-top: 30px; color: rgb(0, 0, 0); font-family: arial; text-align: center;">
+	&nbsp;</div>
+<p style="margin: 26px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p">皮影道具制作。受访者供图</span></p>
+<p style="margin: 22px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p">&ldquo;皮影艺人越来越少，再这么下去，这门艺术就要没了。&rdquo;王熙想只有找一些年轻人来传承这门老手艺，皮影才有未来和希望。但是这条路走的并不顺利。&ldquo;我们用了将近一年的时间都没有找到合适的徒弟。现在的年轻人都适应快节奏的生活方式，很多人已经静不下心来从事这种传统的艺术。</span></p>
+<p style="margin: 22px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p">皮影戏需要长时间地锻炼手法，学习唱腔，学习民乐和打击乐，而现在的年轻人对这些有些格格不入。&rdquo;王熙说。</span></p>
+<div class="img-container" style="margin-top: 30px; color: rgb(0, 0, 0); font-family: arial;">
+	<img class="large" data-loaded="0" data-loadfunc="0" src="https://pics1.baidu.com/feed/aec379310a55b319eff2a6cf75143222cefc1745.jpeg?token=d365c62099a2ee824f403ead9357dede&amp;s=9A28810BFEF17A843925D8E1010070B3" style="border: 0px; width: 537px; display: block; text-align: center;" /></div>
+<p style="margin: 26px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p">一群小伙伴因为皮影戏聚在一起。受访者供图</span></p>
+<p style="margin: 22px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p"><span class="bjh-strong" style="font-size: 18px; font-weight: 700;">&ldquo;袖珍人&rdquo;加入剧院 成为皮影艺人</span></span></p>
+<p style="margin: 22px 0px 0px; padding: 0px; font-size: 16px; line-height: 24px; color: rgb(51, 51, 51); font-family: arial; text-align: center;">
+	<span class="bjh-p">后来，王熙偶然结识了曾获吉尼斯世界纪录认证的&ldquo;第一袖珍女歌手&rdquo;吴小莉，这个难题才算解决。&ldquo;我们觉得由&lsquo;袖珍人&rsquo;来传承皮影戏会有很好的效果：一方面由于身高的限制，他们可能在就业方面会比较受局限，另一方面由于他们外表像小孩的样子，会更容易和小孩亲近交流。&rdquo;吴小莉介绍了4位&ldquo;袖珍人&rdquo;到剧院参观了解情况，经过3个月的免费培训，他们都留了下来，成为剧院的第一批年轻传承人。随之而来，越来越多的&ldquo;袖珍人&rdquo;参加到了剧院中，成为皮影艺人。孔令博就是其中一员。</span></p>
+<div class="img-container" style="margin-top: 30px; color: rgb(0, 0, 0); font-family: arial;">
+	&nbsp;</div>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

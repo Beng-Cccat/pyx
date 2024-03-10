@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{dede:global.cfg_webname/}</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+        #list-item{
+            margin-bottom: 15px;
+        }
+        #listImg img{
+            max-width: 100%;
+            height: auto;
+        }
+        h3{
+            width: 162px;
+        }
+
+        @media (min-width: 1200px){
+          .timeline ul li .maskImg img{
+              width: 100%;
+              height: 246px;
+            }
+        .left-warp{
+            position: fixed;
+            right: 10px;
+            top: auto;
+            bottom: 50px !important;
+           }
+         }
+            body{
+              overflow-x: hidden;
+            }
+            .timeline ul li {
+              list-style-type: none;
+              position: relative;
+              width: 6px;
+              margin: 0 auto;
+              padding-top: 50px;
+              background: #fff;
+            }
+            .timeline ul li::after {
+              content: '';
+              position: absolute;
+              left: 50%;
+              bottom: 0;
+              transform: translateX(-50%) rotate(45deg);
+              width: 20px;
+              height: 20px;
+              z-index: 2;
+              background: #008b5f;
+            }
+            .timeline ul li div {
+              position: relative;
+              bottom: 0;
+              width: 400px;
+              padding: 20px;
+              background: #fff;
+              box-shadow:  1px 4px 10px 2px #CCC;
+              border-radius: 5px;
+              display: flex;
+              align-items: center;
+            }
+           
+            .timeline ul li div time {
+              position: absolute;
+              background: #31c193;
+              color: #fff;
+              width: 140px;
+              height: 30px;
+              top: -15px;
+              border-radius: 5px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              letter-spacing: 2px;
+            }
+            .timeline ul li .maskImg img{
+              width: 100%;
+            }
+            .timeline ul li div div {
+              height: 320px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+            .timeline ul li:nth-of-type(odd) > div {
+              left: 45px;
+            }
+            .timeline ul li:nth-of-type(even) > div {
+              left: -439px;
+            }
+             
+            .timeline ul li div {
+              visibility: hidden;
+              opacity: 0;
+              transition: all 0.5s ease-in-out;
+            }
+            .timeline ul li:nth-of-type(odd) div {
+              transform: translate3d(100px, -10px, 0) rotate(10deg);
+            }
+            .timeline ul li:nth-of-type(even) div {
+              transform: translate3d(-100px, -10px, 0) rotate(10deg);
+            }
+            .timeline ul li.in-view div {
+              transform: none;
+              visibility: visible;
+              opacity: 1;
+            }
+             
+            @media screen and (max-width: 900px) {
+              .timeline ul li div {
+                width: 250px;
+                flex-direction: column;
+              }
+              .timeline ul li div div {
+                width: 80%;
+                margin: 10px;
+              }
+              .timeline ul li:nth-of-type(even) > div {
+                left: -289px;
+              }
+            }
+            @media screen and (max-width: 600px) {
+              body{
+                background: #8bfff4;
+                overflow-x: hidden!important;
+              }
+             
+              .timeline ul li {
+                margin-left: -34px;
+              }
+              .timeline ul li div {
+                width: calc(100vw - 91px);
+              }
+              .timeline ul li:nth-of-type(even) > div {
+                left: 45px;
+              }
+            }
+            .left-warp{
+            position: fixed;
+            right: 10px;
+            top: auto;
+            bottom: 50px !important;
+           }
+        .left-warp li {
+                width: 60px;
+                height: 60px;
+                position: relative;
+                border-radius: 5px;
+                color: #fff;
+                text-align: center;
+                line-height: 60px;
+                z-index: 10;
+                background-color: #008b5f;
+                margin-top: 10px;
+                cursor: pointer;
+                box-shadow: 0px 0px 24px 0px rgba(4, 1, 1, 0.32);
+                cursor: pointer;
+            }
+           #main-wrap {
+            margin-top: 27px;
+            background-color: #e7eff4;
+        }
+        
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    {dede:include filename='head.htm'/}        
+    <!-- nav-end -->
+ 
+    <!-- mian-s -->
+    <div class="container-fluid right-side" id="main-wrap">
+         <!-- swiper-s -->
+         <div class="container-fluid" >   
+            <img src="{dede:global.cfg_templets_skin/}/images/tu/bn1.png" alt="" style="width: 100%;height:auto">
+          </div>  
+        <!-- swiper-end -->
+        <div class="container" >
+            <div class="row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：{dede:field name='position'/} </span>
+            </div>  
+           <div class="row">
+                <section class="timeline">
+                        <ul>
+                        {dede:list pagesize='8'}
+                            <li>
+                                <div>
+                                    <time>[field:title/]</time>
+                                    <div class="maskImg">
+                                      [field:array runphp='yes']@me = (empty(@me['litpic']) ? "" : "<a href='{@me['arcurl']}' class='preview'><img src='{@me['litpic']}'/></a>"); [/field:array] 
+                                    </div>
+                                      
+                                </div>
+                            </li>  
+                            {/dede:list}
+                        </ul>
+                </section>
+           </div>
+    
+         
+            <div class="left-warp top" style="bottom:50px">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    {dede:include filename='footer.htm'/}  
+    <!-- footer-end -->
+
+    <script>
+            var items = document.querySelectorAll(".timeline li");
+             
+            function isElementInViewport(el) {
+              var rect = el.getBoundingClientRect();
+              return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+              );
+            }
+             
+            function callbackFunc() {
+              for (var i = 0; i < items.length; i++) {
+                if (isElementInViewport(items[i])) {
+                  if(!items[i].classList.contains("in-view")){
+                    items[i].classList.add("in-view");
+                  }
+                } else if(items[i].classList.contains("in-view")) {
+                    items[i].classList.remove("in-view");
+                }
+              }
+            }
+              
+            window.addEventListener("load", callbackFunc);
+            window.addEventListener("scroll", callbackFunc);
+        </script>
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+<li><a href="[field:arcurl/]"><img src="[field:picname/]" alt="" class="img-responsive img-rounded"></a></li>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/piyingjianjie/'>皮影简介</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">历史起源</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-06-02 10:04
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <div class="para" label-module="para" style="font-size: 14px; overflow-wrap: break-word; color: rgb(51, 51, 51); margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1; font-family: arial, 宋体, sans-serif;">
+	<div class="para" label-module="para" style="overflow-wrap: break-word; margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1;">
+		皮影戏从有文字记载，已经有2000多年的历史，汉武帝爱妃<a href="https://baike.baidu.com/item/%E6%9D%8E%E5%A4%AB%E4%BA%BA" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">李夫人</a>染疾故去了，武帝的思念心切神情恍惚，终日不理朝政。大臣李少翁一日出门，路遇孩童手拿布娃娃玩耍，影子倒映于地栩栩如生。李少翁心中一动，用棉帛裁成李夫人影像，涂上色彩，并在手脚处装上木杆。入夜围方帷，张灯烛，恭请皇帝端坐帐中观看。武帝看罢龙颜大悦，就此爱不释手。这个载入《<a href="https://baike.baidu.com/item/%E6%B1%89%E4%B9%A6" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">汉书</a>》的爱情故事，被认为是皮影戏最早的渊源。</div>
+	<div class="para" label-module="para" style="overflow-wrap: break-word; margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1;">
+		<a href="https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E7%9A%AE%E5%BD%B1%E8%89%BA%E6%9C%AF" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">中国皮影艺术</a>从十三世纪元代起，随着军事远征和海陆交往，相继传入了波斯（伊朗）、阿拉伯、土耳其、暹罗（泰国）、缅甸、马来群岛、日本以及英、法、德、意、俄等亚欧各国。</div>
+	<div class="para" label-module="para" style="overflow-wrap: break-word; margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1;">
+		明武宗正德戊辰三年（1508年）北京曾举办百戏大会，皮影戏参加了演出。另传皮影自明中叶从兰州和华亭先传入河北涿州、后再传到京西、北郊农村，然后入城并形成东、西城两派。
+		<div class="lemma-picture text-pic layout-right" style="border: 1px solid rgb(224, 224, 224); overflow: hidden; margin: 0px 0px 3px; position: relative; float: right; clear: right; width: 131px;">
+			<a class="image-link" href="https://baike.baidu.com/pic/%E7%9A%AE%E5%BD%B1%E6%88%8F/23224/0/a0ca99d661e5254606088b21?fr=lemma&amp;ct=single" nslog-type="9317" style="color: rgb(19, 110, 194); text-decoration-line: none; display: block; width: 131px; height: 140px;" target="_blank" title="望奎皮影戏"><img alt="望奎皮影戏" src="/uploads/allimg/190602/1006034427-0.jpg" style="border: 0px; display: block; margin: 0px auto; width: 131px; height: 140px;" /></a><span class="description" style="display: block; color: rgb(85, 85, 85); font-size: 12px; text-indent: 0px; font-family: 宋体; overflow-wrap: break-word; word-break: break-all; line-height: 15px; padding: 8px 7px; min-height: 12px; border-top: 1px solid rgb(224, 224, 224);">望奎皮影戏</span></div>
+	</div>
+	<div class="para" label-module="para" style="overflow-wrap: break-word; margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1;">
+		从清人入关至清末民初，中国皮影戏艺术发展到了鼎盛时期。当时很多官第王府豪门旺族乡绅大户，都以请名师刻制影人、蓄置精工影箱、私养影班为荣。在民间乡村城镇，大大小小皮影戏班比比皆是，一乡一市有二三十个影班也不足为奇。无论逢年过节、喜庆丰收、祈福拜神、嫁娶宴客、添丁祝寿，都少不了搭台唱影。连本戏（连续剧）要通宵达旦或连演十天半月不止，一个庙会可出现几个影班搭台对擂唱影，热闹非凡，其盛状可想而知。</div>
+	<div class="para" label-module="para" style="overflow-wrap: break-word; margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1;">
+		清代北京皮影已很普及。除深受农民、市民欢迎外，还进入到宫廷。康熙时，礼亲王府设有八位食五品俸禄的官员专管影戏。嘉庆时逢年过节等喜庆日子还传皮影班进宅表演。当时的北京影戏班白天演木偶，夜晚则于堂会唱影戏，有不少京剧演员也参加影戏班演出。</div>
+	<div class="para" label-module="para" style="overflow-wrap: break-word; margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1;">
+		<div class="lemma-picture text-pic layout-right" style="border: 1px solid rgb(224, 224, 224); overflow: hidden; margin: 0px 0px 3px; position: relative; float: right; clear: right; width: 220px;">
+			<a class="image-link" href="https://baike.baidu.com/pic/%E7%9A%AE%E5%BD%B1%E6%88%8F/23224/0/5d6034a85edf8db16594b9af0923dd54574e7447?fr=lemma&amp;ct=single" nslog-type="9317" style="color: rgb(19, 110, 194); text-decoration-line: none; outline: dotted thin; display: block; width: 220px; height: 146px;" target="_blank" title="皮影戏演出现场"><img alt="皮影戏演出现场" src="/uploads/allimg/190602/1006035221-1.jpg" style="border: 0px; display: block; margin: 0px auto; width: 220px; height: 146px;" /></a><span class="description" style="display: block; color: rgb(85, 85, 85); font-size: 12px; text-indent: 0px; font-family: 宋体; overflow-wrap: break-word; word-break: break-all; line-height: 15px; padding: 8px 7px; min-height: 12px; border-top: 1px solid rgb(224, 224, 224);">皮影戏演出现场</span></div>
+		到了清代后期，曾有些地方官府害怕皮影戏的黑夜场所聚众起事，便禁演影戏，甚至捕办皮影艺人。皮影艺人还曾受清末<a href="https://baike.baidu.com/item/%E7%99%BD%E8%8E%B2%E6%95%99%E8%B5%B7%E4%B9%89" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">白莲教起义</a>的牵连，被以&ldquo;玄灯匪&rdquo;的罪名遭到查抄。日军入侵前后，又因社会动荡和连年战乱，民不聊生，致使盛极一时的皮影行业万户凋零，一蹶不振。</div>
+	<div class="para" label-module="para" style="overflow-wrap: break-word; margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1;">
+		1949年后，全国各地残存的皮影戏班、艺人又开始重新活跃，从1955年起，先后组织了全国和省、市级的皮影戏汇演，并屡次派团出国访问演出，进行文化艺术交流，颇有成果。但到&ldquo;文革&rdquo;时，皮影艺术再次遭&ldquo;破四旧&rdquo;的噩运，从此元气大伤。</div>
+</div>
+<br />
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

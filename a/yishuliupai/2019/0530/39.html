@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/yishuliupai/'>艺术流派</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">辽宁皮影</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-05-31 22:03
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <p style="padding: 0px; margin: 0px 0px 20px 4em;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">辽宁皮影中，凌源皮影属滦州皮影派系，传说是在清代由河北省的昌黎、滦县、乐亭等地传??的，已有300多年历史。岫岩皮影是在明清时传入的，俗称&ldquo;驴皮影&rdquo;，也是当地深受民众欢迎的一种民间艺术形式。除此之外，尚有盖州皮影戏、复州皮影戏锦州皮影戏、黑山皮影戏、沈阳关氏皮影、庄河皮影戏、海城皮影戏、鞍山皮影戏、喀左皮影戏、宽甸八河川皮影戏、大荒皮影戏等地方皮影戏，流传面很广。</span></p>
+<h3 style="position: absolute; font-size: 1.5em; font-weight: bolder; line-height: 1; padding: 0.6em 0px; margin: 0.5em 0px 0px; width: 1.8em; text-align: center;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">造型</span></h3>
+<p style="padding: 0px; margin: 0px 0px 20px 4em;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">辽宁皮影造型与滦州皮影相近。影人以驴皮制成。其中凌源影人的雕刻用料讲究，皮料以小口青槽期的本地毛驴皮为佳，皮板薄厚适中，质坚而柔。雕刻刀法也十分讲究&mdash;&mdash;走刀、推皮、打眼等按先繁后简、先内后外的顺序雕刻，在眉、眼、鼻、嘴和胡须五个部分进行夸张地处理。造型外轮廓以直线概括、出神俊俏，着色对比强烈。</span></p>
+<h3 style="position: absolute; font-size: 1.5em; font-weight: bolder; line-height: 1; padding: 0.6em 0px; margin: 0.5em 0px 0px; width: 1.8em; text-align: center;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">唱腔</span></h3>
+<p style="padding: 0px; margin: 0px 0px 20px 4em;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">总体来说，辽宁皮影戏唱腔流派繁多。辽西朝阳地区，靠近河北省的凌源、喀左皮影戏，受滦州影戏影响较多，演唱风格类似唐山、乐亭。凌源皮影道白需用&ldquo;乐亭口&rdquo;，多是掐嗓演唱，声音高亢圆润，唱腔委婉细腻。<br />
+	而其他地区皮影戏受二人转、东北大鼓、民歌，特别是方言语调的直接影响，其唱腔较之粗犷豪放，短促平直。具体来说，建平县老河、泵河、黑水、三趟川等地地处辽西，皮影演唱风格更具有辽西的粗犷地域特征。辽南皮影有南派、北派之分，各有千秋。而同一地区也有不同：如鞍山影戏就形成了乡土气息浓郁的板腔体音乐；而同属辽南的岫岩人口90%左右都为满族，岫岩皮影戏与满族文化不断融合，逐渐吸收了当地的满族单鼓、东北大鼓、二人转、东北秧歌等曲调，形成了具有强烈地方风格的唱腔与影词；盖州皮影在创作上采用地方口语化，念白多为乡音俚语，唱词格式风格独特，有着自己的独特词牌，音乐唱腔主要分为影调、外调、杂牌三种。</span></p>
+<div>
+	&nbsp;</div>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

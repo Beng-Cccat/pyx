@@ -1,0 +1,6 @@
+<div class="col-lg-3 col-md-6 col-sm-6 wow bounceIn" >
+                            <a href="" id="make-list">
+                                <img src="[field:picname/]" alt="" class="img-responsive img-rounded">
+                                <p class="text-center lead">[field:title/]</p>
+                            </a>
+                        </div>

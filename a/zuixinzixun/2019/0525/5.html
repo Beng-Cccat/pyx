@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/zuixinzixun/'>最新资讯</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">腾冲刘家寨非遗传人刘永周皮影戏的魅力</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-05-25 12:45
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <div style="text-align: center;">
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">第一次感受</span><a href="https://www.rouding.com/minjianyishu/piying/" style="margin: 0px; padding: 0px; text-decoration-line: none; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" target="_blank">皮影</a><span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">戏的魅力是基于10多年前姜文的禁片《活着》里面葛优的角色</span><br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">一个少年生生就被葛大爷的秦腔也不知道是碗碗腔的那几嗓子喊的着了迷</span><br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">当然更主要的是皮影戏这套完整的演、唱合一的融合技术与艺术的表演形式让人痴迷</span><br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">去年国庆企图在陕西周至县附近寻找与皮影戏流动班子偶遇遭挫败后，对皮影的兴趣又被逆反激发出来</span><br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">适逢此次腾冲之行，便要求当地朋友帮忙联系了一场号称非遗传人亲演的皮影戏</span><br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">虽然不是我神往的流动戏班乡间演出，或许这样的真实场景早已消亡，但终算填补了本人的一项体验空缺</span><br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">然而在遗憾中总又会去想下面这些无用的东西</span><br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">非遗的保护，若只保存了形式与技艺，那个流动戏班的乡间真实环境和受众不再存在的话，就恰如相声离开了天桥</span><br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">50元一张门票的天津相声会馆里面传承的可能是真的传统相声文化</span><br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">而现在的郭德纲，只是讨好富极无聊的ZB人士的娱乐表演</span><br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">以上只是想一想，然而并没有什么卵用。</span><br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">刘家寨刘氏宗祠内景，暨皮影戏演出场地（以下图片全部使用ZEISS 25MM f2.0镜头拍摄）</span></div>
+<img src="/uploads/allimg/190525/124IBZ3-0.jpg" style="margin: 0px auto; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; clear: both; display: block; max-width: 100%; font-size: 16px; background-color: rgb(239, 239, 239); text-align: center;" />
+<div style="text-align: center;">
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">后台开场前器乐简单彩排（幕布周围悬挂的是演出备用皮影）</span></div>
+<img src="/uploads/allimg/190525/124IA5J-1.jpg" style="margin: 0px auto; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; clear: both; display: block; max-width: 100%; font-size: 16px; background-color: rgb(239, 239, 239); text-align: center;" />
+<div style="text-align: center;">
+	<br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">后台休息档口娃娃学皮影</span></div>
+<img src="/uploads/allimg/190525/124I62Y9-2.jpg" style="margin: 0px auto; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; clear: both; display: block; max-width: 100%; font-size: 16px; background-color: rgb(239, 239, 239); text-align: center;" />
+<div style="text-align: center;">
+	<br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">非遗传人刘永周老汉边演边唱，同时用眼色指挥周边配合</span></div>
+<img src="/uploads/allimg/190525/124I61538-3.jpg" style="margin: 0px auto; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; clear: both; display: block; max-width: 100%; font-size: 16px; background-color: rgb(239, 239, 239); text-align: center;" />
+<div style="text-align: center;">
+	<br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">&nbsp;《大闹天宫》杨戬与孙悟空大战</span></div>
+<img src="/uploads/allimg/190525/124IA362-4.jpg" style="margin: 0px auto; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; clear: both; display: block; max-width: 100%; font-size: 16px; background-color: rgb(239, 239, 239); text-align: center;" />
+<div style="text-align: center;">
+	<br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">刘永周徒弟与孙子</span></div>
+<img src="/uploads/allimg/190525/124I611M-5.jpg" style="margin: 0px auto; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; clear: both; display: block; max-width: 100%; font-size: 16px; background-color: rgb(239, 239, 239); text-align: center;" />
+<div style="text-align: center;">
+	<br style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" />
+	<span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">仙鹤与</span><a href="https://s.rouding.com/book/7162" style="margin: 0px; padding: 0px; text-decoration-line: none; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239);" target="_blank">乌龟</a><span style="color: rgb(58, 58, 58); font-family: 微软雅黑; font-size: 16px; background-color: rgb(239, 239, 239);">，表演较为细腻</span></div>
+<img src="/uploads/allimg/190525/124I61439-6.jpg" style="margin: 0px auto; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; clear: both; display: block; max-width: 100%; font-size: 16px; background-color: rgb(239, 239, 239); text-align: center;" />
+<div style="margin: 0px; padding: 0px; list-style-type: none; color: rgb(58, 58, 58); background-image: none; font-family: 微软雅黑; box-sizing: border-box; font-size: 16px; background-color: rgb(239, 239, 239); text-align: center;">
+	城隍</div>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

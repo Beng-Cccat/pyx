@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/zuixinzixun/'>最新资讯</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">老北京皮影戏，在康熙年间流行，还设专人管理</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-05-25 16:38
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <p style="box-sizing: border-box; margin: 40px 0px 20px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　今天小编要和大家聊一聊老北京皮影戏。2008年，不仅是中国奥运年，也是老北京皮影值得纪念的年份。因为这一年的6月8号，老北京皮影入选了国家级非物质文化遗产名录。同时，在这第八个文化遗产日，北京的传统皮影戏&mdash;《樊梨花》正式演出，热闹非凡。皮影戏是老北京的一门独特的戏曲艺术。北京的皮影戏，也叫&ldquo;驴皮影&rdquo;，由此可知，老北京的皮影是用驴皮做的。没有那些个精致细腻的皮影，皮影戏就上演不了。老北京皮影，同样是别具风味的艺术品。要说皮影戏，它也叫&ldquo;影子戏&rdquo;或&ldquo;灯影戏&rdquo;，其实是中国&ldquo;傀儡戏&rdquo;的一种特殊形式，是受人们暗中操纵的小种戏曲。它与同为傀儡戏的布袋木偶、提线木偶不同的是，它的材料用的不是木偶，而是兽皮或纸板。</p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　<img src="/uploads/allimg/190525/163U53292-0.jpg" style="box-sizing: border-box; border: 0px; vertical-align: baseline; max-width: 100%; margin: 20px 0px;" /></p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　将一些如牛、羊、马、骡、驴等的皮或纸板剪成人物角色剪影，而后细致雕刻、缝缀，并涂上色彩，这样就成了演戏用的皮影人了。表演的时候，艺人们在幕后操纵，通常一个人可以同时操纵和控制三四个皮影的动作。这些皮影则在灯光下，隔着亮布，通过精彩的动作，配上艺人们的配音，以及伴奏音乐，一场传统皮影戏就开演了。在老北京，皮影戏叫&ldquo;驴皮影&rdquo;，是因为北京人喜欢用驴皮制作皮影的缘故吧。每年春节庙会期间，总会上演各种皮影戏。大人看历史，品味道；小孩则看稀奇，瞧人影儿。说起来，这种影子戏算是今天影视的&ldquo;鼻祖&rdquo;了，它们同样是在幕布上展示身影和故事。不同的是，皮影戏是戏剧，需要唱腔，而电影则是普通的对白而已。</p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　<img src="/uploads/allimg/190525/163U56053-1.jpg" style="box-sizing: border-box; border: 0px; vertical-align: baseline; max-width: 100%; margin: 20px 0px;" /></p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　不过，有一点得提醒一下，皮影戏最早并非是从北京诞生的，而是发明于陕西。陕西是皮影的发源地。至于皮影是怎么诞生的，还有个古老的传说呢。这个传说跟汉武帝刘彻有关。汉朝的京城在陕西威阳，汉武帝一生文韬武略，很是强悍，开创了大汉盛世。不过不幸的是，他的爱妃李夫人因为一场疾病，早早地离开了人世。汉武帝受到打击，郁郁寡欢，茶饭不思，神思恍惚连朝政工作都懒得理。大臣们个个都为此着急。汉武帝崇信方士，召请李少翁，让他招来李夫人的魂，希望能见一面。这个李少翁倒也敢接受这个命令，说时辰未到，过几天吧。某天出门，他在街上碰见一个孩子拿着布娃娃耍，倒映在地上的影子，不仅清晰，而且栩棚如生。</p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　<img src="/uploads/allimg/190525/163U56442-2.jpg" style="box-sizing: border-box; border: 0px; vertical-align: baseline; max-width: 100%; margin: 20px 0px;" /></p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　这一下子触动了李少翁的灵感，回到家他用棉帛剪成李夫人模样身段，然后涂上服饰色彩，最后在手脚处安上可以活动的木杆。到了晚上，他设置了帷幕，点上蜡烛，然后恭请汉武帝前来，让影戏皇帝坐在帐中静静观看，不许前去触摸。在摇晃的烛影下，汉武帝果然看到了久违的李夫人的身影，依旧那么熟悉，仿佛翩然而来。汉武帝大为欣喜，不觉喃喃说：&ldquo;是邪？非邪？立而望之，偏何姗姗来迟！&rdquo;接着，那个身影消失了，汉武帝不觉怅然若失，写下了一篇动人的《李夫人赋》来祭吊她。其实，这都是那个方士搞的鬼。他用皮影的把戏，让皇帝动情了一回罢了。没想到，这次小把戏竟成了以后陕西皮影的渊源。若干年后，陕西出现了真正的皮影戏，那时候是用羊皮剪的，因而也叫&ldquo;羊皮戏&rdquo;。人们俗称为&ldquo;人头戏&rdquo;，或&ldquo;影子戏&rdquo;。</p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　<img src="/uploads/allimg/190525/163U511P-3.jpg" style="box-sizing: border-box; border: 0px; vertical-align: baseline; max-width: 100%; margin: 20px 0px;" /></p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　接着，陕西的皮影戏传到了整个西北地区。到了大约明代，西北的皮影戏从兰州和华亭，先是传到了河北的涿州，后传到京西，及至北郊的乡村，最后从这些乡村流传到了北京城内，进而形成了东城派和西城派两大派别。东城派以滦州戏为头儿，西城派则以涿州戏为主。不过在西城中，也有东城派的皮影班子。西城有个毛家湾，皮影班子众多，其中的和顺社是西城派，其余的都是东城派了。可见，东城派的实力强大，西城派有些被挤兑的危险哩。这是啥原因呢？关键是，西城派没有自己的底本，演出时，那些皮影人全是古装。而东城派就不同了，人家不仅有底本，而且除了古装，还有时装，因而大受欢迎。然而，东城派也只是风光一时罢了，到如今，北京城的皮影仅存西城派了。要说北京的西城派皮影，差不多是在明朝正德年间形成的。</p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　<img src="/uploads/allimg/190525/163U52950-4.jpg" style="box-sizing: border-box; border: 0px; vertical-align: baseline; max-width: 100%; margin: 20px 0px;" /></p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　到了19世纪清朝晚期，西城派发展为五代传承，分别是路德成的祥顺影戏班、路福元的福顺影戏班、路耀光的德顺影戏班、以路景达为代表的另一德顺影戏班，以及路海、路宝两兄弟的皮影班。西城派在表演皮影时，用的是西北的&ldquo;碗碗腔&rdquo;和&ldquo;老虎调&rdquo;。因为一些佛戏和神话戏中时常有观世音菩萨坐在蒲团中，念着台词，警醒世人，因而，人们又管它叫&ldquo;蒲团影&rdquo;。于是，这也成了西城派的一个特色。当然，皮影戏这种小种戏剧纯属民间戏，只受到很少普通老百姓的欢迎，似乎难登大雅之堂。皇室宫廷最开始还不屑一顾，但渐渐地被这种傀儡戏感染，最终皮影戏进入了宫廷。据说，康熙年间，礼亲王府里有八个五品大臣，专门管理皮影戏呢。到了嘉庆年间，逢年过节的，许多王公大臣还特意召那些民间皮影班子进自己的府哪前来演出，可见皮影戏红火、时髦得不得了。</p>
+<p style="box-sizing: border-box; margin: 20px 0px; padding: 0px; font-size: 18px; line-height: 34px; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Hiragino Sans GB&quot;, &quot;WenQuanYi Micro Hei&quot;, sans-serif; text-align: center;">
+	　　</p>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

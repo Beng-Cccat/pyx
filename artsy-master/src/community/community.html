@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="community.css">
+    <script src="../../js/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <title>艺影ARTSY-图片分享社区</title>
+    <link rel="shortcut icon" href="../../img/ARTSY.ico" />
+</head>
+
+<body>
+    <div id="app">
+        <main id="page" class="o-page">
+            <!--导航-->
+            <header class="o-header">
+                <!--logo-->
+                <div class="logo">
+                    <a href="../../home.html"><img src="../../img/logo2.png" style="width: 130px;height: 40px;margin-top: -11px;" alt=""></a>
+                </div>
+
+                <!--导航-->
+                <nav class="c-main-menu" aria-labelledby="mainmenulabel">
+                    <!-- <h2 id="mainmenulabel" class="u-visually-hidden">Main Menu</h2> -->
+                    <ul class="c-main-menu__list">
+                        <li><a class="c-main-menu__link" href="../../home.html">Home</a></li>
+                        <!-- <li><a aria-current="page" class="is-magic-active c-main-menu__link" href="#">ABOUT</a></li> -->
+                    </ul>
+                </nav>
+            </header>
+            <!--内容-->
+            <section class="o-main-section">
+                <h2 class="c-main-title">ARTSY COMMUNITY</h2>
+
+                <article class="article">
+                    <a class="article__link" href="../details/details.html">
+                        <div>
+                            <header>
+                                <h3 class="article__heading">STM摄影联盟</h3>
+                            </header>
+                            <div class="article__content">
+                                STM摄影联盟，成立于2021年8月，由20名专业摄影师、摄影记者和摄影爱好者共同创办，是一个聚齐全国各地优秀摄影师的摄影交流组织。 </div>
+                        </div>
+                        <div class="article__img-wrapper">
+                            <img class="article__img" src="../../img/community/STM.jpg" alt="" />
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article">
+                    <a class="article__link" href="../details/details.html">
+                        <div>
+                            <header>
+                                <h3 class="article__heading">摄影研习社</h3>
+                            </header>
+                            <div class="article__content">
+                                这里是摄影研习社的交流地，这里有摄影小白的第一手福利；在这里你可以了解到如何摄影；在这里你可以分享你的照片。
+                            </div>
+                        </div>
+                        <div class="article__img-wrapper">
+                            <img class="article__img" src="../../img/community/YXS.jpg" alt="" />
+                        </div>
+                    </a>
+                </article>
+
+                <article class="article">
+                    <a class="article__link" href="../details/details.html">
+                        <div>
+                            <header>
+                                <h3 class="article__heading">Seeker光影联盟</h3>
+                            </header>
+                            <div class="article__content">
+                                我们新奇且对生活充满十足的激情，热衷于探索自然和城市之美的同时向大家传递世间的美好。期待你能在这里遇上一群有趣的灵魂！ </div>
+                        </div>
+                        <div class="article__img-wrapper">
+                            <img class="article__img" src="../../img/community/SEEKER.jpg" alt="" />
+                        </div>
+                    </a>
+                </article>
+            </section>
+        </main>
+        <div class="login">
+            <div class="login_inner">
+                <a href="../../src/login/login.html">
+                    <a href="../../src/login/login.html" class="login_photo"><img class="login_img" src="../../img/image.jpg"></a>
+                    <p><span>{{logintext1}}</span>
+                        <br />
+                        <span>{{logintext}}</span>
+                    </p>
+                </a>
+            </div>
+        </div>
+        <footer style="height: 400px;">
+            <iframe width="100%" height="100%" src="../../src/footer/footer.html" frameborder="0" scrolling="no"></iframe>
+        </footer>
+        <div class="SBGSimg"></div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: function() {
+                return {
+                    logintext: '点击登录 定格瞬间',
+                    logintext1: '山城风物 浮生未歇'
+                }
+            },
+
+            mounted() {
+
+            },
+
+            methods: {
+
+
+            },
+            created() {
+                var params = location.search.substr(9);
+                if (params !== '') {
+                    this.$message({
+                        type: 'success',
+                        message: `${decodeURI(params)}，欢迎你！`
+                    });
+                    this.logintext = `${decodeURI(params)},欢迎您!`
+                    this.logintext1 = '点击退出登录'
+                } else {
+                    this.$notify({
+                        title: '欢迎来到圈子，快去寻找你的皮影灵魂社区吧！',
+                        duration: 2000,
+                    });
+                }
+
+
+            },
+
+        })
+        let SBGSimg = document.querySelector('.SBGSimg')
+            // 定义小图片的旋转角度
+        let deg = 0
+            // 定义小图片位于网页左侧的位置
+        let SBGSimgx = 0
+            // 定义小图片位于网页顶部的位置
+        let SBGSimgy = 0
+            // 定义小图片x轴的位置
+        let SBGSimgl = 0
+            // 定义小图片y轴的位置
+        let SBGSimgt = 0
+            // 定义小图片翻转的角度
+        let y = 0
+            // 定义一个计数器
+        let index = 0
+
+        window.addEventListener('mousemove', function(xyz) {
+            // 获取网页左侧距离的图片位置
+            SBGSimgx = xyz.x - SBGSimg.offsetLeft - SBGSimg.clientWidth / 2
+                // 多去网页顶部距离图片的位置
+            SBGSimgy = xyz.y - SBGSimg.offsetTop - SBGSimg.clientHeight / 2
+                // 套入公式，定义图片的旋转角度
+            deg = 360 * Math.atan(SBGSimgy / SBGSimgx) / (2 * Math.PI)
+                // 每当鼠标移动的时候重置index
+            index = 0
+                // 定义当前鼠标的位置
+            let x = event.clientX
+                // 当鼠标的x轴大于图片的时候，提普安就要对着鼠标，所以需要将图片翻转过来
+                // 否则就不用翻转
+            if (SBGSimg.offsetLeft < x) {
+                y = -180
+            } else {
+                y = 0
+            }
+        })
+        setInterval(() => {
+            // 设置小图片的旋转和翻转
+            SBGSimg.style.transform = "rotateZ(" + deg + "deg) rotateY(" + y + "deg)"
+            index++
+            // 在这里设置小图片的位置和速度，并判断小图片到达鼠标位置时停止移动
+            if (index < 50) {
+                SBGSimgl += SBGSimgx / 50
+                SBGSimgt += SBGSimgy / 50
+            }
+            SBGSimg.style.left = SBGSimgl + "px"
+            SBGSimg.style.top = SBGSimgt + "px"
+        }, 10)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/zuixinzixun/'>最新资讯</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">老街里的皮影戏</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-05-25 16:07
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <p style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<font style="padding: 0px; margin: 0px; font-size: 12pt;">一块幕布做戏台，一张兽皮扮人物，一束灯光亮全场，一双巧手调动千军万马，两根竹竿演尽喜怒哀乐，这就是皮影戏。在宣州区水东老街，土生土长的何泽华，建了皮影戏博物馆，搭起了戏班子。几个老艺人，一直在三尺生绢戏台之上，默默守护着这份老手艺。</font></p>
+<p style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<font style="padding: 0px; margin: 0px; font-size: 12pt;">&nbsp;&nbsp;&nbsp;&nbsp;400年前，随着湖北移民的到来，皮影随之传入皖南。在吸取了皖南民间小调、花鼓戏、绘画、雕刻、剪纸等民间艺术后，皖南皮影独树一帜、自成一派。</font></p>
+<p align="center" style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<img align="center" border="0" id="458104" sourcedescription="编辑提供的本地文件" sourcename="本地文件" src="/uploads/allimg/190525/160IIQ7-0.jpg" style="padding: 0px; margin: 0px; border: none; width: 640px; height: 455px;" title="" /><br style="padding: 0px; margin: 0px;" />
+	<font color="blue" style="padding: 0px; margin: 0px; font-size: 12pt;">皮影戏艺人们。</font></p>
+<p style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<font style="padding: 0px; margin: 0px; font-size: 12pt;">&nbsp;&nbsp;&nbsp;<strong style="padding: 0px; margin: 0px;">&nbsp;相遇</strong></font></p>
+<p style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<font style="padding: 0px; margin: 0px; font-size: 12pt;">&nbsp;&nbsp;&nbsp;&nbsp;穿过柏油马路和喧闹的集市，踏进古色古香的水东老街。入眼而来的，大红的灯笼，金黄的油坊，屋檐上未融化的雪，在太阳的温暖下，滴落在脚边。脚下的青石板每一块都诉说着古老的戏文，一丈高的木板门每一扇都藏着说不完的故事。阳光透过飞檐吊角，点点散落在斑驳的木门板上，置身于此，有种奇妙的感觉：仿佛穿越到了明清时代。</font></p>
+<p style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<font style="padding: 0px; margin: 0px; font-size: 12pt;">&nbsp;&nbsp;&nbsp;&nbsp;巷子深处传来热闹的锣鼓声，行人渐渐多了起来。好戏上演了。</font></p>
+<p style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<font style="padding: 0px; margin: 0px; font-size: 12pt;">&nbsp;&nbsp;&nbsp;&nbsp;点上灯，一尺白布，几幅皮影，锣鼓钹紧密地敲打，两根木棍在手中千变万化。伴随着老艺人口中的戏文，一幕幕爱恨情仇轮番出场。</font></p>
+<p style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<font style="padding: 0px; margin: 0px; font-size: 12pt;">&nbsp;&nbsp;&nbsp;&nbsp;&ldquo;每逢红白喜事、节庆赶集，皮影戏艺人就挑着戏箱走乡串村地演出。无论大人小孩，早早就搬着板凳占座。最早是蜡烛，后来是电灯，没有音响设备，全凭艺人一张嘴。&rdquo;何泽华是皖南皮影戏第九代传承人，从他记事起，就拿皮影当玩具。烛火摇曳间，何泽华看着爷爷做皮影，这一幕永远定格在了他心里。</font></p>
+<p style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<font style="padding: 0px; margin: 0px; font-size: 12pt;">&nbsp;&nbsp;&nbsp;&nbsp;皮影制作工艺精细，要经过选皮、制皮、推皮、描样、雕刻、上色、熨平、装订八个工序，这头一道就是选皮。制作皮影的牛皮是何泽华买来新鲜牛皮自己处理的。去除牛皮上的脂肪和牛毛，特殊处理后晾干，经过一整个夏天方能使用。</font></p>
+<p style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<font style="padding: 0px; margin: 0px; font-size: 12pt;">&nbsp;&nbsp;&nbsp;&nbsp;&ldquo;小时候跟着爷爷学，三年才能出师。要想做好皮影首先要喜欢，有兴趣。&rdquo;何泽华说，做皮影并不难，但要付出极大的耐心、要耐得住寂寞。一刀刀、一笔笔，才能将一个人物活灵活现地展现出来。&ldquo;小时候最开心的事，就是每天放学后把书包一甩，找一把刀子，跟爷爷学刻皮影子。&rdquo;</font></p>
+<p style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<font style="padding: 0px; margin: 0px; font-size: 12pt;">&nbsp;&nbsp;&nbsp;&nbsp;何泽华走出过这座满是戏文的古镇，做过其他工作。&ldquo;总觉得心里不踏实，当我回到老家，再次拿起皮影，才知道这辈子我都要与皮影为伴。&rdquo;</font></p>
+<p align="center" style="padding: 0px; margin: 0px 0px 8px; line-height: 34px; font-family: Arial; text-indent: 1em; color: rgb(42, 42, 42); font-size: 14px;">
+	<img align="center" border="0" id="458122" sourcedescription="编辑提供的本地文件" sourcename="本地文件" src="/uploads/allimg/190525/160II551-1.jpg" style="padding: 0px; margin: 0px; border: none; width: 640px; height: 427px;" title="" /><br style="padding: 0px; margin: 0px;" />
+	<font color="blue" style="padding: 0px; margin: 0px; font-size: 12pt;">戏前准备。</font></p>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

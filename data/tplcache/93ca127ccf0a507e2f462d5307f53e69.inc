@@ -1,0 +1,1 @@
+<li><a href="[field:arcurl/]" class="img-response">[field:image/]</a></li>

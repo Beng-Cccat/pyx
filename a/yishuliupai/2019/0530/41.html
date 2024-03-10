@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/yishuliupai/'>艺术流派</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">山东皮影</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-05-31 22:02
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <p style="padding: 0px; margin: 0px 0px 20px 4em;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">山东皮影有文献记载的时间较早。明小说《檮杌闲评》即记载了临清艺人侯一娘表演皮影戏的场景，其道具盒为竹篾制成，可以猜测山东处于运河流经区域，影戏由南方流传而来的可能性。济南皮影戏过去叫&ldquo;兰州布影&rdquo;，&ldquo;兰州&rdquo;或为&ldquo;滦州&rdquo;之误，但是影人的造型接近中原一带的影人而距滦州皮影较远，由此可见，山东皮影传入的复杂成因。山东皮影戏曾流行于枣庄、临沂、济宁、青岛、烟台一带，不过到现在大多已经自然而然地消亡了。现山东皮影分布于定陶、枣庄、济南、泰山、黄墩、临沂等地。</span></p>
+<h3 style="position: absolute; font-size: 1.5em; font-weight: bolder; line-height: 1; padding: 0.6em 0px; margin: 0.5em 0px 0px; width: 1.8em; text-align: center;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">造型</span></h3>
+<p style="padding: 0px; margin: 0px 0px 20px 4em;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">山东影人采用牛皮雕镂，也有采用其他皮质雕刻的。造型古拙，少雕刻。其眉眼轮廓圆浑，大多采用写实手法，少数造型采用夸张手法，但又受到民间剪纸和京剧脸谱的影响。在角色上分为生、旦、净、丑等行当。旦角多用阳刻，那全侧面的外轮廓线极富弹性，悬鼻、高额、小唇、一弯细眉和凤眼直连云鬓。文人脸谱大多采用阳刻，显示为平长细眼，小嘴巴、直鼻梁，显得平和大度。武将大多采用阴刻，显示为圆眼睛、疙瘩鼻、饱满额头；冠饰后移幅变大，显得很有神采。身段大略而概括，如果皮料透明度高时，甚至直接彩绘。用刀拙朴，粗旷豪爽，在用色上对比强烈，多用红、绿、黄、紫等民间传统颜色。由于风格质朴粗犷，色泽古拙，刻工劲健，因此充分体现了粗中有细、豪放有致的艺术风格，体现了山东人憨厚、豁达的性格。操纵时单臂为主。泰山皮影还有演出只有一人完成的情形，表演者左脚踩鼓，右脚敲锣，口中演唱，双手指挥皮影，一个人演出一台戏，因此，泰山皮影又被称为&ldquo;十不闲&rdquo;。</span></p>
+<h3 style="position: absolute; font-size: 1.5em; font-weight: bolder; line-height: 1; padding: 0.6em 0px; margin: 0.5em 0px 0px; width: 1.8em; text-align: center;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">唱腔</span></h3>
+<p style="padding: 0px; margin: 0px 0px 20px 4em;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">山东皮影戏在唱腔上吸收了鲁地方戏和民歌的曲调。比如定陶皮影在音乐上广泛吸收了戏曲和说唱艺术的因素，形成了较为固定的行当、板式、唱腔。山东枣庄皮影戏唱腔圆润，道白有声有色，在唱腔上吸收了鲁南地方戏和民歌曲调，韵味独特，悠扬宛转。泰山皮影戏在唱腔上，以山东大鼓为主，刚中有柔，具有杂家风格，体现了泰山文化的兼容性。</span></p>
+<div>
+	&nbsp;</div>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

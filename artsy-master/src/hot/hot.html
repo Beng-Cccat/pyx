@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="hot.css">
+    <link rel="stylesheet" href="../home/images/images.css">
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../js/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+    <title>艺影ARTSY-图片分享社区</title>
+    <link rel="shortcut icon" href="../../img/ARTSY.ico" />
+</head>
+
+<body>
+    <header>
+        <div class="page-header">
+            <input id="menu-toggle-input" type="checkbox" />
+            <label class="menu-toggle" for="menu-toggle-input">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <div class="page-tagline">
+                <a href="../../home.html"><img src="../../img/logo1.png" style="width: 130px;height: 40px;margin-top: -11px;" alt=""></a>
+            </div>
+
+            <nav class="menu">
+                <ol>
+                    <li class="menu-item "><a href="../base/base.html" style="background-image: url(../../img/base/baseHeader.jpg);background-size: cover;">基地</a>
+                    </li>
+                    <li class="menu-item"><a href="../school/school.html" style="background-image: url(../../img/school.jpg);background-size: cover;background-position:center;">校园</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="../hot/hot.html" style="background-image: url(../../img/hot/30.jpg);background-size: cover;background-position:center;">热门</a>
+                        <ol class="sub-menu">
+                            <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/hot/43.jpg);background-size: cover;background-position:center;">年轮</a>
+                            </li>
+                            <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/hot/29.jfif);background-size: cover;background-position:center;">壮青</a>
+                            </li>
+                            <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/hot/35.jpg);background-size: cover;background-position:center;">童稚</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="menu-item">
+                        <a href="../community/community.html" style="background-image: url(../../img/QZ2.jpg);background-size: cover;background-position:center;">圈子</a>
+                        <ol class="sub-menu">
+                            <li class="menu-item">
+                                <a href="../scenery/scenery.html" style="background-image: url(../../img/hot/5.jpg);background-size: cover;background-position:center;">动画</a>
+                            </li>
+                            <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/hot/41.jpg);background-size: cover;background-position:center;">动物</a>
+                            </li>
+                            <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/hot/17.jpg);background-size: cover;background-position:center;">游戏</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/image.jpg);background-size: cover;">风景</a></li>
+                </ol>
+            </nav>
+        </div>
+        <div class="shell">
+            <img src="../../img/hotHead.jpg" class="video"></img>
+            <h1 class="big-title">ARTSY HOT</h1>
+        </div>
+    </header>
+
+    <div id="app">
+        <!-- element-ui回到顶部组件 -->
+        <el-backtop></el-backtop>
+        <div class="hot-text">
+            <div class="hot-H">Do you have anything to love?</div>
+            <div class="hot-P">
+                <span class="hotPE">
+                    Artsy will record every click you make, what you love will be displayed, and the top list will be
+                    updated regularly to record every popular image.
+                </span>
+
+                <span class="hotPC">ARTSY会记录你的每一次点击，你所热爱的都将被展示，热门榜会定时更新，记录每一张受欢迎的图片。</span>
+            </div>
+
+        </div>
+        <el-row :gutter="0">
+            <el-col :xs="24" :sm="4" :md="4" :lg="4">
+                <div class="daohang">
+                    <el-tabs v-model="activeName" :tab-position="TabPosition" @tab-click="handleClick">
+                        <el-tab-pane label="总热门" name="first"></el-tab-pane>
+                        <el-tab-pane label="近一年" name="second"></el-tab-pane>
+                        <el-tab-pane label="近一月" name="third"></el-tab-pane>
+                        <el-tab-pane label="近一周" name="fourth"></el-tab-pane>
+                        <el-tab-pane label="今天" name="one"></el-tab-pane>
+                    </el-tabs>
+                </div>
+
+
+
+            </el-col>
+            <el-col :xs="24" :sm="20" :md="20" :lg="20">
+                <div class="ImageF">
+                    <div class="masonry">
+                        <div class="item  one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/24.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second third">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/25.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/26.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item  third">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/27.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth second">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/28.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/29.jfif" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second third">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/45.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/41.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item  third">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/42.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item third one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/43.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/44.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/30.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item third">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/31.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/32.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth second">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/33.jfif" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second third">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/34.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/35.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/36.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/37.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item third">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/38.jfif" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/39.jfif" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item third one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/40.jfif" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/1.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/2.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item third second">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/3.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/4.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item third second">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/5.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/6.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/7.png" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/8.png" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second third one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/9.png" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/10.png" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item third fourth">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/11.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second fourth">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/12.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/13.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/14.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/15.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item third">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/16.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/17.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/18.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item fourth one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/19.png" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item third fourth">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/20.png" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/21.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/22.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+                        <div class="item second third fourth one">
+                            <img src="../../img/zw2.gif" picAddress="../../img/hot/23.jpg" class="img0 lazyLoadImg">
+
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+            </el-col>
+        </el-row>
+        <!-- 图片详情弹出框 -->
+        <div id="myModal" class="Modal">
+            <!-- 弹窗内容 -->
+
+            <el-row :gutter="0" style="width: 100%;margin: 0;">
+                <el-col :md="4" class="maxAclose">
+
+                    <div class="Image-container">
+                        <a href="javascript:void(0);" class="close">关闭</a>
+                    </div>
+
+                </el-col>
+                <el-col :md="20" class="rowcol-t">
+                    <div class="img-content">
+                        <!-- 图片详情容器 -->
+                        <img class="img-modal-content" id="img_content">
+
+                    </div>
+                </el-col>
+                <el-col :md="4" class="PhoneAclose">
+                    <div class="Image-container">
+                        <a href="javascript:void(0);" class="close">关闭</a>
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
+
+    </div>
+    <footer style="height: 400px;">
+        <iframe width="100%" height="100%" src="../footer/footer.html" frameborder="0" scrolling="no"></iframe>
+    </footer>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: function() {
+                return {
+                    activeName: 'first',
+                    TabPosition: 'left'
+                }
+            },
+
+            mounted() {
+                // 挂载鼠标滚动事件scroll，执行函数tabsGDFn
+                window.addEventListener('scroll', this.tabsGDFn)
+                const screenWidth = document.body.clientWidth;
+                // 屏幕宽度小于等于768时
+                if (screenWidth <= 768) {
+                    // 导航栏位置改为上方
+                    this.TabPosition = 'top'
+                        // 移除鼠标滚动事件
+                    window.removeEventListener("scroll", this.tabsGDFn);
+                }
+
+                // 头部b站效果
+                const shell = document.querySelector(".shell")
+                const video = document.querySelector(".video")
+                    // mouseenter当指针设备（通常是鼠标）移动到连接了侦听器的元素上时，会触发该事件。
+                shell.addEventListener('mouseenter', function(e) {
+                        // this.x为鼠标刚移上去的位置
+                        this.x = e.clientX
+                        video.style.transition = 'none'
+                    })
+                    // mousemove鼠标移动事件
+                shell.addEventListener('mousemove', function(e) {
+                        // this._x为鼠标移动后的位置
+                        this._x = e.clientX
+                        const disx = this._x - this.x
+                            // 计算图像运动
+                        const move = 36 - disx / -20
+                        video.style.transform = `translate(${move}px,-8px)`
+                    })
+                    // mouseleave当指针设备（通常是鼠标）移出连接有侦听器的元素时，会触发该事件。
+                shell.addEventListener('mouseleave', function(e) {
+                    video.style.transition = .3 + 's'
+                    video.style.transform = 'translate(36px,-8px)'
+                })
+            },
+
+            methods: {
+
+                tabsGDFn() {
+                    const elTabs = document.querySelector(".el-tabs")
+                    const masonry = document.querySelector(".masonry")
+                        // scrooll为滚动条顶部到网页顶部的这段距离
+                    let scroll = window.pageYOffset;
+                    let elTabsY = elTabs.getBoundingClientRect();
+                    let masonryY = masonry.getBoundingClientRect();
+
+                    if (scroll < 300) {
+                        // 移除elTabs的class：tabsGD
+                        elTabs.classList.remove("tabsGD")
+                    } else {
+                        // 给elTabs添加class：tabsGD
+                        elTabs.classList.add("tabsGD")
+                        const tabsGD = document.querySelector(".tabsGD")
+                            // 当图片底部距离窗口顶部距离小于400时
+                        if (masonryY.bottom < 400) {
+                            // 动态修改tabsGD的top值
+                            tabsGD.style.top = `${masonryY.bottom - 300}px`
+                        } else {
+                            tabsGD.style.top = "20%"
+                        }
+                    }
+                },
+                // 导航切换函数
+                handleClick(tab, event) {
+                    if (tab.name == 'first') {
+                        // show为jQuery显示内容 括号内为过渡时间
+                        $('.item').show(300);
+                    } else {
+                        // hide为隐藏内容
+                        $('.item').fadeOut(300);
+                        $(`.${tab.name}`).show(300);
+                    }
+                },
+            },
+            created() {
+                const screenWidth = document.body.clientWidth;
+                const daohang = document.querySelector(".daohang")
+                if (screenWidth <= 768) {
+                    // this.TabPosition = 'top'
+                    daohang.classList.remove("daohang")
+
+                }
+            },
+
+        })
+    </script>
+
+    <script src="../../js/lazyLoadImg.js"></script>
+    <script src="../../js/ImagesDetail.js"></script>
+</body>
+
+</html>

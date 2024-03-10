@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{dede:global.cfg_webname/}</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+        .right-new{
+            background-color: #fff;
+        }
+        #list-item{
+            background-color: #fff;
+            padding-bottom: 10px;
+            border-bottom:1px solid #d8d8d8;
+        }
+        #listImg img{
+            width: 100%;
+            height: auto;
+        }
+        .new-title{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color:#31c193;
+            color: #fff;
+            text-align: center;
+            height: 50px;
+            line-height: 50px
+        }
+       
+        .left-warp{
+            position: fixed;
+            right: 10px;
+            top: auto;
+            bottom: 50px !important;
+           }
+        .left-warp li {
+                width: 60px;
+                height: 60px;
+                position: relative;
+                border-radius: 5px;
+                color: #fff;
+                text-align: center;
+                line-height: 60px;
+                z-index: 10;
+                background-color: #008b5f;
+                margin-top: 10px;
+                cursor: pointer;
+                box-shadow: 0px 0px 24px 0px rgba(4, 1, 1, 0.32);
+                cursor: pointer;
+            }
+
+        .pagelists{
+            padding-left: 9px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .pagelists li{
+            border: 1px solid #31c193;
+            border-radius: 5px;
+            margin-left: 5px;
+            width: 55px;
+            text-align: center
+        }
+        .thisclass{
+            background-color: #31c193;
+            color: #fff;
+        }
+        #main-wrap {
+            margin-top: 27px;
+            background-color: #e7eff4;
+        }
+        @media (max-width:768px){
+            #listright{
+                height: 93px;
+                overflow: hidden;
+            }
+        }
+        @media (min-width:1200px){
+          .descript{
+              line-height: 40px;
+          }
+        }
+        .hotlist li{
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    {dede:include filename='head.htm'/}        
+    <!-- nav-end -->
+ 
+    <!-- mian-s -->
+    <div class="container-fluid right-side" id="main-wrap">
+         <!-- swiper-s -->
+         <div class="container-fluid" >   
+                <img src="{dede:global.cfg_templets_skin/}/images/tu/bn1.png" alt="" style="width: 100%;height:auto">
+        </div>    
+        <!-- swiper-end -->
+        <div class="container" >
+            <div class="row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：{dede:field name='position'/} </span>
+            </div>  
+            <div class="row">
+                    <div class="col-lg-9 col-md-9 col-xs-12">
+                            {dede:list pagesize='6'}
+                            <div class="row" id="list-item">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="listImg">
+                                    [field:array runphp='yes']@me = (empty(@me['litpic']) ? "" : "<a href='{@me['arcurl']}' class='preview'><img src='{@me['litpic']}'/></a>"); [/field:array] 
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="listright"> 
+                                [<b>[field:typelink/]</b>] <a href="[field:arcurl/]" class="title">[field:title/]</a> <span class="info"> 
+                                <p class="descript"> [field:description/]... </p>  
+                                </div>
+                             </div>
+                            {/dede:list}
+                       
+                      
+                            <ul class="pagelists">
+
+                            {dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+                            </ul>
+                   </div> 
+                   <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
+                        <div class="right-new">
+                        <h2 class="new-title">
+                         <img src="/templets/default/images/l-new.png" alt="" style="vertical-align: middle;">
+                        热点内容
+                        </h2>
+                        <ul class="list-unstyled hotlist">
+                        
+                         {dede:arclist row=6 orderby=click}
+                         <li style="border-top: 1px solid #d8d8d8;padding-top: 10px;
+                         margin-bottom: 0px"><a href="[field:arcurl/]">[field:title/]</a>
+                           <p><i class="glyphicon glyphicon-time"></i>
+                           20[field:pubdate function="MyDate('y-m-d',@me)"/]</p>
+                         </li>
+                         {/dede:arclist}
+                       
+                        </ul>
+                      </div>
+                    </div> 
+            </div>
+    
+         
+            <div class="left-warp top" style="bottom:50px">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    {dede:include filename='footer.htm'/}  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

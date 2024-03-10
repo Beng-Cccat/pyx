@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>南开大学——AI皮影生成</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+    <script language="javascript" type="text/javascript">
+        <!--
+
+            function CheckLogin(){
+              var taget_obj = document.getElementById('_userlogin');
+              myajax = new DedeAjax(taget_obj,false,false,'','','');
+              myajax.SendGet2("/member/ajax_loginsta.php");
+              DedeXHTTP = null;
+            }
+        -->
+        </script>
+        
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         
+         <a href="https://huggingface.co/spaces/beng-cccat/piying"> <img src="/templets/default/images/211.jpeg" width=40 height=40 alt="" style="vertical-align: -7px;"><span>生成</span></a>
+         
+         <a href="/artsy-master/index.html"> <img src="/templets/default/images/213.jpeg" width=40 height=40 alt="" style="vertical-align: -7px;"><span>图片</span></a>
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+  
+    <!-- mian-s -->
+    <div id="main-wrap">      
+        <div class="container-fluid right-side" >
+                <div class="container">
+                        <form class="text-center search-warp" action="/plus/search.php">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="皮影戏" id="search-text" value="">
+                                </div>
+                                <button type="submit" class="search"><i class="glyphicon glyphicon-search"></i></button>
+                        </form>
+                </div>
+                <div class="container panel intro-wrap"  id="bg">
+                        <div class="panel-heading">
+                                <h3 class="intro-title">南开大学         AI    皮影</h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow bounceInLeft intro-txt">
+                                     <h4 class="intro-titles">皮影戏</h4>
+                                      皮影戏(Shadow Puppets)，又称“影子戏”或“灯影戏”，是一种以兽皮或纸板做成的人物剪影以表演故事的民间戏剧。表演时，艺人们在白色幕布后面，一边操纵影人，一边用当地流行的曲调讲述故事，同时配以打击乐器和弦乐，有浓厚的乡土气息。其流行范围极为广泛，并因各地所演的声腔不同而形成多种多样的皮影戏,皮影戏始于西汉，兴于唐朝，盛于清代，元代时期传至西亚和欧洲，可谓历史悠久……  <a href="/a/piyingjianjie/index.html">【详细内容】 </a>       
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+                                <img src="/templets/default/images/tu/index2.jpg" alt="" class="img-responsive img-rounded">
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow bounceInRight intro-txt">  
+
+                                     <h4 class="intro-titles">历史起源</h4>
+                                     皮影戏从有文字记载，已经有2000多年的历史，汉武帝爱妃李夫人染疾故去了，武帝的思念心切神情恍惚，终日不理朝政。大臣李少翁一日出门，路遇孩童手拿布娃娃玩耍，影子倒映于地栩栩如生。李少翁心中一动，用棉帛裁成李夫人影像，涂上色彩，并在手脚处装上木杆。入夜围方帷，张灯烛，恭请皇帝端坐帐中观看。武帝看罢龙颜大悦，就此爱不释手。…… <a href="/a/piyingjianjie/index.html">【详细内容】 </a>      
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <a href="/a/piyingjianjie/index.html" class="more1">更多</a> 
+                        </div>
+                </div>
+                <div class="container panel make-wrap"  id="bg">
+                    <div class="panel-heading">
+                            <h3 class="intro-title">皮影制作</h3>         
+                    </div>
+                    <div class="row makeall panel-body">
+                        <div class="col-lg-3 col-md-6 col-sm-6 wow bounceIn" >
+                            <a href="/a/piyingzhizuo/2019/0525/12.html" id="make-list">
+                                <img src="/uploads/190609/1-1Z609214J41T.jpg" alt="" class="img-responsive">
+                                <p class="text-center lead">第八步缀结完成</p>
+                            </a>
+                        </div>
+<div class="col-lg-3 col-md-6 col-sm-6 wow bounceIn" >
+                            <a href="/a/piyingzhizuo/2019/0525/11.html" id="make-list">
+                                <img src="/uploads/190609/1-1Z609214G0c4.jpg" alt="" class="img-responsive">
+                                <p class="text-center lead">第七步发汗熨平</p>
+                            </a>
+                        </div>
+<div class="col-lg-3 col-md-6 col-sm-6 wow bounceIn" >
+                            <a href="/a/piyingzhizuo/2019/0525/9.html" id="make-list">
+                                <img src="/uploads/190609/1-1Z609214611294.jpg" alt="" class="img-responsive">
+                                <p class="text-center lead">第五步镂刻</p>
+                            </a>
+                        </div>
+<div class="col-lg-3 col-md-6 col-sm-6 wow bounceIn" >
+                            <a href="/a/piyingzhizuo/2019/0525/8.html" id="make-list">
+                                <img src="/uploads/190609/1-1Z609214504P4.jpg" alt="" class="img-responsive">
+                                <p class="text-center lead">第四步过稿</p>
+                            </a>
+                        </div>
+<div class="col-lg-3 col-md-6 col-sm-6 wow bounceIn" >
+                            <a href="/a/piyingzhizuo/2019/0525/7.html" id="make-list">
+                                <img src="/uploads/190609/1-1Z609214334522.jpg" alt="" class="img-responsive">
+                                <p class="text-center lead">第三步画稿</p>
+                            </a>
+                        </div>
+<div class="col-lg-3 col-md-6 col-sm-6 wow bounceIn" >
+                            <a href="/a/piyingzhizuo/2019/0525/3.html" id="make-list">
+                                <img src="/uploads/tu/190609/1-1Z609214225235.jpg" alt="" class="img-responsive">
+                                <p class="text-center lead">第一步选皮</p>
+                            </a>
+                        </div>
+<div class="col-lg-3 col-md-6 col-sm-6 wow bounceIn" >
+                            <a href="/a/piyingzhizuo/2019/0525/4.html" id="make-list">
+                                <img src="/uploads/allimg/190525/1-1Z5251205200-L.jpg" alt="" class="img-responsive">
+                                <p class="text-center lead">第二步制皮</p>
+                            </a>
+                        </div>
+<div class="col-lg-3 col-md-6 col-sm-6 wow bounceIn" >
+                            <a href="/a/piyingzhizuo/2019/0525/10.html" id="make-list">
+                                <img src="/uploads/allimg/190525/1-1Z5251540570-L.jpg" alt="" class="img-responsive">
+                                <p class="text-center lead">第六步敷彩</p>
+                            </a>
+                        </div>
+  
+                    </div>
+                    
+                    <div class="row">
+                        <a href="/a/piyingzhizuo/index.html" class="more1">更多</a> 
+                    </div>
+                    
+
+                </div>
+                <div class="container panel art-warp" id="bg">
+                    <div class="panel-heading">
+                                <h3 class="intro-title">艺术流派</h3>           
+                    </div>
+                    <div class="row artall panel-body">
+                        <ul class="list-unstyled art">
+                            <li class="art-item"> 
+                                <p class="art-title wow bounceInLeft">唐山皮影戏</p>
+                                <a href="/a/yishuliupai/2019/0530/30.html">
+                                <img src="/uploads/tu/pic9.jpg" alt="">  
+                                </a>    
+                            </li>
+<li class="art-item"> 
+                                <p class="art-title wow bounceInLeft">  陕西皮影</p>
+                                <a href="/a/yishuliupai/2019/0530/31.html">
+                                <img src="/uploads/tu/pic8.jpg" alt="">  
+                                </a>    
+                            </li>
+<li class="art-item"> 
+                                <p class="art-title wow bounceInLeft">山西皮影</p>
+                                <a href="/a/yishuliupai/2019/0530/32.html">
+                                <img src="/uploads/tu/pic7.jpg" alt="">  
+                                </a>    
+                            </li>
+<li class="art-item"> 
+                                <p class="art-title wow bounceInLeft">  浙江皮影</p>
+                                <a href="/a/yishuliupai/2019/0530/33.html">
+                                <img src="/uploads/tu/pic6.jpg" alt="">  
+                                </a>    
+                            </li>
+<li class="art-item"> 
+                                <p class="art-title wow bounceInLeft">四川皮影</p>
+                                <a href="/a/yishuliupai/2019/0530/34.html">
+                                <img src="/uploads/tu/pic5.jpg" alt="">  
+                                </a>    
+                            </li>
+   
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <a href="/a/yishuliupai/index.html" class="more1">更多</a>  
+                    </div>
+                </div>
+                <div class="container panel new-warp" id="bg">
+                    <div class="panel-heading">
+                                <h3>最新资讯</h3>        
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-lg-6 wow slideInLeft newitem">
+                            <li class="news"><a href="/a/zuixinzixun/2019/0524/1.html"><img src="/uploads/allimg/190524/1-1Z5242132140-L.jpg" alt="" class="img-responsive img-rounded"></a></li>
+<li class="news"><a href="/a/zuixinzixun/2019/0525/29.html"><img src="/uploads/allimg/190525/1641043I4-0-lp.jpg" alt="" class="img-responsive img-rounded"></a></li>
+<li class="news"><a href="/a/zuixinzixun/2019/0525/28.html"><img src="/uploads/allimg/190525/163U53292-0-lp.jpg" alt="" class="img-responsive img-rounded"></a></li>
+<li class="news"><a href="/a/zuixinzixun/2019/0525/27.html"><img src="/uploads/allimg/190525/163A635H-0-lp.jpg" alt="" class="img-responsive img-rounded"></a></li>
+<li class="news"><a href="/a/zuixinzixun/2019/0525/26.html"><img src="/uploads/allimg/190525/16352S502-0-lp.jpg" alt="" class="img-responsive img-rounded"></a></li>
+<li class="news"><a href="/a/zuixinzixun/2019/0525/25.html"><img src="/uploads/allimg/190525/16341313D-0-lp.jpg" alt="" class="img-responsive img-rounded"></a></li>
+<li class="news"><a href="/a/zuixinzixun/2019/0525/24.html"><img src="/uploads/allimg/190525/16330545a-0-lp.png" alt="" class="img-responsive img-rounded"></a></li>
+<li class="news"><a href="/a/zuixinzixun/2019/0525/23.html"><img src="/uploads/allimg/190525/1630432O6-0-lp.jpg" alt="" class="img-responsive img-rounded"></a></li>
+<li class="news"><a href="/a/zuixinzixun/2019/0525/22.html"><img src="/uploads/allimg/190525/162ZRb2-0-lp.jpg" alt="" class="img-responsive img-rounded"></a></li>
+
+                        </div>  
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled" id="new">
+                              <!--最新文档-->
+                              <li><a href="/a/zuixinzixun/2019/0524/1.html" >当阳皮影戏：一块白布一盏灯，吹吹打打</a>
+                              <span id="newlist">2023-06-04</span>
+                              </li>
+<li><a href="/a/zuixinzixun/2019/0525/29.html" >光影中演绎皮影故事</a>
+                              <span id="newlist">2023-05-25</span>
+                              </li>
+<li><a href="/a/zuixinzixun/2019/0525/28.html" >老北京皮影戏，在康熙年间流行，还设专</a>
+                              <span id="newlist">2023-05-25</span>
+                              </li>
+<li><a href="/a/zuixinzixun/2019/0525/27.html" >传承非遗泰山皮影 文创产品备受青睐</a>
+                              <span id="newlist">2023-05-25</span>
+                              </li>
+<li><a href="/a/zuixinzixun/2019/0525/26.html" >皮影艺术广受外国人喜爱，他传承精髓，</a>
+                              <span id="newlist">2023-05-25</span>
+                              </li>
+<li><a href="/a/zuixinzixun/2019/0525/25.html" >感受古老艺术，皮影表演+皮影体验，让娃</a>
+                              <span id="newlist">2023-05-25</span>
+                              </li>
+<li><a href="/a/zuixinzixun/2019/0525/24.html" >快来长宁看皮影听老腔</a>
+                              <span id="newlist">2023-05-25</span>
+                              </li>
+<li><a href="/a/zuixinzixun/2019/0525/23.html" >10省非遗皮影齐聚华州 皮影版《清明上河</a>
+                              <span id="newlist">2023-05-25</span>
+                              </li>
+<li><a href="/a/zuixinzixun/2019/0525/22.html" >敲“板凳” 吼老腔 渭南华州皮影进京展</a>
+                              <span id="newlist">2023-05-25</span>
+                              </li>
+
+                              <!--//最新文档-->
+                            </ul>
+                        </div>  
+                    </div>
+                    <div class="row">
+                        <a href="/a/zuixinzixun/index.html" class="more1">更多</a> 
+                    </div>
+                </div>
+                <div class="left-warp hidden-md hidden-sm hidden-xs">
+                    <ul class="list-unstyled" id="scroll">
+                        <li>
+                            <img src="/templets/default/images/l-intro.png" alt="">
+                            <div class="txt1">
+                                    皮影简介
+                            </div>
+                        </li>
+                        <li>
+                            <img src="/templets/default/images/l-make2.png" alt="">
+                                <div class="txt1">
+                                        皮影制作
+                                </div>
+                        </li>
+                        <li>
+                            <img src="/templets/default/images/art.png" alt="">
+                                <div class="txt1">
+                                        艺术流派
+                                </div>
+                        </li>
+                        <li>    
+                            <img src="/templets/default/images/l-new.png" alt="">
+                                <div class="txt1">
+                                        最新资讯
+                                </div>
+                        </li>
+                        <li class="backToTop">
+                                <i class="glyphicon glyphicon-chevron-up"></i>
+                                 <div class="txt1">
+                                     返回顶部   
+                                 </div>
+                               
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+    <script>
+            function CheckLogin(){
+              var taget_obj = document.getElementById('_userlogin');
+              myajax = new DedeAjax(taget_obj,false,false,'','','');
+              myajax.SendGet2("/member/ajax_loginsta.php");
+              DedeXHTTP = null;
+            }
+        </script>
+</body>
+</html>

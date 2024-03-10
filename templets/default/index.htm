@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{dede:global.cfg_webname/}</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+    <script language="javascript" type="text/javascript">
+        <!--
+
+            function CheckLogin(){
+              var taget_obj = document.getElementById('_userlogin');
+              myajax = new DedeAjax(taget_obj,false,false,'','','');
+              myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta.php");
+              DedeXHTTP = null;
+            }
+        -->
+        </script>
+        
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    {dede:include filename='head.htm'/}        
+    <!-- nav-end -->
+  
+    <!-- mian-s -->
+    <div id="main-wrap">      
+        <div class="container-fluid right-side" >
+                <div class="container">
+                        <form class="text-center search-warp" action="/plus/search.php">
+                                <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="皮影戏" id="search-text" value="{dede:global name='keyword' function='RemoveXSS(@me)'/}">
+                                </div>
+                                <button type="submit" class="search"><i class="glyphicon glyphicon-search"></i></button>
+                        </form>
+                </div>
+                <div class="container panel intro-wrap"  id="bg">
+                        <div class="panel-heading">
+                                <h3 class="intro-title">皮影简介</h3>
+                        </div>
+                        <div class="panel-body">
+                          <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow bounceInLeft intro-txt">
+                                     <h4 class="intro-titles">皮影戏</h4>
+                                      皮影戏(Shadow Puppets)，又称“影子戏”或“灯影戏”，是一种以兽皮或纸板做成的人物剪影以表演故事的民间戏剧。表演时，艺人们在白色幕布后面，一边操纵影人，一边用当地流行的曲调讲述故事，同时配以打击乐器和弦乐，有浓厚的乡土气息。其流行范围极为广泛，并因各地所演的声腔不同而形成多种多样的皮影戏,皮影戏始于西汉，兴于唐朝，盛于清代，元代时期传至西亚和欧洲，可谓历史悠久……  <a href="/a/piyingjianjie/index.html">【详细内容】 </a>       
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+                                <img src="{dede:global.cfg_templets_skin/}/images/tu/index.jpg" alt="" class="img-responsive img-rounded">
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 wow bounceInRight intro-txt">  
+
+                                     <h4 class="intro-titles">历史起源</h4>
+                                     皮影戏从有文字记载，已经有2000多年的历史，汉武帝爱妃李夫人染疾故去了，武帝的思念心切神情恍惚，终日不理朝政。大臣李少翁一日出门，路遇孩童手拿布娃娃玩耍，影子倒映于地栩栩如生。李少翁心中一动，用棉帛裁成李夫人影像，涂上色彩，并在手脚处装上木杆。入夜围方帷，张灯烛，恭请皇帝端坐帐中观看。武帝看罢龙颜大悦，就此爱不释手。…… <a href="/a/piyingjianjie/index.html">【详细内容】 </a>      
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <a href="/a/piyingjianjie/index.html" class="more1">更多</a> 
+                        </div>
+                </div>
+                <div class="container panel make-wrap"  id="bg">
+                    <div class="panel-heading">
+                            <h3 class="intro-title">皮影制作</h3>         
+                    </div>
+                    <div class="row makeall panel-body">
+                        {dede:arclist row='8' typeid='2' }
+                        <div class="col-lg-3 col-md-6 col-sm-6 wow bounceIn" >
+                            <a href="[field:arcurl/]" id="make-list">
+                                <img src="[field:picname/]" alt="" class="img-responsive">
+                                <p class="text-center lead">[field:title/]</p>
+                            </a>
+                        </div>
+                        {/dede:arclist}  
+                    </div>
+                    
+                    <div class="row">
+                        <a href="/a/piyingzhizuo/index.html" class="more1">更多</a> 
+                    </div>
+                    
+
+                </div>
+                <div class="container panel art-warp" id="bg">
+                    <div class="panel-heading">
+                                <h3 class="intro-title">艺术流派</h3>           
+                    </div>
+                    <div class="row artall panel-body">
+                        <ul class="list-unstyled art">
+                            {dede:arclist row='5' typeid='3' }
+                            <li class="art-item"> 
+                                <p class="art-title wow bounceInLeft">[field:title/]</p>
+                                <a href="[field:arcurl/]">
+                                <img src="[field:picname/]" alt="">  
+                                </a>    
+                            </li>
+                            {/dede:arclist}   
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <a href="/a/yishuliupai/index.html" class="more1">更多</a>  
+                    </div>
+                </div>
+                <div class="container panel new-warp" id="bg">
+                    <div class="panel-heading">
+                                <h3>最新资讯</h3>        
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-lg-6 wow slideInLeft newitem">
+                            {dede:arclist row=9 typeid='1'}
+                            <li class="news"><a href="[field:arcurl/]"><img src="[field:picname/]" alt="" class="img-responsive img-rounded"></a></li>
+                            {/dede:arclist}
+                        </div>  
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled" id="new">
+                              <!--最新文档-->
+                              {dede:arclist row=9 typeid='1' titlelen=50 noflag='h'}
+                              <li><a href="[field:arcurl/]" >[field:title/]</a>
+                              <span id="newlist">20[field:pubdate function="MyDate('y-m-d',@me)"/]</span>
+                              </li>
+                              {/dede:arclist}
+                              <!--//最新文档-->
+                            </ul>
+                        </div>  
+                    </div>
+                    <div class="row">
+                        <a href="/a/zuixinzixun/index.html" class="more1">更多</a> 
+                    </div>
+                </div>
+                <div class="left-warp hidden-md hidden-sm hidden-xs">
+                    <ul class="list-unstyled" id="scroll">
+                        <li>
+                            <img src="{dede:global.cfg_templets_skin/}/images/l-intro.png" alt="">
+                            <div class="txt1">
+                                    皮影简介
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <img src="{dede:global.cfg_templets_skin/}/images/l-make2.png" alt="">
+                                <div class="txt1">
+                                        皮影制作
+                                </div>
+                        </li>
+                        <li>
+                            <img src="{dede:global.cfg_templets_skin/}/images/art.png" alt="">
+                                <div class="txt1">
+                                        艺术流派
+                                </div>
+                        </li>
+                        <li>    
+                            <img src="{dede:global.cfg_templets_skin/}/images/l-new.png" alt="">
+                                <div class="txt1">
+                                        最新资讯
+                                </div>
+                        </li>
+                        <li class="backToTop">
+                                <i class="glyphicon glyphicon-chevron-up"></i>
+                                 <div class="txt1">
+                                     返回顶部   
+                                 </div>
+                               
+                        </li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    {dede:include filename='footer.htm'/}  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+    <script>
+            function CheckLogin(){
+              var taget_obj = document.getElementById('_userlogin');
+              myajax = new DedeAjax(taget_obj,false,false,'','','');
+              myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta.php");
+              DedeXHTTP = null;
+            }
+        </script>
+</body>
+</html>

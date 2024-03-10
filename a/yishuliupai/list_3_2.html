@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+        #list-item{
+            margin-bottom: 15px;
+        }
+        #listImg img{
+            max-width: 100%;
+            height: auto;
+        }
+        h3{
+            width: 162px;
+        }
+        @media (min-width: 1200px){
+        .left-warp{
+            position: fixed;
+            right: 10px;
+            top: auto;
+            bottom: 50px !important;
+           }
+        }
+        .imglist{
+            margin-bottom: 15px;
+            background-color: #fff;
+        }
+        .imglist:hover{
+            box-shadow:  1px 4px 10px 2px #CCC;
+        }
+        .imglist img{
+            width: 100%;
+        }
+        .pagelists{
+            padding-left: 9px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .pagelists li{
+            border: 1px solid #31c193;
+            border-radius: 5px;
+            margin-left: 5px;
+            width: 55px;
+            text-align: center
+        }
+        .thisclass{
+            background-color: #31c193;
+            color: #fff;
+        }
+        .left-warp{
+            position: fixed;
+            right: 10px;
+            top: auto;
+            bottom: 50px !important;
+           }
+        .left-warp li {
+                width: 60px;
+                height: 60px;
+                position: relative;
+                border-radius: 5px;
+                color: #fff;
+                text-align: center;
+                line-height: 60px;
+                z-index: 10;
+                background-color: #008b5f;
+                margin-top: 10px;
+                cursor: pointer;
+                box-shadow: 0px 0px 24px 0px rgba(4, 1, 1, 0.32);
+                cursor: pointer;
+            }
+            #main-wrap {
+            margin-top: 27px;
+            background-color: #e7eff4;
+           }
+          
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+ 
+    <!-- mian-s -->
+    <div class="container-fluid right-side" id="main-wrap">
+         <!-- swiper-s -->
+         <div class="container-fluid" >   
+                <img src="/templets/default/images/tu/bn1.png" alt="" style="width: 100%;height:auto" >
+        </div>  
+        <!-- swiper-end -->
+        <div class="container" >
+            <div class="row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/yishuliupai/'>艺术流派</a> >  </span>
+            </div>  
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="imglist">
+                        <p class="text-center"><a href="/a/yishuliupai/2019/0530/42.html" class="title">河南皮影</a></p>
+                        <a href='/a/yishuliupai/2019/0530/42.html' class='preview'><img src='/uploads/tu/pic10.jpg' /></a> 
+                       </div>
+                </div><div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="imglist">
+                        <p class="text-center"><a href="/a/yishuliupai/2019/0530/43.html" class="title">广东皮影</a></p>
+                        <a href='/a/yishuliupai/2019/0530/43.html' class='preview'><img src='/uploads/tu/pic1.jpg' /></a> 
+                       </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                    <ul class="pagelists">
+                            <li><a href='list_3_1.html'>首页</a></li>
+<li><a href='list_3_1.html'>上一页</a></li>
+<li><a href='list_3_1.html'>1</a></li>
+<li class="thisclass">2</li>
+<li>末页</li>
+
+                    </ul>
+            </div>
+         
+            <div class="left-warp top" style="bottom:50px">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

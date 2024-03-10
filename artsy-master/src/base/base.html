@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入头部css导航样式 -->
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="base.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>艺影ARTSY-图片分享社区</title>
+    <link rel="shortcut icon" href="../../img/ARTSY.ico" />
+    <!-- 引入vue2 -->
+    <script src="../../js/vue.js"></script>
+    <!-- 引入elementUI -->
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="page-header">
+            <input id="menu-toggle-input" type="checkbox" />
+            <label class="menu-toggle" for="menu-toggle-input">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <div class="page-tagline">
+                <a href="../../home.html"><img src="../../img/logo1.png" style="width: 130px;height: 40px;margin-top: -11px;" alt=""></a>
+            </div>
+
+            <nav class="menu">
+                <ol>
+                    <li class="menu-item "><a href="../base/base.html" style="background-image: url(../../img/base/baseHeader.jpg);background-size: cover;">基地</a>
+                    </li>
+                    <li class="menu-item"><a href="../school/school.html" style="background-image: url(../../img/school.jpg);background-size: cover;background-position:center;">校园</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="../hot/hot.html" style="background-image: url(../../img/hot/30.jpg);background-size: cover;background-position:center;">热门</a>
+                        <ol class="sub-menu">
+                            <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/hot/43.jpg);background-size: cover;background-position:center;">年轮</a>
+                            </li>
+                            <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/hot/29.jfif);background-size: cover;background-position:center;">壮青</a>
+                            </li>
+                            <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/hot/35.jpg);background-size: cover;background-position:center;">童稚</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="menu-item">
+                        <a href="../community/community.html" style="background-image: url(../../img/QZ2.jpg);background-size: cover;background-position:center;">圈子</a>
+                        <ol class="sub-menu">
+                            <li class="menu-item">
+                                <a href="../scenery/scenery.html" style="background-image: url(../../img/hot/5.jpg);background-size: cover;background-position:center;">动画</a>
+                            </li>
+                            <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/hot/41.jpg);background-size: cover;background-position:center;">动物</a>
+                            </li>
+                            <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/hot/17.jpg);background-size: cover;background-position:center;">游戏</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="menu-item"><a href="../scenery/scenery.html" style="background-image: url(../../img/image.jpg);background-size: cover;">风景</a></li>
+                </ol>
+            </nav>
+        </div>
+        <section class="section1">
+            <!-- 旋转图 -->
+            <div class="wave">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="contentTitle">
+                <h1>ARTSY BACE</h1>
+            </div>
+        </section>
+    </header>
+    <div class="bace-text">
+        <div class="bace-H">Do you want to see more?
+        </div>
+        <div class="bace-P">
+            <span class="bacePE">
+                Artsy has just started construction, the road is still a long way off, we will not stop here, we have
+                collected a number of boutique picture sites to meet the needs of enthusiasts.
+            </span>
+
+            <span class="bacePC">ARTSY刚开始建设，要走的路还很远，我们不会止步于此，我们收集了一些精品的图片网站，满足爱好者的需求。</span>
+        </div>
+
+    </div>
+    <!-- id为app：挂载vue -->
+    <div id="app">
+        <div class="shell">
+            <div class="text">
+                <h1>1x.com</h1>
+            </div>
+
+            <div class="image" style="background-image: url('../../img/base/1x.png');"></div>
+            <div class="heading headingTop">
+                <el-tooltip content="点击跳转" placement="bottom" effect="light">
+                    <h1>
+                        <a href="https://1x.com/" target="_blank" class="shellA">精心策划的画廊</a>
+                    </h1>
+                </el-tooltip>
+
+            </div>
+
+
+            <div class="text">
+                <h1>POCO摄影</h1>
+            </div>
+
+            <div class="image" style="background-image: url('../../img/base/poco.png');"></div>
+            <div class="heading">
+                <el-tooltip content="点击跳转" placement="bottom" effect="light">
+                    <h1>
+                        <a href="https://www.poco.cn/" target="_blank" class="shellA">摄影文化交流平台</a>
+                    </h1>
+                </el-tooltip>
+
+            </div>
+            <div class="text">
+                <h1 style="color: #333;">LFI</h1>
+            </div>
+
+            <div class="image" style="background-image: url('../../img/base/LFI.png');"></div>
+            <div class="heading">
+                <el-tooltip content="点击跳转" placement="bottom" effect="light">
+                    <h1>
+                        <a href="https://lfi-online.de/ceemes/en/" target="_blank" class="shellA">徕卡摄影</a>
+                    </h1>
+                </el-tooltip>
+
+
+            </div>
+            <div class="text">
+                <h1>500px</h1>
+            </div>
+
+            <div class="image" style="background-image: url('../../img/base/500px.png');"></div>
+            <div class="heading">
+                <el-tooltip content="点击跳转" placement="bottom" effect="light">
+                    <h1>
+                        <a href="https://500px.com.cn/" target="_blank" class="shellA">摄影社区</a>
+                    </h1>
+                </el-tooltip>
+
+
+            </div>
+            <div class="text">
+                <h1>影像中国</h1>
+            </div>
+
+            <div class="image" style="background-image: url('../../img/base/cpanet.png');"></div>
+            <div class="heading headingBottom">
+                <el-tooltip content="点击跳转" placement="bottom" effect="light">
+                    <h1>
+                        <a href="http://www.cpanet.cn/" target="_blank" class="shellA">中国摄影家协会</a>
+                    </h1>
+                </el-tooltip>
+
+
+
+            </div>
+
+        </div>
+
+        <div id="wrap">
+            <h1 class="bace-H wrapH">
+                <span class="wrapHE">Recommend it to us</span>
+                <span class="wrapHC">向我们推荐</span>
+            </h1>
+            <br><br>
+            <div id="form-wrap">
+                <form>
+                    <p>HELLO CUTE,</p>
+                    <el-tooltip content="你推荐它的理由是？" placement="bottom" effect="light">
+                        <label for="email">Your Reasons:</label>
+                    </el-tooltip>
+
+                    <textarea name="message" id="message" value="Your Message" v-model="Reasons"></textarea>
+
+                    <el-tooltip content="网页地址" placement="bottom" effect="light">
+                        <label for="url">Url:</label>
+                    </el-tooltip>
+                    <input type="text" name="url" value="" v-model="Url" id="url" />
+
+                    <!-- <input type="submit" name="submit" @click="open2" value="NOW, I SEND!" /> -->
+                </form>
+                <button class="formButton" @click="open2">NOW, I SEND!</button>
+            </div>
+        </div>
+    </div>
+
+    <footer style="height: 400px;">
+        <iframe width="100%" height="100%" src="../footer/footer.html" frameborder="0" scrolling="no"></iframe>
+    </footer>
+    <!-- 鼠标跟随小羊容器 -->
+    <div class="SBGSimg"></div>
+    <script>
+        // 创建vue实例
+        new Vue({
+            // 挂载到id为app上
+            el: '#app',
+            data: function() {
+                return {
+                    Reasons: '',
+                    Url: ''
+                }
+            },
+            // vue生命周期函数,当vue实例被创建时
+            created() {
+                this.$notify({
+                    title: '欢迎来到基地！',
+                    duration: 2000,
+                });
+            },
+            // vue方法
+            methods: {
+                open2() {
+                    if (this.Reasons === '' || this.Url === '') {
+                        this.$message({
+                            message: '信息不能为空！',
+                            type: 'warning'
+                        });
+                    } else {
+                        this.$message({
+                            message: '发送成功!',
+                            type: 'success'
+                        });
+                        this.Reasons = ''
+                        this.Url = ''
+                    }
+
+                },
+            }
+        })
+
+        let SBGSimg = document.querySelector('.SBGSimg')
+            // 定义小图片的旋转角度
+        let deg = 0
+            // 定义小图片位于网页左侧的位置
+        let SBGSimgx = 0
+            // 定义小图片位于网页顶部的位置
+        let SBGSimgy = 0
+            // 定义小图片x轴的位置:对应left
+        let SBGSimgl = 0
+            // 定义小图片y轴的位置:对应top
+        let SBGSimgt = 0
+            // 定义小图片翻转的角度
+        let y = 0
+            // 定义一个计数器
+        let index = 0
+
+        window.addEventListener('mousemove', function(xyz) {
+                // console.log("xyz.x", xyz.x);
+                // console.log("SBGSimg.offsetLeft", SBGSimg.offsetLeft);
+                // 获取网页左侧距离的图片位置
+                // xyz.x为鼠标距离屏幕左侧的距离,SBGSimg.offsetLeft为图片SBGSimg左侧距离屏幕左侧的距离SBGSimg.clientWidth为图片SBGSimg的宽度
+                // console.log(SBGSimgx);
+                SBGSimgx = xyz.x - SBGSimg.offsetLeft - SBGSimg.clientWidth / 2
+                    // 获取网页顶部距离图片的位置
+                SBGSimgy = xyz.y - SBGSimg.offsetTop - SBGSimg.clientHeight / 2
+                    // 套入公式，定义图片的旋转角度
+                deg = 360 * Math.atan(SBGSimgy / SBGSimgx) / (2 * Math.PI)
+                    // 每当鼠标移动的时候重置index
+                index = 0
+                    // 定义当前鼠标的位置
+                let x = event.clientX
+                    // 当鼠标的x轴大于图片的时候,小羊的头就要对着鼠标，所以需要将图片翻转过来
+                    // 否则就不用翻转
+                if (SBGSimg.offsetLeft < x) {
+                    y = -180
+                } else {
+                    y = 0
+                }
+            })
+            // setInterval() 方法会不停地调用函数:周期函数
+
+        setInterval(() => {
+            // 设置小图片的旋转和翻转
+            SBGSimg.style.transform = "rotateZ(" + deg + "deg) rotateY(" + y + "deg)"
+            index++
+            // console.log(index);
+            // 在这里设置小图片的位置和速度，并判断小图片到达鼠标位置时停止移动
+            if (index < 50) {
+                SBGSimgl += SBGSimgx / 50
+                SBGSimgt += SBGSimgy / 50
+            }
+
+            SBGSimg.style.left = SBGSimgl + "px"
+            SBGSimg.style.top = SBGSimgt + "px"
+
+
+        }, 10)
+    </script>
+</body>
+
+</html>

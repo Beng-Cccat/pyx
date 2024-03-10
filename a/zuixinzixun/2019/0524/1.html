@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/zuixinzixun/'>最新资讯</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">当阳皮影戏：一块白布一盏灯，吹吹打打唱皮影</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-06-04 00:06
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <h1 id="bd_article_title" style="margin: 0px 0px 10px; word-wrap: break-word; font-size: 28px; line-height: 40px; letter-spacing: 1px; font-family: &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif;">
+	&nbsp;</h1>
+<article class="content" style="font-size: 16px; line-height: 34px; letter-spacing: 0.5px; color: rgb(68, 68, 68); position: relative; margin: 10px 0px 3px; font-family: &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif;">
+	<div deep="6">
+		<div>
+			<img class="loaded" data-="" data-was-processed="true" src="/uploads/allimg/190524/2132234U2-0.jpg" style="border: none; display: block; vertical-align: middle; margin: 30px auto; max-width: 100%; width: 710px; height: 383.4px;" /></div>
+		<p style="margin: 0px 0px 16px;">
+			&ldquo;一块白布一盏灯，吹吹打打唱皮影&rdquo;。这一古朴优美的民间艺术，至今仍活跃在许多人的记忆中。在当阳西部的王店镇，仍然有一班挚爱皮影艺术的老艺人。这是我市目前唯一能够正常演出的皮影戏班，最年轻的成员已经50多岁了。</p>
+		<div>
+			<img class="loaded" data-="" data-was-processed="true" src="/uploads/allimg/190524/2132231K4-1.jpg" style="border: none; display: block; vertical-align: middle; margin: 30px auto; max-width: 100%; width: 450px; height: 269.1px;" /></div>
+		<p style="margin: 0px 0px 16px;">
+			当阳皮影在宜昌境内称为&ldquo;北路皮影&rdquo;，与宜昌、远安、兴山、保康等地的皮影戏为同一流派。其唱腔高亢明亮，以&ldquo;傩愿腔&rdquo;、&ldquo;走马腔&rdquo;为主要腔调。&ldquo;坐傩愿&rdquo;、&ldquo;行走马&rdquo;是艺人遵循的行腔规律。唱本分文场戏和武声戏，演唱风格各不相同。</p>
+		<div>
+			<img class="loaded" data-="" data-was-processed="true" src="/uploads/allimg/190524/2132233209-2.jpg" style="border: none; display: block; vertical-align: middle; margin: 30px auto; max-width: 100%; width: 710px; height: 594.625px;" /></div>
+		<p style="margin: 0px 0px 16px;">
+			当阳皮影一般由5-6人组成班子，台面一人是该班子的核心，负责提皮影、主唱，后台由乐队组成，乐器为当阳境内流行的打击乐，有堂鼓、大锣、钹、马锣、梆子、唢呐等乐器组成。乐队成员还兼对白和帮腔。皮影戏的演唱内容大都以唱历史故事为主，主要靠师傅口传心授。长篇故事一般只记故事梗概，艺人可以临场发挥编成朗朗上口韵文演唱，情节丝丝入扣，故事生动完美，有的戏班可以连续演唱十天半月。</p>
+		<div>
+			<img class="loaded" data-="" data-was-processed="true" src="/uploads/allimg/190524/2132236328-3.jpg" style="border: none; display: block; vertical-align: middle; margin: 30px auto; max-width: 100%; width: 450px; height: 239.516px;" /></div>
+		<p style="margin: 0px 0px 16px;">
+			据传皮影戏起源于唐代，具体时间无从考证，在当阳境内流传已有300多年历史。主要在乡村流行。农家婚丧嫁娶、添生祝寿、起屋上梁等重大场合，都流行唱皮影戏。旧时皮影戏还被用来祈福消灾，如久旱不雨、发猪瘟牛瘟，也请皮影戏班唱戏，名为&ldquo;还傩愿。&rdquo;上世纪80年代初，当阳有两班皮影戏比较活跃，一班是胡场柏林村，一班是双莲的柏林村，被称为&ldquo;东柏林&rdquo;和&ldquo;西柏林&rdquo;。由于文化部门专业人员参与搜集整理，新编反映农村新人新事新风尚的剧目，深受群众欢迎，两班皮影参加宜昌地区民间文艺汇演，双双获奖。</p>
+	</div>
+</article>
+<br />
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>艺影ARTSY-图片分享社区</title>
+    <link rel="shortcut icon" href="../../img/ARTSY.ico" />
+    <link rel="stylesheet" href="login.css">
+    <script src="../../js/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <div class="logo">
+        <a href="../../home.html"><img src="../../img/logo1.png" style="width: 130px;height: 40px;margin-top: -11px;z-index: 99;"></a>
+    </div>
+    <div id='app'>
+
+        <div class="container">
+            <div class="form-warp">
+                <!-- 登录 -->
+                <form class="sign-in-form" action="../community/community.html">
+                    <h2 class="form-title">LOGIN</h2>
+                    <div class="form-input">
+                        <input type="text" required v-model="usename" name="usename" /><label>用户名</label>
+                    </div>
+                    <div class="form-input">
+                        <input type="password" required v-model="password" /><label>密码</label>
+                    </div>
+                    <input class="submit-btn" @click="loginBtn" type="submit" value="立即登录">
+                    <a class="goCommunity" href="../community/community.html">回到圈子</a>
+                </form>
+                <!-- 注册 -->
+                <form class="sign-up-form">
+                    <h2 class="form-title">REGISTERED</h2>
+                    <div class="form-input">
+                        <input type="text" required v-model="usename" /><label>用户名</label>
+                    </div>
+                    <div class="form-input">
+                        <input type="password" required v-model="password" /><label>密码</label>
+                    </div>
+                    <div class="submit-btn" @click="registeredBtn">立即注册</div>
+                    <a class="goCommunity" href="../community/community.html">回到圈子</a>
+                </form>
+            </div>
+            <div class="desc-warp">
+                <div class="desc-warp-item sign-up-desc">
+                    <div class="content">
+                        <button id="sign-up-btn" @click='singUpBtn'>注册</button>
+                    </div>
+                    <img src="./../../img/login/register.svg" alt="">
+                </div>
+                <div class="desc-warp-item sign-in-desc">
+                    <div class="content">
+                        <button id="sign-in-btn">登录</button>
+                    </div>
+                    <img src="./../../img/login/log.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: function() {
+                return {
+                    usename: '',
+                    password: '',
+                }
+            },
+            mounted() {
+                const singUpBtn = document.querySelector('#sign-up-btn')
+                const singInBtn = document.querySelector('#sign-in-btn')
+                const container = document.querySelector('.container')
+                const logo = document.querySelector('.logo')
+                let pc_whidth = document.body.offsetWidth;
+                singUpBtn.addEventListener('click', () => {
+                    container.classList.add('sign-up-mode')
+
+                    if (pc_whidth < 870) {
+                        logo.style.top = '1em'
+                        logo.style.bottom = ''
+                    } else {
+                        logo.style.right = ''
+                        logo.style.left = '1em'
+                    }
+
+                })
+                singInBtn.addEventListener('click', () => {
+                    container.classList.remove('sign-up-mode')
+                    if (pc_whidth < 870) {
+                        logo.style.top = ''
+                        logo.style.bottom = '1em'
+                    } else {
+                        logo.style.right = '1em'
+                        logo.style.left = ''
+                    }
+
+                })
+            },
+            created() {
+
+            },
+
+            methods: {
+                singUpBtn() {
+                    this.usename = '',
+                        this.password = ''
+                },
+                loginBtn() {
+                    if (this.usename !== '' && this.password !== '') {
+                        this.$message({
+                            type: 'success',
+                            message: '登录成功!'
+                        });
+                    }
+
+                },
+                registeredBtn() {
+                    if (this.usename == '' || this.password == '') {
+                        this.$message.error('请正确输入账号密码！');
+                    } else {
+                        this.$confirm(`是否注册账号为: ${this.usename}  密码为: ${this.password} 的账号？`, '提示', {
+                            confirmButtonText: '确定',
+                            cancelButtonText: '取消',
+                            type: 'warning',
+                            center: true
+                        }).then(() => {
+                            this.$message({
+                                type: 'success',
+                                message: '注册成功!'
+                            });
+                            const loginBtn = document.getElementById('sign-in-btn')
+                            loginBtn.click()
+
+                        }).catch(() => {
+                            this.$message({
+                                type: 'info',
+                                message: '已取消注册'
+                            });
+                        });
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

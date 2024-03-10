@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/yishuliupai/'>艺术流派</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">云南皮影</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-05-31 22:04
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <p style="padding: 0px; margin: 0px 0px 20px 4em;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">云南皮影中，楚雄易门皮影由广东传入。而腾冲一带皮影很可能是明代屯边时由北方传入的。现云南现有名可查的皮影艺人共有6位，尚在演出的有三位，分别是云南腾冲刘家寨刘永周、云南楚雄禄丰县文武乡额加寿、云南楚雄易门县铜厂乡王文跃。皮影传入云南后 ，与当地的戏曲进行了融合，形成了自己的风格。</span></p>
+<h3 style="position: absolute; font-size: 1.5em; font-weight: bolder; line-height: 1; padding: 0.6em 0px; margin: 0.5em 0px 0px; width: 1.8em; text-align: center;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">造型</span></h3>
+<p style="padding: 0px; margin: 0px 0px 20px 4em;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">云南皮影以昆明小皮影和腾冲大皮影为代表。现昆明小皮影已不可见；易门、腾冲一带流行的皮影形制较大。影人以牛皮制成，相对较厚，早期不涂颜色。在上个世纪初进行了皮影改革之后皮影制作渐趋精致，刻画以及上色技艺得到发展。特别是云南腾冲刘家寨皮影鞣皮严格，设色精艳，刻画细致。云南皮影虽设双臂，但多为单臂操纵。早期有头帽分离现象，现无。人物造型较为古拙，脸部圆和饱满，身形较为丰硕。</span></p>
+<h3 style="position: absolute; font-size: 1.5em; font-weight: bolder; line-height: 1; padding: 0.6em 0px; margin: 0.5em 0px 0px; width: 1.8em; text-align: center;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">唱腔</span></h3>
+<p style="padding: 0px; margin: 0px 0px 20px 4em;">
+	<span style="font-weight: bolder; color: rgb(33, 23, 4); font-family: &quot;Songti SC&quot;, STZhongsong, STSong, SimSun, 宋体; font-size: 16px;">云南地方戏曲小调非常丰富，皮影与之结合后，也呈现出多样化的面貌。禄丰皮影擅长民间小唱及滇剧等地方唱腔，民间小唱尤有特色，其唱法是四句为一段，后有衬词，连绵往复，节奏欢快。易门皮影擅长将&ldquo;苦蔬调&rdquo;、滇剧唱腔融入其中。尤其以众人帮腔的&ldquo;一窝蜂&rdquo;式的诵唱为代表。易门皮影艺人王文跃擅长评书，也会以影人配合评书进行演出。云南腾冲刘家寨皮影擅长以滇剧腔调、西腔以及花灯戏等唱腔演出。</span></p>
+<div>
+	&nbsp;</div>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

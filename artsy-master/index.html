@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入jQuery -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 网页标题 -->
+    <title>艺影ARTSY-图片分享社区</title>
+    <!-- 浏览器顶栏网页图标 -->
+    <link rel="shortcut icon" href="img/ARTSY.ico" />
+    <style>
+        html,
+        body {
+            min-height: 100%;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+        
+        a {
+            /* 去除下划线 */
+            text-decoration: none;
+        }
+        
+        .main-group {
+            width: 100%;
+            min-height: 100vh;
+            height: 100vh;
+            display: flex;
+        }
+        
+        .logo-group {
+            background: #454545;
+            height: 100%;
+            /* width: 30%; */
+            /* 过渡时间 */
+            transition: 2s;
+            /* 以下为transition属性兼容适配其它浏览器的写法 */
+            -moz-transition: 2s;
+            /* Firefox 4 */
+            -webkit-transition: 2s;
+            /* Safari 和 Chrome */
+            -o-transition: 2s;
+            /* Opera */
+            /* 先默认设置宽度为0 */
+            width: 0;
+        }
+        
+        .logo-group img {
+            /* 全透明 */
+            opacity: 0;
+            transition: 2s;
+            -moz-transition: 2s;
+            /* Firefox 4 */
+            -webkit-transition: 2s;
+            /* Safari 和 Chrome */
+            -o-transition: 2s;
+            /* Opera */
+            width: 90%;
+        }
+        
+        .desc-group {
+            /* 相对定位 */
+            position: relative;
+            width: 70%;
+            height: 100%;
+            background: #fff;
+        }
+        
+        .desc-group .color-blod {
+            /* 绝对定位 */
+            position: absolute;
+            width: 0;
+            height: 100vh;
+            background: #747373;
+            /* css3动画属性，属性值依次为：动画名称（定义的关键帧），动画完成时间，动画完成方式，动画结束后进行的操作forwards为动画结束后停留在最后的位置 */
+            animation: to-right 2s cubic-bezier(0.71, 0.04, 0.4, 0.92)forwards;
+        }
+        /* animation 关键帧 */
+        /* 0％是开头动画，100％是当动画完成。 */
+        
+        @keyframes to-right {
+            0% {
+                left: 0;
+                width: 0;
+            }
+            50% {
+                left: 0;
+                width: 100%;
+            }
+            100% {
+                left: 100%;
+                width: 0;
+            }
+        }
+        
+        .desc-group .box-group {
+            position: absolute;
+            height: 40%;
+            /* vw单位为当前窗口宽度为基准，100vw即为100%窗口宽度，vh同理即以窗口高度为基准 */
+            left: 28vw;
+            top: 25vh;
+            opacity: 0;
+            transition: 2s;
+            -moz-transition: 2s;
+            /* Firefox 4 */
+            -webkit-transition: 2s;
+            /* Safari 和 Chrome */
+            -o-transition: 2s;
+            /* Opera */
+        }
+        
+        .desc-group .box-group h2 {
+            font-size: 6rem;
+            margin-bottom: 3rem;
+            color: #454545;
+            font-weight: 300;
+        }
+        
+        .desc-group .box-group p {
+            margin-left: 0.5rem;
+            ;
+            font-size: 1.5rem;
+            padding-right: 20rem;
+            color: #747373;
+            font-weight: 300;
+        }
+        
+        .desc-group .box-group a {
+            /* 转换为行内块元素 */
+            display: inline-block;
+            margin-top: 4rem;
+            font-size: 1rem;
+            color: #747373;
+            border: 1px solid #747373;
+            border-radius: 6px;
+            padding: 5px 30px;
+        }
+        
+        .main-group .pic {
+            position: absolute;
+            z-index: 1;
+            left: 15vw;
+            top: 20vh;
+            height: 60vh;
+            width: 40vw;
+            width: 0;
+            background: url('./img/image.jpg') no-repeat;
+            /* 设置背景图片跟随盒子大小 */
+            background-size: cover;
+            box-shadow: 7px 29px 49px 0px rgba(0, 0, 0, .3);
+            transition: 1s;
+            -moz-transition: 1s;
+            /* Firefox 4 */
+            -webkit-transition: 1s;
+            /* Safari 和 Chrome */
+            -o-transition: 1s;
+            /* Opera */
+        }
+        /* 媒体查询，当屏幕宽度小于850px时 */
+        
+        @media screen and (max-width:850px) {
+            /* 设置为块级元素 */
+            .main-group {
+                display: block;
+            }
+            .logo-group {
+                /* width: 100% !important; */
+                height: auto;
+                text-align: center;
+            }
+            .logo-group img {
+                margin: 1em auto;
+                width: 100%;
+            }
+            .desc-group {
+                width: 100%;
+                height: auto;
+            }
+            .main-group .pic {
+                /* display: none; */
+                position: relative;
+                left: 0;
+                top: 0;
+                /* width: 100% !important; */
+                height: 30vh;
+            }
+            .desc-group .box-group {
+                /* unset是关键字initial和inherit的组合。 */
+                /* 如果该属性是默认继承属性，该值等同于inherit
+                如果该属性是非继承属性，该值等同于initial
+                换句话说这个unset关键字会优先用inherit的样式，
+                其次会应该用initial的样式。 */
+                /* initial(默认)关键字 inherit是继承父类的属性，一般用于字体、颜色、背景等 */
+                /*  initial(默认)关键字简单的来说就是初始化到该属性浏览器默认定义的值。 */
+                position: unset;
+                padding: 1em;
+                left: 0;
+                top: 0;
+            }
+            .desc-group .box-group p {
+                margin: 0;
+                padding: 0;
+            }
+            .desc-group .box-group a {
+                box-sizing: border-box;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="main-group">
+        <div class="logo-group">
+            <img class="logo-group-img" src="img/logo2.png" alt="">
+        </div>
+        <div class="pic"></div>
+        <div class="desc-group">
+            <div class="login-color-blod"></div>
+            <div class="box-group">
+                <h2>艺影·ARTSY</h2>
+                <p>
+                    艺影ARTSY是以皮影爱好者为核心的图片分享社区，汇聚海量精品影像，致力打造国内极具影响力的皮影文化交流平台。让艺术真正走进寻常百姓家。让艺术品走进千家万户，这是艺品万家的发展方向与目标，也是我们的核心理念。
+                </p>
+                <a href="home.html" id="home-a">点击进入</a>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        // jQuery
+        // 声明Action函数
+        class Action {
+            // 定义时间函数 setTimeout计时器
+            sleep(time) {
+                    return new Promise((resolve) => setTimeout(resolve, time * 1000));
+                }
+                // 定义页面显现的函数
+            initFun() {
+                let that = this;
+                (async function() {
+                    // 获取屏幕宽度
+                    let pc_whidth = document.body.offsetWidth;
+                    let max_width = 850;
+                    // console.log(pc_whidth);
+                    // 如果pc_whidth > max_width，logoGroup的宽度为30%，否者为100%
+                    that.logoGroup.css('width', (pc_whidth > max_width ? '30%' : '100%'));
+                    // 停顿时间
+                    await that.sleep(1);
+                    // 将logo的透明度调为1
+                    that.logo.css('opacity', 1);
+                    // 停顿时间
+                    await that.sleep(1);
+                    // 对colorBlod添加class：color-blod
+                    that.colorBlod.addClass('color-blod');
+                    // 停顿时间
+                    await that.sleep(0.2);
+                    // 将boxGroup的透明度调为1
+                    that.boxGroup.css('opacity', 1);
+                    // 停顿时间
+                    await that.sleep(1);
+                    // 如果pc_whidth > max_width，imgGroup的宽度为40vw，否者为100vw
+                    that.imgGroup.css('width', (pc_whidth > max_width ? '40vw' : '100vw'));
+                })();
+
+            }
+            constructor(parameter) {
+                let that = this;
+                // 获取html元素
+                this.logoGroup = $('.logo-group');
+                this.logo = this.logoGroup.find('img');
+                this.colorBlod = $('.login-color-blod');
+                this.boxGroup = $('.box-group');
+                this.imgGroup = $('.main-group .pic');
+                // async await 用于同步函数 当该函数执行完才会执行下边的代码
+                (async function() {
+                    // 调用时间函数，计时器500ms
+                    await that.sleep(0.5);
+                    that.initFun();
+                })();
+                $(window).resize(function() {
+                    //当浏览器大小变化时
+                    that.initFun();
+                });
+            }
+        }
+
+        // 调用Action函数
+        new Action({});
+    </script>
+</body>
+
+</html>

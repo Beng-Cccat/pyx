@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/zuixinzixun/'>最新资讯</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">千年中国皮影 今日世界瞩目</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-05-25 16:15
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <p align="center" style="margin: 32px 0px 0px; padding: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 18px; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; text-indent: 2em; color: rgb(64, 64, 64); text-align: center;">
+	<img alt="千年中国皮影 今日世界瞩目" id="2143779" src="/uploads/allimg/190525/1616144421-0.jpg" style="vertical-align: top; border: 0px;" /></p>
+<p align="center" style="margin: 32px 0px 0px; padding: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 18px; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; text-indent: 2em; color: rgb(64, 64, 64); text-align: center;">
+	老艺人指点北京少年亲身体验皮影戏表演。摄影/谌强</p>
+<p style="margin: 32px 0px 0px; padding: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 18px; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; text-indent: 2em; color: rgb(64, 64, 64); text-align: justify;">
+	　　联合国教科文组织日前宣布，正在印度尼西亚旅游胜地巴厘岛举行的保护非物质文化遗产政府间委员会第六届会议决定，将具有一千多年悠久历史的中国皮影戏列入《人类非物质文化遗产代表作名录》。此次会议之前，全世界共有213项代表作名录项目、16项急需保护名录项目和3项优秀实践名册项目。中国皮影戏的入选《人类非物质文化遗产代表作名录》使中国在其代表作名录项目上的数量增加到29个。</p>
+<p style="margin: 32px 0px 0px; padding: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 18px; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; text-indent: 2em; color: rgb(64, 64, 64); text-align: justify;">
+	　　联合国教科文组织发布的新闻稿说，中国皮影戏是一种以皮制或纸制的彩色影偶形象、伴随着音乐和唱腔进行表演的戏剧形式。皮影艺人在幕后用木杆操控影偶，通过光线照射在半透明的幕布上创造出动态的形象。皮影艺人有许多绝技，如即兴演唱，假声扮演，一个人同时操纵数个影偶，还能演奏多种不同的乐器。相关的皮影技艺或由家庭或戏班传承，或由师徒传承。中国皮影戏对传递知识、提升文化价值、为社区尤其是年轻人带来乐趣发挥着重要的作用。</p>
+<p style="margin: 32px 0px 0px; padding: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 18px; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; text-indent: 2em; color: rgb(64, 64, 64); text-align: justify;">
+	　　皮影戏又称&ldquo;灯影戏&rdquo;、&ldquo;影子戏&rdquo;、&ldquo;土影戏&rdquo;，有的地区叫&ldquo;皮猴戏&rdquo;、&ldquo;纸影戏&rdquo;等，由艺人在幕后操作用兽皮或纸板剪制的形象、并借灯光照射将所剪形象在半透明幕布上映出动人形象而表演故事，由艺人一边操控影偶、一边演唱，并配以音乐，是一种我国民间工艺美术与传统戏曲巧妙结合并融入了戏剧、音乐等多种艺术手段的古老戏曲艺术和独特艺术品种。皮影戏形成的时代至今未有很准确的考证，甚至有人认为其历史悠久，在两千年前的西汉时期就已萌芽。据南宋孟元老《东京梦华录》中的记载，皮影戏最晚已在宋代成熟和盛行，至今已有一千多年的历史。</p>
+<p style="margin: 32px 0px 0px; padding: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 18px; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; text-indent: 2em; color: rgb(64, 64, 64); text-align: justify;">
+	　　传统皮影的制作技艺和工序十分精细，制作影偶形象的材料也十分讲究，先将选好的驴皮或牛皮在水中浸泡变软后，经过加工，使其皮面光滑透明，再精心雕刻人物、动物影偶形象并涂上各种色彩，干透后刷上桐油，其四肢、头部可活动，艺人用细木杆对其牵制表演。演出时，用一块白纱布作屏幕，艺人站在屏幕背后，并把皮影贴到屏幕上，灯光从背后往前照射，在观众观看的幕布上映出活动影像，伴之以艺人的演唱和乐器演奏，一台维妙维肖的戏就在观众面前上演了。</p>
+<p style="margin: 32px 0px 0px; padding: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 18px; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; text-indent: 2em; color: rgb(64, 64, 64); text-align: justify;">
+	　　皮影戏在我国流行的范围很广，几乎遍及全国各个省区，并因各地表演时演唱的声腔不同而形成了多种多样的皮影戏。在我国第一批国家级非物质文化遗产名录上，皮影戏作为一个整体项目列入，而其申报的地区和具体的项目便涉及到河北、山西、辽宁、浙江、湖北、广东、陕西、甘肃等地的皮影戏，包括河北的唐山皮影戏、冀南皮影戏，山西的孝义碗碗腔皮影戏，辽宁的复州皮影戏、凌源皮影戏，浙江的海宁皮影戏，湖北的江汉平原皮影戏，广东的陆丰皮影戏，陕西的华县皮影戏、华阴老腔皮影戏、阿宫腔皮影戏、弦板腔皮影戏和甘肃的环县道情皮影戏。</p>
+<p style="margin: 32px 0px 0px; padding: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 18px; line-height: 32px; font-family: &quot;Microsoft Yahei&quot;; text-indent: 2em; color: rgb(64, 64, 64); text-align: justify;">
+	　　此次入选《人类非物质文化遗产代表作名录》，使中国皮影戏的保护和传承又踏上了一个新的台阶，也让世界各国的民众对中国皮影戏有了更多的了解。从从十三世纪起，中国皮影艺术相继传入了波斯、阿拉伯、土耳其、暹罗、缅甸、马来群岛、日本等，十八世纪中叶开始传入欧洲的英国、法国、德国、意大利、俄罗斯等国，法国传教士还将中国皮影戏带回法国，并在巴黎、马赛等地演出，曾轰动一时，被法国民众称为&ldquo;中国灯影&rdquo;。</p>
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

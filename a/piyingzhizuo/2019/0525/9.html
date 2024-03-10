@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/piyingzhizuo/'>皮影制作</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">第五步镂刻</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-06-09 21:45
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <div class="para" label-module="para" style="font-size: 14px; overflow-wrap: break-word; color: rgb(51, 51, 51); margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1; font-family: arial, 宋体, sans-serif;">
+	雕刻刀具一般都有十一、二把，甚至三十把以上。刀具有宽窄不同的斜口刀（尖刀）、平刀、圆刀、三角刀、花口刀等，分工很讲究，艺人需要熟练各种刀具的不同使用方法。根据传统经验，在刻制线状的纹样时要用平刀去扎；在刻制直线条的纹样时用平刀去推；对于传统服饰的袖头袄边的圆型花纹则需要用凿刀去凿；一些曲折多变的花纹图样，则须用斜口刀刻制。艺人雕刻的口诀如下：樱花平刀扎，万字平刀推，袖头袄边凿刀上，花朵尖刀刻。雕刻线有虚实之分，还有暗线、绘线之分<a class="lemma-album layout-right nslog:10000206" href="https://baike.baidu.com/pic/%E7%9A%AE%E5%BD%B1%E6%88%8F/23224/9114306/a9d3fd1f4134970a732757c395cad1c8a6865d81?fr=lemma&amp;ct=cover" nslog-type="10000206" style="font-family: simSun; font-size: 12px; text-indent: 0px; white-space: nowrap; color: rgb(19, 110, 194); text-decoration-line: none; width: 222px; border-bottom: 0px; margin: 10px 0px; position: relative; clear: right; display: inline !important;" target="_blank" title="沔阳皮影戏在央视亮相">沔阳皮影戏在央视亮相<span class="number" style="display: inline; color: gray;">(1张)</span></a></div>
+<div class="para" label-module="para" style="font-size: 14px; overflow-wrap: break-word; color: rgb(51, 51, 51); margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1; font-family: arial, 宋体, sans-serif;">
+	<div class="albumBg">
+		<div class="albumBgFir" style="border-width: 1px; border-style: solid; border-color: rgb(245, 245, 245) rgb(230, 230, 230) rgb(230, 230, 230); border-image: initial; height: 1px; margin: 0px auto; overflow: hidden; width: 214px;">
+			&nbsp;</div>
+		<div class="albumBgSec" style="border-width: 1px; border-style: solid; border-color: rgb(245, 245, 245) rgb(230, 230, 230) rgb(230, 230, 230); border-image: initial; height: 1px; margin: 0px auto; overflow: hidden; width: 208px;">
+			&nbsp;</div>
+	</div>
+	虚线为阴刻，即镂空形体线而成，皮影多为这种线法。实线保留形体轮廓挖去余部，为阳刻，多用于生旦、须丑的白脸，凡白色的物体都用阳刻法。虚实线沿轮廓的两侧刻出断续的镂空线，多用于景片建筑的刻制。暗线则用刀划线而不透皮，多在活动关节处。绘线是以笔代之，以表现细致的物体。刻制皮影有口诀相传，程序如下：刻人面&mdash;&mdash;先刻头帽后刻脸，眼眉刻完再刻鼻子尖。刻衣饰花纹&mdash;&mdash;卍字先把四方画，四边咬茬转着扎。雪花先竖画，然后左右再打叉。六棂丢出齿，挑成雪花花。刻盔甲&mdash;&mdash;黄靠甲，先把眼眼打，拾岔岔，人字三角扎。刻建筑装饰&mdash;&mdash;空心桃儿落落梅，雪里竹梅六角龟，一满都在水字格。</div>
+<div>
+	&nbsp;</div>
+<img _height="278" _width="480" data-="" src="/uploads/allimg/190604/0Z6046336-0.jpg" style="border: 0px; color: rgb(51, 51, 51); font-family: arial, &quot;Microsoft YaHei&quot;, 宋体, sans-serif, tahoma;" /><br />
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

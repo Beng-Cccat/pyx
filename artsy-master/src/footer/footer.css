@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    width: 90%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.content-L {
+    width: 30rem;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content-Llogo {
+    width: 100px;
+}
+
+.content-Ltext {
+    padding: 10px 0 5px;
+    color: #bbb;
+    line-height: 1.3rem;
+    letter-spacing: .6px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #333;
+}
+
+.content-Lmember {
+    line-height: 30px;
+    padding-top: 5px;
+    color: #999;
+}
+
+.Lmember-T {
+    font-size: 1.15rem;
+    color: #333;
+}
+
+.content-r {
+    width: 30rem;
+    height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.content-r img {
+    width: 100%;
+}
+
+@media (max-width: 1100px) {
+    .Width {
+        width: 25rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .Width {
+        width: 22rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .content-Ltext {
+        font-size: 0.7rem;
+    }
+    .Lmember-T {
+        font-size: 1.1rem;
+    }
+    .content-Lmember {
+        font-size: 0.8rem;
+    }
+}

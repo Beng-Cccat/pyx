@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>皮影戏</title>
+    <link rel="stylesheet" href="/templets/default/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="/templets/default/lib/swiper/css/">
+    <link rel="stylesheet" href="/templets/default/lib/WOW-master/css/libs/animate.css">
+    <link rel="stylesheet" href="/templets/default/css/commen.css">
+    <link rel="stylesheet" href="/templets/default/css/index.css">
+    <style>
+    
+        @media (min-width: 1200px){
+            .left-warp{
+                position: fixed;
+                right: 10px;
+                top: auto;
+                bottom: 50px !important;
+             }
+            }
+    </style>
+</head>
+<body>  
+   
+    <!-- nav--s -->
+    
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="/templets/default/images/logo.jpg" alt="" >
+        </a>
+        <!-- <span style="color: #a5bcc2">皮影戏</span> -->
+        <i class="glyphicon glyphicon-menu-hamburger" id="logo"></i>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <div class="navbar-right login">
+         <a href="/member/index_do.php?fmdo=user&dopost=regnew" > <img src="/templets/default/images/register.png" alt="" style="vertical-align: -7px;"><span>注册</span></a>
+        
+         <i class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal" ></i>
+         <span class="denglu">登陆</span>
+       </div>
+
+      
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">登陆页面</h4>
+        </div>
+        <div class="modal-body" id="_userlogin">
+            <form action="/member/index_do.php" method="POST" id="login">
+                <input type="hidden" name="fmdo" value="login" />
+                <input type="hidden" name="dopost" value="login" />
+                <input type="hidden" name="keeptime" value="604800" />
+                <div class="form-group">
+                  <label for="exampleInputEmail1">用户名:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="userid">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">密码:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="pwd">
+                </div>
+                <button type="submit" class="btn btn-default">登陆</button>
+            </form>
+              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">CheckLogin();</script>
+<div class="latestlogin"> <strong>最近登陆的会员</strong>
+  <ul class="e7">
+   
+  </ul>
+ </div>
+ <!-- /latestlogin -->
+<div class="left-side">
+  <ul class="left-nav">
+       <li class="left-item"><i class="glyphicon glyphicon-home"></i><a href="/"  class="subline">首页</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingjianjie/index.html">皮影简介</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/piyingzhizuo/index.html">皮影制作</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/yishuliupai/index.html">艺术流派</a></li>
+       <li class="left-item"><i class="glyphicon glyphicon-tags"></i><a href="/a/zuixinzixun/index.html">最新资讯</a></li>
+  </ul>
+</div>
+        
+    <!-- nav-end -->
+    <!-- swiper-s -->
+    <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#">
+                        <img src="/templets/default/images/banner.jpg" alt="">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+                <div class="swiper-slide">
+                        <a href="#">
+                                <img src="/templets/default/images/banner.jpg" alt="">
+                        </a>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    </div>
+    <!-- swiper-end -->
+    <!-- mian-s -->
+    <div class="container-fluid" id="main-wrap">
+        <div class="container" >
+            <div class="row row local">
+                <i class="glyphicon glyphicon-home"></i>
+                <span>位置：<a href='http://localhost/'>主页</a> > <a href='/a/piyingjianjie/'>皮影简介</a> > </span>
+            </div>  
+            <div class="row">
+                <h4 class="text-center">保护状况</h4>
+                <p class="text-center" style="border:1px solid #d8d8d8">
+                    <span>
+                         <i class="glyphicon glyphicon-pencil"></i>
+                         作者：admin 
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-time"></i>
+                        时间：2023-06-03 23:04
+                    </span>
+                    <span>
+                        <i class="glyphicon glyphicon-list-alt"></i>
+                        来源：未知
+                    </span>
+                </p>
+            </div>   
+    
+            <div class="row">
+                <div class="para" label-module="para" style="font-size: 14px; overflow-wrap: break-word; color: rgb(51, 51, 51); margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1; font-family: arial, 宋体, sans-serif;">
+	2006年5月20日，经国务院批准列入第一批<a href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E7%BA%A7%E9%9D%9E%E7%89%A9%E8%B4%A8%E6%96%87%E5%8C%96%E9%81%97%E4%BA%A7%E5%90%8D%E5%BD%95" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">国家级非物质文化遗产名录</a>。2007年6月8日，湖北省云梦皮影艺术团和山东省泰安市范正安皮影工作室获得国家文化部颁布的首届文化遗产日奖。</div>
+<div class="para" label-module="para" style="font-size: 14px; overflow-wrap: break-word; color: rgb(51, 51, 51); margin-bottom: 15px; text-indent: 2em; line-height: 24px; zoom: 1; font-family: arial, 宋体, sans-serif;">
+	2011年11月27日，总部位于巴黎的联合国教科文组织宣布，正在巴厘岛举行的保护非物质文化遗产政府间委员会第6届会议正式决定把中国皮影戏列入&ldquo;人类非物质文化遗产代表作名录&rdquo;。<span class="sup--normal" data-ctrmap=":10," data-sup="10" style="font-size: 12px; line-height: 0; position: relative; vertical-align: baseline; top: -0.5em; margin-left: 2px; color: rgb(51, 102, 204); cursor: pointer; padding: 0px 2px;">&nbsp;[10]</span><a class="sup-anchor" name="ref_[10]_6871125" style="color: rgb(19, 110, 194); position: relative; top: -50px; font-size: 0px; line-height: 0;">&nbsp;</a></div>
+<table data-sort="sortDisabled" log-set-param="table_view" style="border-spacing: 0px; border-collapse: collapse; color: rgb(51, 51, 51); font-family: arial, 宋体, sans-serif;" width="658">
+	<caption style="font-weight: 700; padding: 8px 0px 9px; font-size: 14px;">
+		中国皮影戏申遗状况</caption>
+	<tbody>
+		<tr>
+			<th style="padding: 2px 10px; line-height: 22px; height: 23px; border-style: solid; border-color: rgb(230, 230, 230); text-align: left; background-color: rgb(248, 248, 248);" width="242">
+				年份</th>
+			<th style="padding: 2px 10px; line-height: 22px; height: 23px; border-style: solid; border-color: rgb(230, 230, 230); text-align: left; background-color: rgb(248, 248, 248);" width="119">
+				申报地区</th>
+			<th style="padding: 2px 10px; line-height: 22px; height: 23px; border-style: solid; border-color: rgb(230, 230, 230); text-align: left; background-color: rgb(248, 248, 248);" width="227">
+				代表作品</th>
+			<th style="padding: 2px 10px; line-height: 22px; height: 23px; border-style: solid; border-color: rgb(230, 230, 230); text-align: left; background-color: rgb(248, 248, 248);">
+				遗产名录</th>
+		</tr>
+		<tr>
+			<td align="middle" rowspan="13" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="center" width="69">
+				2006年</td>
+			<td align="left" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				河北唐山</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				<a href="https://baike.baidu.com/item/%E5%94%90%E5%B1%B1%E7%9A%AE%E5%BD%B1%E6%88%8F" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">唐山皮影戏</a></td>
+			<td align="middle" rowspan="26" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="center" width="227">
+				<div class="para" label-module="para" style="overflow-wrap: break-word; margin: 0px; line-height: 24px; zoom: 1; height: auto;">
+					国家第一批非物质文化遗产</div>
+				<div class="para" label-module="para" style="overflow-wrap: break-word; margin: 0px; line-height: 24px; zoom: 1; height: auto;">
+					（序号235，项目名称：皮影戏）</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="left" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				河北邯郸</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				<a href="https://baike.baidu.com/item/%E5%86%80%E5%8D%97%E7%9A%AE%E5%BD%B1%E6%88%8F" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">冀南皮影戏</a></td>
+		</tr>
+		<tr>
+			<td align="left" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				山西孝义</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				<a href="https://baike.baidu.com/item/%E5%AD%9D%E4%B9%89%E7%9A%AE%E5%BD%B1%E6%88%8F" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">孝义皮影戏</a></td>
+		</tr>
+		<tr>
+			<td align="left" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				辽宁瓦房店</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				<a href="https://baike.baidu.com/item/%E5%A4%8D%E5%B7%9E%E7%9A%AE%E5%BD%B1%E6%88%8F" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">复州皮影戏</a></td>
+		</tr>
+		<tr>
+			<td align="left" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				浙江海宁</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				<a href="https://baike.baidu.com/item/%E6%B5%B7%E5%AE%81%E7%9A%AE%E5%BD%B1%E6%88%8F" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">海宁皮影戏</a></td>
+		</tr>
+		<tr>
+			<td align="left" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				湖北<a href="https://baike.baidu.com/item/%E6%BD%9C%E6%B1%9F" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">潜江</a></td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				<a href="https://baike.baidu.com/item/%E6%B1%9F%E6%B1%89%E5%B9%B3%E5%8E%9F%E7%9A%AE%E5%BD%B1%E6%88%8F" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">江汉平原皮影戏</a></td>
+		</tr>
+		<tr>
+			<td align="left" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				广东<a href="https://baike.baidu.com/item/%E6%B1%95%E5%B0%BE" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">汕尾</a></td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				<a href="https://baike.baidu.com/item/%E9%99%86%E4%B8%B0%E7%9A%AE%E5%BD%B1%E6%88%8F" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">陆丰皮影戏</a></td>
+		</tr>
+		<tr>
+			<td align="left" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				陕西渭南</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				<a href="https://baike.baidu.com/item/%E5%8D%8E%E5%8E%BF%E7%9A%AE%E5%BD%B1%E6%88%8F" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">华县皮影戏</a></td>
+		</tr>
+		<tr>
+			<td align="left" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				陕西<a href="https://baike.baidu.com/item/%E5%8D%8E%E9%98%B4" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">华阴</a></td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				华阴老腔</td>
+		</tr>
+		<tr>
+			<td align="left" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				陕西<a href="https://baike.baidu.com/item/%E5%AF%8C%E5%B9%B3" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">富平</a></td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				阿宫腔</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				陕西乾县</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				弦板腔</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				甘肃环县</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				环县道情皮影戏</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				辽宁凌源</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				凌源皮影戏</td>
+		</tr>
+		<tr>
+			<td align="middle" rowspan="13" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="center" width="69">
+				2008年</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				北京宣武区</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				北京皮影戏</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				河南南阳</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				桐柏皮影</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				河北<a href="https://baike.baidu.com/item/%E6%B2%B3%E9%97%B4" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">河间</a></td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				河间皮影戏</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				辽宁鞍山</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				岫岩皮影戏</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				辽宁<a href="https://baike.baidu.com/item/%E7%9B%96%E5%B7%9E" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">盖州</a></td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				盖州皮影戏</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				黑龙江<a href="https://baike.baidu.com/item/%E6%9C%9B%E5%A5%8E%E5%8E%BF" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">望奎县</a></td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				望奎县皮影戏</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				山东泰安</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				泰山皮影戏</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				山东济南</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				济南皮影戏</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				山东<a href="https://baike.baidu.com/item/%E5%AE%9A%E9%99%B6" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">定陶</a></td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				定陶皮影</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				河南罗山县</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				罗山皮影戏</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				湖南木偶皮影艺术剧院、湖南<a href="https://baike.baidu.com/item/%E8%A1%A1%E5%B1%B1%E5%8E%BF" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">衡山县</a></td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				湖南皮影戏</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				四川阆中、四川<a href="https://baike.baidu.com/item/%E5%8D%97%E9%83%A8%E5%8E%BF" style="color: rgb(19, 110, 194); text-decoration-line: none;" target="_blank">南部县</a></td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				四川皮影戏</td>
+		</tr>
+		<tr>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				青海省</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				河湟皮影戏</td>
+		</tr>
+		<tr>
+			<td align="middle" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="center" width="69">
+				2011年</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="242">
+				中国</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="119">
+				皮影戏</td>
+			<td style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="top" width="227">
+				世界非物质文化遗产名录</td>
+		</tr>
+		<tr>
+			<td align="middle" colspan="4" style="margin: 0px; padding: 2px 10px; line-height: 22px; height: 22px; border-style: solid; border-color: rgb(230, 230, 230);" valign="center">
+				参考资料来源：<span class="sup--normal" data-ctrmap=":11," data-sup="11" style="line-height: 0; position: relative; vertical-align: baseline; top: -0.5em; margin-left: 2px; color: rgb(51, 102, 204); cursor: pointer; padding: 0px 2px;">&nbsp;[11]</span><a class="sup-anchor" name="ref_[11]_6871125" style="color: rgb(19, 110, 194); position: relative; top: -50px; font-size: 0px; line-height: 0;">&nbsp;</a><br />
+				&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+  
+            </div>
+            <div class="left-warp hidden-md hidden-sm hidden-xs">
+                <ul class="list-unstyled" id="scroll">
+                    <li class="backToTop">
+                            <i class="glyphicon glyphicon-chevron-up"></i>
+                             <div class="txt1">
+                                 返回顶部   
+                             </div>    
+                    </li>
+                </ul>
+            </div>
+            </div>
+    </div>
+    <!-- main-end -->
+   
+    <!-- footer-s -->
+    
+   <div class="footer">
+        <p class="text-center">皮影戏@2023191115</p>
+    </div>  
+    <!-- footer-end -->
+    <script src="/templets/default/js/jquery-3.4.1.min.js"></script>
+    <script src="/templets/default/js/bootstrap.min.js"></script>
+    <script src="/templets/default/lib/swiper/js/swiper.min.js"></script>
+    <script src="/templets/default/lib/WOW-master/dist/wow.min.js"></script>
+    <script src="/templets/default/js/index.js"></script>
+</body>
+</html>

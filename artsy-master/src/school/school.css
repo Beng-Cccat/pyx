@@ -1,0 +1,473 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+} */
+
+@media (min-width: 450px) {
+    body {
+        font-size: 1.25rem;
+    }
+}
+
+.schoolText {
+    padding-bottom: 30px;
+    padding-top: 100px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.one1 {
+    padding-top: 10px;
+    background-color: #bcb6bd1c;
+}
+
+
+/* @media (max-width:450px) {
+    .one1 {
+        padding-top: 350px!important;
+    }
+} */
+
+.schoolH {
+    font-family: freight-big-pro, serif!important;
+    font-family: var(--font-family-serif)!important;
+    font-style: normal;
+    font-size: 3.5rem!important;
+    text-align: center;
+    line-height: 1.225;
+    font-style: italic;
+    font-weight: 300;
+    margin: 50px 0px 0px 0px;
+}
+
+@media (max-width:450px) {
+    .schoolH {
+        font-size: 2.5rem!important;
+    }
+    .first {
+        margin-top: 60px;
+    }
+    .page_content span {
+        display: none;
+    }
+}
+
+.schoolP {
+    font-family: proxima-nova, sans-serif;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.5em;
+    /* max-width: 800px; */
+    margin: 20px auto 30px auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    /* max-width: 800px; */
+}
+
+@media (max-width:450px) {
+    .schoolText {
+        padding-bottom: 1px!important;
+    }
+}
+
+.back {
+    background-color: #bcb6bd1c;
+}
+
+.niubig {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    background-color: #bcb6bd1c;
+}
+
+.shell {
+    width: 100%;
+    height: 720px;
+    background-color: #bcb6bd1c;
+    overflow: hidden;
+}
+
+@media (max-width:450px) {
+    .shell {
+        height: 300px!important;
+    }
+}
+
+.page {
+    transform: translateX(-112%);
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    /* margin-left: 30px; */
+    transition: 0.5s;
+    background-size: cover;
+}
+
+.buttonone {
+    display: block;
+    width: 10%;
+    color: #fff;
+    font-size: 30px;
+    border-bottom: #fff solid 4px;
+    text-align: center;
+    position: absolute;
+    bottom: 5px;
+    margin: 50px;
+    left: calc(50% + (var(--i)*17%));
+    z-index: 1;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+@media (max-width:450px) {
+    .buttonone {
+        /* width: 6%!important; */
+        font-size: 4px;
+        margin: 12px;
+    }
+}
+
+.page_content {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 50px;
+    color: #FFF;
+    position: absolute;
+    left: 100%;
+    display: none;
+    animation-name: fade;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
+    opacity: 1;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+input {
+    display: none;
+}
+
+input:checked+.page {
+    transform: translateX(0px);
+    transition: 0.4s;
+}
+
+input:checked+.page .page_content {
+    width: 100%;
+    display: block;
+}
+
+.page:nth-child(3) {
+    background-image: url('../../img/school/31.jpg');
+}
+
+.page:nth-child(3) .page_content {
+    background-color: #b98282;
+}
+
+.page:nth-child(6) {
+    background-image: url('../../img/school/25.jpg');
+}
+
+.page:nth-child(6) .page_content {
+    background-color: #adaae2;
+}
+
+.page:nth-child(9) {
+    background-image: url('../../img/school/28.jpg');
+}
+
+.page:nth-child(9) .page_content {
+    background-color: #ecb46e;
+}
+
+.page h1 {
+    font-size: 30px;
+}
+
+.page p {
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+@media (max-width:450px) {
+    .page p {
+        font-size: 14px!important;
+        padding: 5px!important;
+        margin: 22px 0!important;
+    }
+}
+
+.page span {
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: #383838;
+}
+
+
+/* label:hover {
+  cursor: pointer;
+  border-bottom: solid 4px #232323;
+} */
+
+.starlight {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background-color: #bcb6bd1c;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.title {
+    color: white;
+    font-size: 4em;
+    margin: 0;
+    padding: 0;
+}
+
+.subtitle {
+    color: hsla(0, 0%, 100%, 0.3);
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+}
+
+.button-wrapper {
+    margin-top: 24px;
+}
+
+
+/* .button {
+    margin: 24px;
+} */
+
+main {
+    margin: 0 auto;
+    max-width: 1600px;
+    padding: 30px 70px 0;
+}
+
+main img {
+    width: 100%;
+}
+
+.photo-grid-container {
+    column-count: 5;
+    column-width: 300px;
+}
+
+.photo-grid-item {
+    margin: 0 auto 15px;
+    max-width: 400px;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.photo-grid-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all 0.6s;
+}
+
+.photo-grid-item img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+/* 弹窗背景 */
+
+.Modal {
+    position: fixed;
+    width: 80%;
+    height: 100vh;
+    transition: 0.5s;
+    transform: translateX(100%);
+    background-color: rgba(0, 0, 0, 0.9);
+    /*阴影*/
+    top: 0;
+    right: 0;
+    z-index: 30;
+}
+
+.rowcol-t {
+    height: 100%!important;
+    display: flex;
+    align-items: center;
+}
+
+.img-content {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+    .img-content {
+        height: 80vh!important;
+    }
+}
+
+
+/* 图片 */
+
+.img-modal-content {
+    max-width: 100%;
+    display: block;
+    max-height: 80%;
+    margin: 0 auto;
+    /* 防止变形 */
+    object-fit: cover;
+}
+
+@media (max-width: 850px) {
+    .Modal {
+        width: 100%!important;
+    }
+    .img-modal-content {
+        width: 100%!important;
+        height: auto!important;
+    }
+}
+
+.Image-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20%;
+}
+
+.Image-container a {
+    /* 相对定位 */
+    position: relative;
+    /* 将a这个行内元素转为块级元素不然无法设置宽和高 */
+    display: block;
+    width: 100px;
+    height: 50px;
+    /* 行高 */
+    line-height: 50px;
+    text-align: center;
+    margin: -8px;
+    color: aqua;
+    font-size: 20px;
+    /* 取消下划线 */
+    text-decoration: none;
+    /* 过渡事件 */
+    transition: all 0.3s ease-in-out;
+    /* 改变各个元素的颜色,一句话搞定 */
+    /* hue-rotate是颜色滤镜 可以加不同的度数来改变颜色
+这里我们用了calc自动计算的方法,还有var函数来调用我们给每一个a设置的不同的属性值1~5,然后分别乘以60度,就能够分别得到不同的度数 */
+    filter: hue-rotate(calc(var(--i) * 60deg));
+}
+
+@media (max-width: 767px) {
+    .Image-container {
+        height: 20vh!important;
+    }
+    .Image-container a {
+        width: 28%!important;
+        margin: 4px!important;
+    }
+}
+
+.Image-container a::before,
+.Image-container a::after {
+    /* 将两个伪元素的相同部分写在一起 */
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid aqua;
+    /* 最后的.3s是延迟时间 */
+    transition: all 0.3s ease-in-out 0.3s;
+    box-sizing: border-box;
+}
+
+.Image-container a::before {
+    top: 0;
+    left: 0;
+    /* 删除左边的伪元素的右和下边框 */
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.Image-container a::after {
+    right: 0;
+    bottom: 0;
+    /* 删除右边的伪元素的上边和左边的边框 */
+    border-top: 0;
+    border-left: 0;
+}
+
+.Image-container a:hover {
+    background-color: aqua;
+    color: #000;
+    /* 加个发光效果和下面的倒影 */
+    /* 模糊度加到了50px */
+    box-shadow: 0 0 50px aqua;
+    /* below 是下倒影 1px是倒影的元素相隔的距离 最后是个渐变的颜色 */
+    -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+    /* 设置一下以上属性的延迟时间 */
+    transition-delay: 0.4s;
+}
+
+
+/* 在设置两条线的变化 总体来说四条各个方向的 只需要改变一下两个伪元素的宽度和高度 */
+
+.Image-container a:hover::before,
+.Image-container a:hover::after {
+    width: 138px;
+    height: 58px;
+    transition-delay: 0s;
+}
+
+@media screen and (max-width:700px) {
+    .schoolH {
+        font-size: 2.5rem!important;
+        margin-top: 15px!important;
+    }
+}
